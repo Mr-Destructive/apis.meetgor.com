@@ -1,0 +1,7 @@
+pages_build_output_dir = "."
+compatibility_date = "2026-06-06"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "apis-meetgor-db"
+database_id = "replace-with-your-database-id"
