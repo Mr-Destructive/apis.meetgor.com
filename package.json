@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "wrangler pages dev",
-    "deploy": "wrangler pages deploy",
+    "dev": "wrangler pages dev .",
+    "deploy": "wrangler pages deploy .",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
