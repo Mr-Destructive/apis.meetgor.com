@@ -1,4 +1,8 @@
 import { handleTicTacToe } from "./games/tic-tac-toe"
+import { rootSpec } from "./openapi/root"
+import { mySpec } from "./openapi/my"
+import { gamesSpec } from "./openapi/games"
+import { scalarHtml } from "./openapi/docs"
 
 const RSS_URL = "https://www.meetgor.com/type/newsletter/rss.xml"
 
@@ -36,13 +40,13 @@ const apis: ApiEntry[] = [
     name: "My API",
     description: "Personal info, books, blog, newsletter",
     path: "/my",
-    endpoints: ["/my", "/my/newsletter"],
+    endpoints: ["/my", "/my/newsletter", "/my/docs"],
   },
   {
     name: "Games API",
     description: "Game-related endpoints",
     path: "/games",
-    endpoints: ["/games", "/games/tic-tac-toe"],
+    endpoints: ["/games", "/games/tic-tac-toe", "/games/docs"],
   },
 ]
 
@@ -245,6 +249,7 @@ function handleMy(): Response {
       { path: "/my/newsletter/<slug>", description: "Get single newsletter by slug" },
       { path: "/my/newsletter/stats", description: "Newsletter stats" },
       { path: "POST /my/newsletter/refresh", description: "Re-fetch RSS feed" },
+      { path: "/my/docs", description: "API documentation" },
     ],
     info: {
       name: "Meet Gor",
@@ -258,6 +263,11 @@ function handleGames(): Response {
   return Response.json({
     name: "Games API",
     description: "Game-related endpoints",
+    endpoints: [
+      { path: "/games", description: "List games" },
+      { path: "/games/tic-tac-toe", description: "Play tic-tac-toe" },
+      { path: "/games/docs", description: "API documentation" },
+    ],
     games: [
       {
         name: "Tic Tac Toe",
@@ -268,15 +278,38 @@ function handleGames(): Response {
   })
 }
 
+function serveDocs(title: string, specUrl: string): Response {
+  return new Response(scalarHtml(title, specUrl), {
+    headers: { "Content-Type": "text/html; charset=utf-8" },
+  })
+}
+
+function serveYaml(spec: string, filename: string): Response {
+  return new Response(spec, {
+    headers: {
+      "Content-Type": "application/yaml",
+      "Content-Disposition": `inline; filename="${filename}"`,
+    },
+  })
+}
+
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url)
     const pathname = url.pathname
 
     if (pathname === "/") return handleRoot()
+    if (pathname === "/docs") return serveDocs("apis.meetgor.com", "/docs/openapi.yaml")
+    if (pathname === "/docs/openapi.yaml") return serveYaml(rootSpec, "root.yaml")
+
     if (pathname === "/my") return handleMy()
+    if (pathname === "/my/docs") return serveDocs("My API", "/my/docs/openapi.yaml")
+    if (pathname === "/my/docs/openapi.yaml") return serveYaml(mySpec, "my.yaml")
     if (pathname.startsWith("/my/newsletter")) return handleNewsletter(request, url, env.DB)
+
     if (pathname === "/games") return handleGames()
+    if (pathname === "/games/docs") return serveDocs("Games API", "/games/docs/openapi.yaml")
+    if (pathname === "/games/docs/openapi.yaml") return serveYaml(gamesSpec, "games.yaml")
     if (pathname === "/games/tic-tac-toe") return handleTicTacToe(request)
 
     return Response.json({ error: "Not found" }, { status: 404 })
