@@ -2,8 +2,8 @@ export const mySpec = `openapi: "3.1.0"
 info:
   title: My API
   description: >
-    Personal information and content APIs. Provides access to Meet Gor's
-    profile, newsletter archive, and other personal content.
+    Personal profile endpoint. Returns Meet Gor's basic information
+    and links to sub-APIs.
   version: "1.0.0"
   contact:
     name: Meet Gor
@@ -12,12 +12,6 @@ info:
 servers:
   - url: https://apis.meetgor.com
     description: Production
-
-tags:
-  - name: My
-    description: Personal profile endpoints
-  - name: Newsletter
-    description: Techstructive Weekly newsletter endpoints
 
 paths:
   /my:
@@ -60,7 +54,25 @@ paths:
                       website:
                         type: string
                         format: uri
+`
 
+export const newsletterSpec = `openapi: "3.1.0"
+info:
+  title: Newsletter API
+  description: >
+    Techstructive Weekly newsletter archive. Fetches and caches RSS feed
+    data from meetgor.com into a D1 database. Supports pagination, search,
+    sorting, and individual item lookup.
+  version: "1.0.0"
+  contact:
+    name: Meet Gor
+    url: https://meetgor.com
+
+servers:
+  - url: https://apis.meetgor.com
+    description: Production
+
+paths:
   /my/newsletter:
     get:
       summary: List newsletters
@@ -86,7 +98,8 @@ paths:
             default: 0
         - name: search
           in: query
-          description: Search term to filter newsletters by title or description
+          description: >
+            Search term to filter newsletters by title or description
           schema:
             type: string
         - name: sort
@@ -158,8 +171,7 @@ paths:
       summary: Get newsletter by slug
       description: >
         Returns a single newsletter entry identified by its URL slug,
-        for example "techstructive-weekly-97". The slug is the last
-        segment of the newsletter's URL path.
+        for example "techstructive-weekly-97".
       operationId: getNewsletterBySlug
       tags:
         - Newsletter
@@ -189,8 +201,7 @@ paths:
       summary: Get newsletter stats
       description: >
         Returns aggregate statistics about the newsletter archive,
-        including total count, earliest publication date, and latest
-        publication date.
+        including total count, earliest and latest publication dates.
       operationId: getNewsletterStats
       tags:
         - Newsletter

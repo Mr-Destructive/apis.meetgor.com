@@ -1,6 +1,6 @@
 import { handleTicTacToe } from "./games/tic-tac-toe"
 import { rootSpec } from "./openapi/root"
-import { mySpec } from "./openapi/my"
+import { mySpec, newsletterSpec } from "./openapi/my"
 import { gamesSpec, ticTacToeSpec } from "./openapi/games"
 import { scalarHtml } from "./openapi/docs"
 
@@ -305,7 +305,11 @@ export default {
     if (pathname === "/my") return handleMy()
     if (pathname === "/my/docs") return serveDocs("My API", "/my/docs/openapi.yaml")
     if (pathname === "/my/docs/openapi.yaml") return serveYaml(mySpec, "my.yaml")
-    if (pathname.startsWith("/my/newsletter")) return handleNewsletter(request, url, env.DB)
+    if (pathname.startsWith("/my/newsletter")) {
+      if (pathname === "/my/newsletter/docs") return serveDocs("Newsletter API", "/my/newsletter/docs/openapi.yaml")
+      if (pathname === "/my/newsletter/docs/openapi.yaml") return serveYaml(newsletterSpec, "newsletter.yaml")
+      return handleNewsletter(request, url, env.DB)
+    }
 
     if (pathname === "/games") return handleGames()
     if (pathname === "/games/docs") return serveDocs("Games API", "/games/docs/openapi.yaml")
