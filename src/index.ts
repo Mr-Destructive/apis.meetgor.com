@@ -1,4 +1,5 @@
 import { handleTicTacToe } from "./games/tic-tac-toe"
+import { handleLlamaline } from "./llamaline"
 import { scalarHtml } from "./openapi/docs"
 
 const RSS_URL = "https://www.meetgor.com/type/newsletter/rss.xml"
@@ -44,6 +45,17 @@ const apis: ApiEntry[] = [
     description: "Game-related endpoints",
     path: "/games",
     endpoints: ["/games", "/games/tic-tac-toe", "/games/docs"],
+  },
+  {
+    name: "Llamaline API",
+    description: "AI model timeline and observatory",
+    path: "/llamaline/v1",
+    endpoints: [
+      "/llamaline/v1/providers",
+      "/llamaline/v1/models",
+      "/llamaline/v1/timeline",
+      "/llamaline/docs",
+    ],
   },
 ]
 
@@ -301,6 +313,11 @@ export default {
     if (pathname.startsWith("/games/tic-tac-toe")) {
       if (pathname === "/games/tic-tac-toe") return handleTicTacToe(request)
       if (pathname === "/games/tic-tac-toe/docs") return serveDocs("Tic Tac Toe", "/games/tic-tac-toe/docs/openapi.yaml")
+    }
+
+    if (pathname === "/llamaline/docs") return serveDocs("Llamaline API", "/llamaline/docs/openapi.yaml")
+    if (pathname.startsWith("/llamaline")) {
+      return handleLlamaline(request, env)
     }
 
     return Response.json({ error: "Not found" }, { status: 404 })

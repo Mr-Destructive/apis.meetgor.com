@@ -1,0 +1,814 @@
+openapi: 3.1.0
+info:
+  title: Llamaline API
+  summary: Timeline and observatory API for AI models and providers
+  description: >
+    Llamaline is a read-only observatory API for tracking AI model providers,
+    models, lineage relationships, and historical timeline events.
+    The API focuses on understanding how the AI ecosystem evolves over time
+    through model releases, updates, deprecations, and provider activity.
+  version: 0.0.1
+  contact:
+    name: Meet Gor
+    url: https://apis.meetgor.com/llamaline
+    email: gormeet711@gmail.com
+
+servers:
+  - url: https://apis.meetgor.com/llamaline/v1
+    description: Production
+  - url: http://localhost:8787/llamaline/v1
+    description: Local development
+
+tags:
+  - name: Providers
+    description: AI model providers
+  - name: Models
+    description: AI models and lineage
+  - name: Timeline
+    description: Historical events across the AI ecosystem
+
+paths:
+
+  /providers:
+    get:
+      tags:
+        - Providers
+      operationId: listProviders
+      summary: List providers
+      description: >
+        Returns a paginated list of AI model providers.
+        Results can be sorted and searched.
+      parameters:
+        - $ref: "#/components/parameters/Search"
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/Sort"
+      responses:
+        "200":
+          description: Providers retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ProviderCollection"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+
+  /providers/{providerId}:
+    get:
+      tags:
+        - Providers
+      operationId: getProvider
+      summary: Get provider by identifier
+      description: Returns a single provider with its details and links.
+      parameters:
+        - $ref: "#/components/parameters/ProviderId"
+      responses:
+        "200":
+          description: Provider retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Provider"
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+  /providers/{providerId}/timeline:
+    get:
+      tags:
+        - Timeline
+      operationId: listProviderTimeline
+      summary: List timeline events for a provider
+      description: >
+        Returns timeline events scoped to a specific provider.
+        Supports filtering by event type and date range.
+      parameters:
+        - $ref: "#/components/parameters/ProviderId"
+        - $ref: "#/components/parameters/EventType"
+        - $ref: "#/components/parameters/FromDate"
+        - $ref: "#/components/parameters/ToDate"
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+      responses:
+        "200":
+          description: Timeline events retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TimelineEventCollection"
+
+  /models:
+    get:
+      tags:
+        - Models
+      operationId: listModels
+      summary: List models
+      description: >
+        Returns a paginated list of AI models.
+        Supports filtering by provider, family, status, type, and text search.
+      parameters:
+        - $ref: "#/components/parameters/Search"
+        - $ref: "#/components/parameters/ProviderFilter"
+        - $ref: "#/components/parameters/FamilyFilter"
+        - $ref: "#/components/parameters/ModelStatusFilter"
+        - $ref: "#/components/parameters/ModelTypeFilter"
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/Sort"
+      responses:
+        "200":
+          description: Models retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ModelCollection"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+
+  /models/{modelId}:
+    get:
+      tags:
+        - Models
+      operationId: getModel
+      summary: Get model by identifier
+      description: Returns a single model with lineage info and links.
+      parameters:
+        - $ref: "#/components/parameters/ModelId"
+      responses:
+        "200":
+          description: Model retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Model"
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+  /models/{modelId}/timeline:
+    get:
+      tags:
+        - Timeline
+      operationId: listModelTimeline
+      summary: List timeline events for a model
+      description: >
+        Returns timeline events scoped to a specific model.
+        Supports filtering by event type and date range.
+      parameters:
+        - $ref: "#/components/parameters/ModelId"
+        - $ref: "#/components/parameters/EventType"
+        - $ref: "#/components/parameters/FromDate"
+        - $ref: "#/components/parameters/ToDate"
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+      responses:
+        "200":
+          description: Timeline events retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TimelineEventCollection"
+
+  /timeline:
+    get:
+      tags:
+        - Timeline
+      operationId: listTimelineEvents
+      summary: List timeline events
+      description: >
+        Returns a paginated list of timeline events across all providers
+        and models. This is the central feed for the AI ecosystem.
+        Supports filtering by event type, provider, model, and date range.
+      parameters:
+        - $ref: "#/components/parameters/EventType"
+        - $ref: "#/components/parameters/ProviderFilter"
+        - $ref: "#/components/parameters/ModelFilter"
+        - $ref: "#/components/parameters/FromDate"
+        - $ref: "#/components/parameters/ToDate"
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+      responses:
+        "200":
+          description: Timeline events retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TimelineEventCollection"
+
+  /timeline/{eventId}:
+    get:
+      tags:
+        - Timeline
+      operationId: getTimelineEvent
+      summary: Get timeline event by identifier
+      description: Returns a single timeline event with full details.
+      parameters:
+        - $ref: "#/components/parameters/EventId"
+      responses:
+        "200":
+          description: Timeline event retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TimelineEvent"
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+components:
+
+  parameters:
+
+    Search:
+      name: search
+      in: query
+      description: Full-text search across name and description fields.
+      schema:
+        type: string
+      example: GPT
+
+    ProviderId:
+      name: providerId
+      in: path
+      required: true
+      description: Provider identifier (slug).
+      schema:
+        type: string
+      example: openai
+
+    ModelId:
+      name: modelId
+      in: path
+      required: true
+      description: Model identifier (slug).
+      schema:
+        type: string
+      example: gpt-4o
+
+    EventId:
+      name: eventId
+      in: path
+      required: true
+      description: Timeline event identifier.
+      schema:
+        type: string
+      example: evt_gpt4o_release
+
+    Limit:
+      name: limit
+      in: query
+      description: Maximum number of records to return (1--100).
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+        default: 20
+
+    Offset:
+      name: offset
+      in: query
+      description: Number of records to skip for pagination.
+      schema:
+        type: integer
+        minimum: 0
+        default: 0
+
+    Sort:
+      name: sort
+      in: query
+      description: >
+        Field to sort by. Prefix with `-` for descending order.
+        Supported fields vary by endpoint.
+      schema:
+        type: string
+      example: -releaseDate
+
+    ProviderFilter:
+      name: providerId
+      in: query
+      description: Filter by provider identifier.
+      schema:
+        type: string
+      example: openai
+
+    ModelFilter:
+      name: modelId
+      in: query
+      description: Filter by model identifier.
+      schema:
+        type: string
+      example: gpt-4o
+
+    FamilyFilter:
+      name: family
+      in: query
+      description: Filter by model family name.
+      schema:
+        type: string
+      example: GPT
+
+    ModelStatusFilter:
+      name: status
+      in: query
+      description: Filter by model lifecycle status.
+      schema:
+        type: string
+        enum:
+          - announced
+          - active
+          - deprecated
+          - retired
+
+    ModelTypeFilter:
+      name: modelType
+      in: query
+      description: Filter by model capability type.
+      schema:
+        type: string
+        enum:
+          - llm
+          - multimodal
+          - image-generation
+          - speech
+          - embedding
+          - reranking
+
+    EventType:
+      name: eventType
+      in: query
+      description: Filter by timeline event type.
+      schema:
+        $ref: "#/components/schemas/TimelineEventType"
+
+    FromDate:
+      name: from
+      in: query
+      description: Start date for filtering (inclusive).
+      schema:
+        type: string
+        format: date
+      example: "2024-01-01"
+
+    ToDate:
+      name: to
+      in: query
+      description: End date for filtering (inclusive).
+      schema:
+        type: string
+        format: date
+      example: "2024-12-31"
+
+  responses:
+
+    BadRequest:
+      description: The request was malformed or contained invalid parameters.
+      content:
+        application/problem+json:
+          schema:
+            $ref: "#/components/schemas/Problem"
+
+    NotFound:
+      description: The requested resource does not exist.
+      content:
+        application/problem+json:
+          schema:
+            $ref: "#/components/schemas/Problem"
+
+  schemas:
+
+    Provider:
+      type: object
+      description: An AI model provider organisation.
+      required:
+        - id
+        - name
+        - status
+        - links
+      properties:
+        id:
+          type: string
+          description: Stable provider identifier.
+          example: openai
+        name:
+          type: string
+          description: Provider display name.
+          example: OpenAI
+        description:
+          type: string
+          description: Human-readable description of the provider.
+          example: AI research and deployment company.
+        website:
+          type: string
+          format: uri
+          example: https://openai.com
+        countryCode:
+          type: string
+          description: ISO 3166-1 alpha-2 country code.
+          example: US
+        foundedDate:
+          type: string
+          format: date
+          example: "2015-12-11"
+        status:
+          type: string
+          enum:
+            - active
+            - inactive
+            - acquired
+            - discontinued
+          example: active
+        modelCount:
+          type: integer
+          readOnly: true
+          example: 12
+        links:
+          $ref: "#/components/schemas/Links"
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+      example:
+        id: openai
+        name: OpenAI
+        description: AI research and deployment company.
+        website: https://openai.com
+        countryCode: US
+        foundedDate: "2015-12-11"
+        status: active
+        modelCount: 12
+        links:
+          self: /llamaline/v1/providers/openai
+          timeline: /llamaline/v1/providers/openai/timeline
+          models: /llamaline/v1/models?providerId=openai
+
+    Model:
+      type: object
+      description: >
+        An AI model with lineage information. Models can have predecessors
+        and successors, forming a directed graph of model evolution.
+      required:
+        - id
+        - name
+        - providerId
+        - releaseDate
+        - status
+        - links
+      properties:
+        id:
+          type: string
+          example: gpt-4o
+        name:
+          type: string
+          example: GPT-4o
+        family:
+          type: string
+          description: Logical model family grouping.
+          example: GPT
+        providerId:
+          type: string
+          example: openai
+        description:
+          type: string
+          description: Human-readable description of the model.
+          example: Multimodal flagship model from OpenAI.
+        modelType:
+          type: string
+          enum:
+            - llm
+            - multimodal
+            - image-generation
+            - speech
+            - embedding
+            - reranking
+          example: multimodal
+        releaseDate:
+          type: string
+          format: date
+          example: "2024-05-13"
+        status:
+          type: string
+          enum:
+            - announced
+            - active
+            - deprecated
+            - retired
+          example: active
+        predecessorIds:
+          type: array
+          description: Models that this model evolved from.
+          items:
+            type: string
+          example:
+            - gpt-4-turbo
+        successorIds:
+          type: array
+          description: Models that evolved from this model.
+          items:
+            type: string
+          example: []
+        tags:
+          type: array
+          items:
+            type: string
+          example:
+            - multimodal
+            - flagship
+        links:
+          $ref: "#/components/schemas/Links"
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+      example:
+        id: gpt-4o
+        name: GPT-4o
+        family: GPT
+        providerId: openai
+        description: Multimodal flagship model from OpenAI.
+        modelType: multimodal
+        releaseDate: "2024-05-13"
+        status: active
+        predecessorIds:
+          - gpt-4-turbo
+        successorIds: []
+        tags:
+          - multimodal
+          - flagship
+        links:
+          self: /llamaline/v1/models/gpt-4o
+          timeline: /llamaline/v1/models/gpt-4o/timeline
+          provider: /llamaline/v1/providers/openai
+
+    TimelineEventType:
+      type: string
+      description: >
+        Categorises timeline events into lifecycle stages
+        and activity types across the AI ecosystem.
+      enum:
+        - provider_created
+        - model_announced
+        - model_released
+        - model_updated
+        - model_deprecated
+        - model_retired
+        - pricing_added
+        - pricing_changed
+        - capability_added
+        - capability_removed
+        - context_window_changed
+
+    TimelineEvent:
+      type: object
+      description: >
+        A single historical event in the AI ecosystem. Events track model
+        releases, updates, deprecations, pricing changes, and more.
+        Each event can optionally reference a provider and/or model.
+      required:
+        - id
+        - eventType
+        - eventDate
+        - title
+        - links
+      properties:
+        id:
+          type: string
+          example: evt_gpt4o_release
+        eventType:
+          $ref: "#/components/schemas/TimelineEventType"
+        eventDate:
+          type: string
+          format: date
+          description: The date the event occurred.
+          example: "2024-05-13"
+        title:
+          type: string
+          description: Short human-readable title.
+          example: GPT-4o Released
+        description:
+          type: string
+          description: Longer description of the event.
+          example: OpenAI released GPT-4o with native multimodal capabilities.
+        providerId:
+          type: string
+          example: openai
+        modelId:
+          type: string
+          example: gpt-4o
+        sourceUrl:
+          type: string
+          format: uri
+          description: Link to the original announcement or source.
+          example: https://openai.com/index/hello-gpt-4o
+        sourceType:
+          type: string
+          enum:
+            - announcement
+            - documentation
+            - blog
+            - release_notes
+            - benchmark
+            - pricing
+        metadata:
+          type: object
+          description: Event-specific structured data.
+          additionalProperties: true
+          example:
+            modalities:
+              - text
+              - image
+              - audio
+        tags:
+          type: array
+          items:
+            type: string
+        links:
+          $ref: "#/components/schemas/Links"
+        createdAt:
+          type: string
+          format: date-time
+      example:
+        id: evt_gpt4o_release
+        eventType: model_released
+        eventDate: "2024-05-13"
+        title: GPT-4o Released
+        description: OpenAI released GPT-4o with native multimodal capabilities.
+        providerId: openai
+        modelId: gpt-4o
+        sourceUrl: https://openai.com/index/hello-gpt-4o
+        sourceType: announcement
+        metadata:
+          modalities:
+            - text
+            - image
+            - audio
+        links:
+          self: /llamaline/v1/timeline/evt_gpt4o_release
+          provider: /llamaline/v1/providers/openai
+          model: /llamaline/v1/models/gpt-4o
+
+    Links:
+      type: object
+      description: >
+        Hypermedia links for resource navigation.
+        Follow these to discover related resources
+        without constructing URLs manually.
+      properties:
+        self:
+          type: string
+          format: uri
+          description: Link to this resource.
+        timeline:
+          type: string
+          format: uri
+          description: Link to the timeline events for this resource.
+        provider:
+          type: string
+          format: uri
+          description: Link to the associated provider.
+        model:
+          type: string
+          format: uri
+          description: Link to the associated model.
+        models:
+          type: string
+          format: uri
+          description: Link to the models list for this provider.
+
+    ProviderCollection:
+      type: object
+      description: Paginated collection of providers.
+      properties:
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/Provider"
+        total:
+          type: integer
+          description: Total number of providers matching the query.
+          example: 5
+        limit:
+          type: integer
+          example: 20
+        offset:
+          type: integer
+          example: 0
+      example:
+        items:
+          - id: openai
+            name: OpenAI
+            status: active
+            modelCount: 12
+            links:
+              self: /llamaline/v1/providers/openai
+              timeline: /llamaline/v1/providers/openai/timeline
+              models: /llamaline/v1/models?providerId=openai
+          - id: anthropic
+            name: Anthropic
+            status: active
+            modelCount: 6
+            links:
+              self: /llamaline/v1/providers/anthropic
+              timeline: /llamaline/v1/providers/anthropic/timeline
+              models: /llamaline/v1/models?providerId=anthropic
+        total: 2
+        limit: 20
+        offset: 0
+
+    ModelCollection:
+      type: object
+      description: Paginated collection of models.
+      properties:
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/Model"
+        total:
+          type: integer
+        limit:
+          type: integer
+        offset:
+          type: integer
+      example:
+        items:
+          - id: gpt-4o
+            name: GPT-4o
+            providerId: openai
+            family: GPT
+            modelType: multimodal
+            status: active
+            releaseDate: "2024-05-13"
+            links:
+              self: /llamaline/v1/models/gpt-4o
+              timeline: /llamaline/v1/models/gpt-4o/timeline
+              provider: /llamaline/v1/providers/openai
+        total: 1
+        limit: 20
+        offset: 0
+
+    TimelineEventCollection:
+      type: object
+      description: Paginated collection of timeline events.
+      properties:
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/TimelineEvent"
+        total:
+          type: integer
+        limit:
+          type: integer
+        offset:
+          type: integer
+      example:
+        items:
+          - id: evt_gpt4o_release
+            eventType: model_released
+            eventDate: "2024-05-13"
+            title: GPT-4o Released
+            links:
+              self: /llamaline/v1/timeline/evt_gpt4o_release
+              provider: /llamaline/v1/providers/openai
+              model: /llamaline/v1/models/gpt-4o
+        total: 1
+        limit: 20
+        offset: 0
+
+    Problem:
+      type: object
+      description: >
+        RFC 9457 Problem Details object.
+        Carries machine-readable error details
+        in a standard format.
+      required:
+        - type
+        - title
+        - status
+      properties:
+        type:
+          type: string
+          format: uri
+          description: URI identifying the problem type.
+          example: https://apis.meetgor.com/problems/not-found
+        title:
+          type: string
+          description: Short human-readable problem summary.
+          example: Resource Not Found
+        status:
+          type: integer
+          description: HTTP status code.
+          example: 404
+        detail:
+          type: string
+          description: Human-readable explanation.
+          example: The requested resource does not exist.
+        instance:
+          type: string
+          format: uri
+          description: URI identifying the specific occurrence.
+      example:
+        type: https://apis.meetgor.com/problems/not-found
+        title: Resource Not Found
+        status: 404
+        detail: The requested resource does not exist.
+        instance: /llamaline/v1/models/nonexistent-model

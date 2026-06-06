@@ -14,11 +14,13 @@ const allSpecs = [
   { file: "newsletter.yaml", tag: "Newsletter", group: "My Profile" },
   { file: "games.yaml", tag: "Games", group: "Games" },
   { file: "tic-tac-toe.yaml", tag: "Tic Tac Toe", group: "Games" },
+  { file: "llamaline.yaml", tag: null, group: "Llamaline API", tagsFromSpec: true },
 ]
 
 const tagGroups = [
   { name: "My Profile", tags: ["My Profile", "Newsletter"] },
   { name: "Games", tags: ["Games", "Tic Tac Toe"] },
+  { name: "Llamaline API", tags: ["Providers", "Models", "Timeline"] },
 ]
 
 const perApiSpecs = [
@@ -26,6 +28,7 @@ const perApiSpecs = [
   { file: "newsletter.yaml", out: "my/newsletter/docs/openapi.yaml" },
   { file: "games.yaml", out: "games/docs/openapi.yaml" },
   { file: "tic-tac-toe.yaml", out: "games/tic-tac-toe/docs/openapi.yaml" },
+  { file: "llamaline.yaml", out: "llamaline/docs/openapi.yaml" },
 ]
 
 function resolveJsonPointer(obj, pointer) {
@@ -39,9 +42,9 @@ function resolveJsonPointer(obj, pointer) {
   return current
 }
 
-function derefNode(node, componentsObj) {
+function derefNode(node, componentsObj, selfObj) {
   if (Array.isArray(node)) {
-    return node.map(item => derefNode(item, componentsObj))
+    return node.map(item => derefNode(item, componentsObj, selfObj))
   }
   if (node && typeof node === "object") {
     if (node.$ref && typeof node.$ref === "string") {
@@ -50,11 +53,11 @@ function derefNode(node, componentsObj) {
       if (ref.startsWith("./components.yaml#")) {
         const pointer = ref.slice("./components.yaml#".length)
         resolved = resolveJsonPointer(componentsObj, pointer)
-      } else if (ref.startsWith("#/")) {
-        resolved = resolveJsonPointer(componentsObj, ref.slice(1))
+      } else if (ref.startsWith("#/") && selfObj) {
+        resolved = resolveJsonPointer(selfObj, ref.slice(1))
       }
       if (resolved !== undefined) {
-        return derefNode(structuredClone(resolved), componentsObj)
+        return derefNode(structuredClone(resolved), componentsObj, selfObj)
       }
       if (ref.startsWith("./components.yaml#") || ref.startsWith("#/")) {
         console.warn(`  Warning: Could not resolve ${ref}`)
@@ -63,18 +66,19 @@ function derefNode(node, componentsObj) {
     }
     const result = {}
     for (const key of Object.keys(node)) {
-      result[key] = derefNode(node[key], componentsObj)
+      result[key] = derefNode(node[key], componentsObj, selfObj)
     }
     return result
   }
   return node
 }
 
-function loadAndResolve(filename, componentsObj) {
+function loadAndResolve(filename, componentsObj, skipDeref) {
   const filePath = resolve(SPECS_DIR, filename)
   const raw = readFileSync(filePath, "utf-8")
   const parsed = yaml.load(raw)
-  return derefNode(parsed, componentsObj)
+  if (skipDeref) return parsed
+  return derefNode(parsed, componentsObj, parsed)
 }
 
 function writeYaml(obj, outPath) {
@@ -109,21 +113,39 @@ function build() {
     servers: [{ url: "https://apis.meetgor.com" }],
     paths: {},
     components: { schemas: {} },
-    tags: allSpecs.map(s => ({ name: s.tag })),
+    tags: allSpecs.flatMap(s => s.tag ? [{ name: s.tag }] : []),
     "x-tagGroups": tagGroups,
   }
 
-  for (const { file, tag } of allSpecs) {
+  const allTagNames = new Set()
+
+  for (const entry of allSpecs) {
+    const { file, tag, tagsFromSpec } = entry
     const spec = loadAndResolve(file, componentsObj)
     for (const [path, methods] of Object.entries(spec.paths || {})) {
       if (!combined.paths[path]) combined.paths[path] = {}
       for (const [method, operation] of Object.entries(methods)) {
-        const op = { ...operation, tags: [tag] }
-        combined.paths[path][method] = op
+        if (tagsFromSpec) {
+          const op = { ...operation }
+          if (op.tags) {
+            for (const t of op.tags) allTagNames.add(t)
+          }
+          combined.paths[path][method] = op
+        } else {
+          const op = { ...operation, tags: [tag] }
+          combined.paths[path][method] = op
+        }
       }
     }
     if (spec.components?.schemas) {
       Object.assign(combined.components.schemas, spec.components.schemas)
+    }
+  }
+
+  // Add any tags from the preserved-tag specs that aren't already listed
+  for (const name of allTagNames) {
+    if (!combined.tags.find(t => t.name === name)) {
+      combined.tags.push({ name })
     }
   }
 
