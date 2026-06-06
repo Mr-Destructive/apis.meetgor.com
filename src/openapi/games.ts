@@ -16,8 +16,6 @@ servers:
 tags:
   - name: Games
     description: Game listing endpoints
-  - name: Tic Tac Toe
-    description: Tic Tac Toe game API
 
 paths:
   /games:
@@ -50,7 +48,28 @@ paths:
                           type: string
                         description:
                           type: string
+`
 
+export const ticTacToeSpec = `openapi: "3.1.0"
+info:
+  title: Tic Tac Toe
+  description: >
+    Play Tic Tac Toe via HTTP requests. GET to see the rules,
+    POST to make a move on the board.
+  version: "1.0.0"
+  contact:
+    name: Meet Gor
+    url: https://meetgor.com
+
+servers:
+  - url: https://apis.meetgor.com
+    description: Production
+
+tags:
+  - name: Tic Tac Toe
+    description: Tic Tac Toe game API
+
+paths:
   /games/tic-tac-toe:
     get:
       summary: Get Tic Tac Toe info

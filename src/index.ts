@@ -1,7 +1,7 @@
 import { handleTicTacToe } from "./games/tic-tac-toe"
 import { rootSpec } from "./openapi/root"
 import { mySpec } from "./openapi/my"
-import { gamesSpec } from "./openapi/games"
+import { gamesSpec, ticTacToeSpec } from "./openapi/games"
 import { scalarHtml } from "./openapi/docs"
 
 const RSS_URL = "https://www.meetgor.com/type/newsletter/rss.xml"
@@ -310,7 +310,11 @@ export default {
     if (pathname === "/games") return handleGames()
     if (pathname === "/games/docs") return serveDocs("Games API", "/games/docs/openapi.yaml")
     if (pathname === "/games/docs/openapi.yaml") return serveYaml(gamesSpec, "games.yaml")
-    if (pathname === "/games/tic-tac-toe") return handleTicTacToe(request)
+    if (pathname.startsWith("/games/tic-tac-toe")) {
+      if (pathname === "/games/tic-tac-toe") return handleTicTacToe(request)
+      if (pathname === "/games/tic-tac-toe/docs") return serveDocs("Tic Tac Toe", "/games/tic-tac-toe/docs/openapi.yaml")
+      if (pathname === "/games/tic-tac-toe/docs/openapi.yaml") return serveYaml(ticTacToeSpec, "tic-tac-toe.yaml")
+    }
 
     return Response.json({ error: "Not found" }, { status: 404 })
   },
