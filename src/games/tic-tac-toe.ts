@@ -20,15 +20,12 @@ function createBoard(): Board {
 
 function checkWinner(board: (string | null)[][]): string | null {
   const lines = [
-    // rows
     [board[0][0], board[0][1], board[0][2]],
     [board[1][0], board[1][1], board[1][2]],
     [board[2][0], board[2][1], board[2][2]],
-    // columns
     [board[0][0], board[1][0], board[2][0]],
     [board[0][1], board[1][1], board[2][1]],
     [board[0][2], board[1][2], board[2][2]],
-    // diagonals
     [board[0][0], board[1][1], board[2][2]],
     [board[0][2], board[1][1], board[2][0]],
   ]
@@ -44,11 +41,11 @@ function isDraw(board: (string | null)[][]): boolean {
   return board.every(row => row.every(cell => cell !== null))
 }
 
-export const onRequest: PagesFunction = async ({ request }) => {
+export async function handleTicTacToe(request: Request): Promise<Response> {
   const url = new URL(request.url)
 
   if (request.method === "GET") {
-    const body = {
+    return Response.json({
       game: "Tic Tac Toe",
       description: "Returns a fresh board. POST to make a move.",
       usage: {
@@ -59,9 +56,7 @@ export const onRequest: PagesFunction = async ({ request }) => {
           body: { board: "[[null,null,null],[null,null,null],[null,null,null]]", row: 0, col: 0, player: "X" },
         },
       },
-    }
-
-    return Response.json(body)
+    })
   }
 
   if (request.method === "POST") {

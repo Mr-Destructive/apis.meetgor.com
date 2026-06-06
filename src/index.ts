@@ -1,4 +1,13 @@
+import { handleTicTacToe } from "./games/tic-tac-toe"
+
 const RSS_URL = "https://www.meetgor.com/type/newsletter/rss.xml"
+
+interface ApiEntry {
+  name: string
+  description: string
+  path: string
+  endpoints: string[]
+}
 
 interface NewsletterItem {
   id?: number
@@ -13,6 +22,21 @@ interface NewsletterItem {
 interface Env {
   DB: D1Database
 }
+
+const apis: ApiEntry[] = [
+  {
+    name: "My API",
+    description: "Personal info, books, blog, newsletter",
+    path: "/my",
+    endpoints: ["/my", "/my/newsletter"],
+  },
+  {
+    name: "Games API",
+    description: "Game-related endpoints",
+    path: "/games",
+    endpoints: ["/games", "/games/tic-tac-toe"],
+  },
+]
 
 function extractTag(text: string, tag: string): string {
   const match = text.match(new RegExp(`<${tag}[^>]*>([\\s\\S]*?)<\/${tag}>`))
@@ -38,13 +62,10 @@ function parseRssItems(xml: string): NewsletterItem[] {
 
     const rawDescription = extractTag(raw, "description")
     const description = extractCdata(rawDescription) || rawDescription
-
     const rawContent = extractTag(raw, "content")
     const content = extractCdata(rawContent) || rawContent
-
     const rawType = extractTag(raw, "type")
     const type = extractCdata(rawType) || rawType || "newsletter"
-
     const pubDate = extractTag(raw, "pubDate")
 
     items.push({ title, link, description, content, type, pub_date: pubDate })
@@ -82,28 +103,84 @@ async function getNewslettersFromDb(db: D1Database): Promise<NewsletterItem[]> {
   return results
 }
 
-export const onRequest: PagesFunction<Env> = async (context) => {
-  const url = new URL(context.request.url)
+function handleRoot(): Response {
+  return Response.json({
+    name: "apis.meetgor.com",
+    version: "1.0.0",
+    apis,
+  })
+}
+
+function handleMy(): Response {
+  return Response.json({
+    name: "My API",
+    description: "Personal information and content APIs",
+    endpoints: [
+      { path: "/my", description: "This info" },
+      { path: "/my/newsletter", description: "Newsletter archive from RSS" },
+    ],
+    info: {
+      name: "Meet Gor",
+      handle: "@meetgor",
+      website: "https://meetgor.com",
+    },
+  })
+}
+
+async function handleNewsletter(url: URL, db: D1Database): Promise<Response> {
   const refresh = url.searchParams.get("refresh") === "true"
 
   if (refresh) {
-    const items = await fetchAndStoreRss(context.env.DB)
+    const items = await fetchAndStoreRss(db)
     return Response.json({ count: items.length, items })
   }
 
-  let items = await getNewslettersFromDb(context.env.DB)
+  let items = await getNewslettersFromDb(db)
 
   if (items.length === 0) {
-    items = await fetchAndStoreRss(context.env.DB)
+    items = await fetchAndStoreRss(db)
   }
 
-  const body = {
+  return Response.json({
     name: "Newsletter",
     description: "Techstructive Weekly newsletters from meetgor.com",
     source: RSS_URL,
     count: items.length,
     items,
-  }
+  })
+}
 
-  return Response.json(body)
+function handleGames(): Response {
+  return Response.json({
+    name: "Games API",
+    description: "Game-related endpoints",
+    games: [
+      {
+        name: "Tic Tac Toe",
+        path: "/games/tic-tac-toe",
+        description: "Play tic-tac-toe via API",
+      },
+    ],
+  })
+}
+
+export default {
+  async fetch(request: Request, env: Env): Promise<Response> {
+    const url = new URL(request.url)
+
+    switch (url.pathname) {
+      case "/":
+        return handleRoot()
+      case "/my":
+        return handleMy()
+      case "/my/newsletter":
+        return handleNewsletter(url, env.DB)
+      case "/games":
+        return handleGames()
+      case "/games/tic-tac-toe":
+        return handleTicTacToe(request)
+      default:
+        return Response.json({ error: "Not found" }, { status: 404 })
+    }
+  },
 }
