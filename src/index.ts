@@ -1,7 +1,4 @@
 import { handleTicTacToe } from "./games/tic-tac-toe"
-import { rootSpec } from "./openapi/root"
-import { mySpec, newsletterSpec } from "./openapi/my"
-import { gamesSpec, ticTacToeSpec } from "./openapi/games"
 import { scalarHtml } from "./openapi/docs"
 
 const RSS_URL = "https://www.meetgor.com/type/newsletter/rss.xml"
@@ -284,15 +281,6 @@ function serveDocs(title: string, specUrl: string): Response {
   })
 }
 
-function serveYaml(spec: string, filename: string): Response {
-  return new Response(spec, {
-    headers: {
-      "Content-Type": "application/yaml",
-      "Content-Disposition": `inline; filename="${filename}"`,
-    },
-  })
-}
-
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url)
@@ -300,24 +288,19 @@ export default {
 
     if (pathname === "/") return handleRoot()
     if (pathname === "/docs") return serveDocs("apis.meetgor.com", "/docs/openapi.yaml")
-    if (pathname === "/docs/openapi.yaml") return serveYaml(rootSpec, "root.yaml")
 
     if (pathname === "/my") return handleMy()
     if (pathname === "/my/docs") return serveDocs("My API", "/my/docs/openapi.yaml")
-    if (pathname === "/my/docs/openapi.yaml") return serveYaml(mySpec, "my.yaml")
     if (pathname.startsWith("/my/newsletter")) {
       if (pathname === "/my/newsletter/docs") return serveDocs("Newsletter API", "/my/newsletter/docs/openapi.yaml")
-      if (pathname === "/my/newsletter/docs/openapi.yaml") return serveYaml(newsletterSpec, "newsletter.yaml")
       return handleNewsletter(request, url, env.DB)
     }
 
     if (pathname === "/games") return handleGames()
     if (pathname === "/games/docs") return serveDocs("Games API", "/games/docs/openapi.yaml")
-    if (pathname === "/games/docs/openapi.yaml") return serveYaml(gamesSpec, "games.yaml")
     if (pathname.startsWith("/games/tic-tac-toe")) {
       if (pathname === "/games/tic-tac-toe") return handleTicTacToe(request)
       if (pathname === "/games/tic-tac-toe/docs") return serveDocs("Tic Tac Toe", "/games/tic-tac-toe/docs/openapi.yaml")
-      if (pathname === "/games/tic-tac-toe/docs/openapi.yaml") return serveYaml(ticTacToeSpec, "tic-tac-toe.yaml")
     }
 
     return Response.json({ error: "Not found" }, { status: 404 })

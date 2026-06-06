@@ -1,0 +1,92 @@
+---
+openapi: "3.1.0"
+info:
+  title: My API
+  description: |
+    A personal endpoint that returns somethings about me and my interests.
+    It could be my blog, reading list, projects, newsletter, social handle, or
+    anything else that's relevant to me.
+    This is intentionally minimal, intended to tell you that there is a human
+    behind the API.
+  version: "0.0.1"
+  contact:
+    name: Meet Gor
+    url: https://meetgor.com
+
+servers:
+  - url: https://apis.meetgor.com
+    description: Production server
+
+paths:
+  /my:
+    get:
+      summary: Get my personal profile
+      description: |
+        Returns a lightweight profile card with my name, social handle,
+        and website URL. Also includes a list of every endpoint nested
+        under `/my` so you can discover what is available without
+        leaving the response.
+
+      operationId: getMyInfo
+      tags:
+        - Profile
+      responses:
+        "200":
+          description: |
+            A JSON object containing my profile information and a list
+            of discoverable sub-endpoints under the /my namespace.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - name
+                  - description
+                  - endpoints
+                  - info
+                properties:
+                  name:
+                    type: string
+                    description: Human-readable name of this API group.
+                    example: My API
+                  description:
+                    type: string
+                    description: Brief description of what this API offers.
+                    example: Personal information and content APIs
+                  endpoints:
+                    type: array
+                    description: |
+                      Every available route under `/my`. Use this to
+                      discover sub-APIs without reading external docs.
+                    items:
+                      type: object
+                      properties:
+                        path:
+                          type: string
+                          description: The URL path for this endpoint.
+                          example: /my/newsletter
+                        description:
+                          type: string
+                          description: What this endpoint does.
+                          example: Newsletter archive from RSS
+                  info:
+                    type: object
+                    description: My personal profile card.
+                    required:
+                      - name
+                      - handle
+                      - website
+                    properties:
+                      name:
+                        type: string
+                        description: My full name.
+                        example: Meet Gor
+                      handle:
+                        type: string
+                        description: My social media handle.
+                        example: "@meetgor"
+                      website:
+                        type: string
+                        format: uri
+                        description: My personal website.
+                        example: https://meetgor.com

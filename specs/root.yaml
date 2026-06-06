@@ -1,0 +1,89 @@
+openapi: "3.1.0"
+info:
+  title: apis.meetgor.com
+  description: |
+    Welcome to the apis.meetgor.com. This is a collection of APIs that I like
+    to build and play with. Many of them are created for understanding API
+    design and development, some of them are for exploration and some just for
+    fun.
+    You will find apis for my blog, newsletter, and personal takes, as well as
+    some serious apis like flight data, llm-timeline, readlits, outsmarty, and
+    more. There are fun apis too like games, reading lists, hot takes and
+    quotes.
+  version: "0.0.1"
+  contact:
+    name: Meet Gor
+    url: https://meetgor.com
+
+servers:
+  - url: https://apis.meetgor.com
+    description: Production server for all live endpoints
+
+paths:
+  /:
+    get:
+      summary: List every API group on the platform
+      description: |
+        Returns a curated directory of all API groups currently
+        available under apis.meetgor.com.
+
+        Use this as your entry point: call `GET /` once, and it
+        will list down all the apis available.
+      operationId: listApis
+      tags:
+        - Discovery
+      responses:
+        "200":
+          description: |
+            A JSON object containing the platform name, version, and
+            an array of every registered API group with its endpoints.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - name
+                  - version
+                  - apis
+                properties:
+                  name:
+                    type: string
+                    description: |
+                      The name of this API platform.
+                    example: apis.meetgor.com
+                  version:
+                    type: string
+                    description: |
+                      Current version of the platform specification.
+                    example: "1.0.0"
+                  apis:
+                    type: array
+                    description: |
+                      Array of API groups. Each group is a collection
+                      of related endpoints under a common base path.
+                    items:
+                      type: object
+                      required:
+                        - name
+                        - description
+                        - path
+                        - endpoints
+                      properties:
+                        name:
+                          type: string
+                          description: Human-readable name of the API group.
+                          example: My API
+                        description:
+                          type: string
+                          description: What this API group offers.
+                          example: Personal info, books, blog, newsletter
+                        path:
+                          type: string
+                          description: Base URL path for this group.
+                          example: /my
+                        endpoints:
+                          type: array
+                          description: Specific routes within this group.
+                          items:
+                            type: string
+                            example: /my/newsletter

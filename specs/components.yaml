@@ -1,0 +1,137 @@
+openapi: "3.1.0"
+info:
+  title: Shared Components
+  version: 1.0.0
+
+components:
+  schemas:
+    ErrorBody:
+      type: object
+      properties:
+        error:
+          type: string
+    NewsletterSummary:
+      type: object
+      description: |
+        A compact summary of a newsletter entry. Includes metadata
+        and a short description, but omits the full markdown content
+        to keep list responses fast and lightweight.
+      required:
+        - id
+        - title
+        - link
+        - pub_date
+        - slug
+      properties:
+        id:
+          type: integer
+          description: Database-generated unique identifier.
+          example: 1
+        title:
+          type: string
+          description: The newsletter issue title.
+          example: Techstructive Weekly #97
+        link:
+          type: string
+          format: uri
+          description: |
+            The permanent URL of the newsletter on meetgor.com.
+          example: https://www.meetgor.com/newsletter/techstructive-weekly-97
+        description:
+          type: string
+          description: |
+            A short, plain-text description of the issue content.
+            Useful for previews, cards, and SEO meta tags.
+          example: Read about OpenAPI specifications, watched a few livestreams...
+        type:
+          type: string
+          description: Content type tag from the RSS feed.
+          example: newsletter
+        pub_date:
+          type: string
+          description: |
+            Publication date as provided by the RSS feed (RFC 2822 format).
+          example: Fri, 05 Jun 2026 00:00:00 UTC
+        slug:
+          type: string
+          description: |
+            URL-friendly identifier extracted from the link. Use this
+            with `GET /my/newsletter/{slug}` to fetch the full entry.
+          example: techstructive-weekly-97
+
+    NewsletterFull:
+      type: object
+      description: |
+        A complete newsletter entry with the full markdown content
+        included. This is what you get from the single-item lookup
+        endpoint.
+      allOf:
+        - $ref: "#/components/schemas/NewsletterSummary"
+        - type: object
+          properties:
+            content:
+              type: string
+              description: |
+                The full markdown body of the newsletter. Includes
+                headings, links, blockquotes, lists, images, and
+                all the formatting from the original post.
+              example: "## Week #97\n\nIt was a great week..."
+            created_at:
+              type: string
+              description: |
+                Timestamp of when this entry was first inserted into
+                the database (ISO 8601 format).
+              example: "2026-06-06 12:00:56"
+
+    Board:
+      type: object
+      description: |
+        The complete state of a Tic Tac Toe game at a given moment.
+        The client is responsible for persisting this between moves
+        and sending it back with each POST request.
+      required:
+        - board
+        - turn
+        - winner
+        - draw
+      properties:
+        board:
+          type: array
+          items:
+            type: array
+            items:
+              type:
+                - string
+                - "null"
+          description: |
+            A 3x3 matrix representing the board. Each cell is either
+            `null` (empty), `"X"`, or `"O"`. The outer array
+            represents rows; the inner arrays represent columns.
+        turn:
+          type: string
+          description: |
+            Whose turn it is next. Use this value as your `player`
+            field in the next POST request.
+          example: O
+        winner:
+          type:
+            - string
+            - "null"
+          description: |
+            The symbol of the winning player, or `null` if the
+            game is still in progress or ended in a draw.
+          example: X
+        draw:
+          type: boolean
+          description: |
+            Whether the game ended in a draw. If `true`, all nine
+            cells are filled and no player has three in a row.
+          example: false
+      example:
+        board:
+          - ["X", "O", "X"]
+          - ["O", "X", "O"]
+          - ["X", "O", "X"]
+        turn: O
+        winner: X
+        draw: false

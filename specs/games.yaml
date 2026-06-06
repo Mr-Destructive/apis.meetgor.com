@@ -1,0 +1,66 @@
+---
+openapi: "3.1.0"
+info:
+  title: Games API
+  description: |
+    A small collection of games I like to play or at least make an api for.
+
+  version: "1.0.0"
+  contact:
+    name: Meet Gor
+    url: https://meetgor.com
+
+servers:
+  - url: https://apis.meetgor.com
+    description: Production server
+
+paths:
+  /games:
+    get:
+      summary: List all available games
+      description: |
+        Returns the current catalogue of games hosted under the
+        `/games` namespace. Each entry includes the game name,
+        its base path, and a short description so you can decide
+        what to play without clicking through every docs page.
+      operationId: listGames
+      tags:
+        - Games
+      responses:
+        "200":
+          description: |
+            A JSON object with the games list. Each game entry
+            contains its name, path, and a description explaining
+            how to play.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    description: Name of this API group.
+                    example: Games API
+                  description:
+                    type: string
+                    description: What this API group is.
+                    example: Game-related endpoints
+                  games:
+                    type: array
+                    description: List of available games.
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                          description: Display name of the game.
+                          example: Tic Tac Toe
+                        path:
+                          type: string
+                          description: Base path for this game's endpoints.
+                          example: /games/tic-tac-toe
+                        description:
+                          type: string
+                          description: |
+                            One-liner explaining how the game works.
+                          example: Play tic-tac-toe via API

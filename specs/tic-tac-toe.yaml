@@ -1,0 +1,196 @@
+---
+openapi: "3.1.0"
+info:
+  title: Tic Tac Toe
+  description: |
+    A Tic Tac Toe API game.
+    The server validates every move, checks for a winner or draw,
+    and returns the updated board. No state is stored between
+    requests, the client holds the board and sends it with
+    each move.
+
+    How it works:
+    1. GET /games/tic-tac-toe to get the initial board template.
+    2. POST /games/tic-tac-toe with the board and your move.
+    3. Server validates and returns the updated state.
+    4. Repeat until the game ends.
+
+    Rules:
+    - X goes first, O goes second.
+    - Players alternate turns.
+    - Three in a row, column, or diagonal wins.
+    - All nine cells filled with no winner is a draw.
+  version: "0.0.1"
+  contact:
+    name: Meet Gor
+    url: https://meetgor.com
+
+servers:
+  - url: https://apis.meetgor.com
+    description: Production server
+
+paths:
+  /games/tic-tac-toe:
+    get:
+      summary: Get game rules and usage guide
+      description: |
+        Returns the game documentation with request/response
+        examples for both GET and POST operations.
+      operationId: getTicTacToeInfo
+      tags:
+        - Tic Tac Toe
+      responses:
+        "200":
+          description: Game info with usage examples.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  game:
+                    type: string
+                    description: Name of the game.
+                    example: Tic Tac Toe
+                  description:
+                    type: string
+                    description: Short description of the game.
+                  usage:
+                    type: object
+                    properties:
+                      start:
+                        type: object
+                        description: >
+                          Fetch game info and a fresh board template.
+                        properties:
+                          method:
+                            type: string
+                            example: GET
+                          path:
+                            type: string
+                            example: /games/tic-tac-toe
+                      move:
+                        type: object
+                        description: How to make a move.
+                        properties:
+                          method:
+                            type: string
+                            example: POST
+                          path:
+                            type: string
+                            example: /games/tic-tac-toe
+                          body:
+                            type: object
+                            description: Payload for a POST request.
+                            properties:
+                              board:
+                                type: array
+                                description: |
+                                  A 3x3 array representing the current board.
+                                  Use null for empty cells, "X" or "O" for
+                                  taken cells.
+                                items:
+                                  type: array
+                                  items:
+                                    type:
+                                      - string
+                                      - "null"
+                              row:
+                                type: integer
+                                description: Row index (0-2) for your move.
+                                example: 0
+                              col:
+                                type: integer
+                                description: Column index (0-2) for your move.
+                                example: 1
+                              player:
+                                type: string
+                                description: 'Your symbol: "X" or "O".'
+                                example: "X"
+
+    post:
+      summary: Make a move on the board
+      description: |
+        Submit a move by sending the current board state,
+        coordinates, and your player symbol. The server validates
+        the move against the game rules and returns the updated
+        board with the next turn.
+
+        Validation rules:
+        - Game must not already be over.
+        - It must be your turn.
+        - Row and column must be between 0 and 2.
+        - Target cell must be empty.
+      operationId: makeTicTacToeMove
+      tags:
+        - Tic Tac Toe
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - board
+                - row
+                - col
+                - player
+              properties:
+                board:
+                  type: array
+                  description: |
+                    The current 3x3 board. Send the entire board
+                    with every move no server-side state.
+                  items:
+                    type: array
+                    items:
+                      type:
+                        - string
+                        - "null"
+                row:
+                  type: integer
+                  minimum: 0
+                  maximum: 2
+                  description: Row index (0-2) for your move.
+                  example: 0
+                col:
+                  type: integer
+                  minimum: 0
+                  maximum: 2
+                  description: Column index (0-2) for your move.
+                  example: 1
+                player:
+                  type: string
+                  enum:
+                    - X
+                    - O
+                  description: 'Your symbol. X goes first.'
+                  example: X
+      responses:
+        "200":
+          description: |
+            Move was valid. Response includes the updated board,
+            whose turn is next, and the winner or draw flag if
+            the game ended.
+          content:
+            application/json:
+              schema:
+                $ref: ./components.yaml#/components/schemas/Board
+        "400":
+          description: |
+            Move rejected due to a validation error. Response
+            includes an error message and the current board.
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: ./components.yaml#/components/schemas/ErrorBody
+                  - type: object
+                    properties:
+                      board:
+                        $ref: ./components.yaml#/components/schemas/Board
+        "405":
+          description: Only GET and POST are accepted.
+          content:
+            application/json:
+              schema:
+                $ref: ./components.yaml#/components/schemas/ErrorBody

@@ -1,0 +1,278 @@
+---
+openapi: "3.1.0"
+info:
+  title: Newsletter API
+  description: |
+    This is my Techstructive Weekly newsletter archive.
+    Every Saturday (or most Saturdays), I publish a newsletter recapping what I
+    read, watched, and learned that week, along some quote, some tech news,
+    and increasingly existential thoughts about software (mostly).
+
+  version: "1.0.0"
+  contact:
+    name: Meet Gor
+    url: https://meetgor.com
+
+servers:
+  - url: https://apis.meetgor.com
+    description: Production server
+
+paths:
+  /my/newsletter:
+    get:
+      summary: List newsletter entries
+      description: |
+        Returns a paginated, filterable list of newsletter entries.
+        Each entry in the list includes the title, publication date,
+        a short plain-text description, the original link, and a
+        URL-friendly slug you can use with the single-item endpoint.
+
+        Use query parameters to control page size, offset, search
+        term, sort field, and sort direction. By default, entries
+        are sorted by publication date from newest to oldest.
+      operationId: listNewsletters
+      tags:
+        - Newsletters
+      parameters:
+        - name: limit
+          in: query
+          description: |
+            How many entries to return per page. The API enforces a
+            maximum of 50 to prevent accidentally overwhelming your
+            client or the database. If you need more, paginate with
+            the offset parameter.
+          schema:
+            type: integer
+            default: 10
+            minimum: 1
+            maximum: 50
+          example: 10
+        - name: offset
+          in: query
+          description: |
+            The number of entries to skip before starting to collect
+            the result set. Combine with `limit` to implement
+            cursor-less pagination
+            page 3.
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+          example: 0
+        - name: search
+          in: query
+          description: |
+            A free-text search term. The API will match it against
+            both the title and the description.
+          schema:
+            type: string
+          example: OpenAPI
+        - name: sort
+          in: query
+          description: |
+            Which field to sort the results by. Choose `pub_date`
+            for chronological ordering, `title` for alphabetical,
+            or `id` for insertion order. The sort is applied before
+            pagination slicing.
+          schema:
+            type: string
+            enum:
+              - pub_date
+              - title
+              - id
+            default: pub_date
+          example: pub_date
+        - name: order
+          in: query
+          description: |
+            Sort direction. `desc` puts newest or Z-first entries
+            at the top; `asc` puts oldest or A-first entries first.
+          schema:
+            type: string
+            enum:
+              - asc
+              - desc
+            default: desc
+          example: desc
+      responses:
+        "200":
+          description: |
+            A paginated slice of the newsletter archive. The `total`
+            field tells you how many entries match your query (ignoring
+            pagination), so you can build pagination UI accurately.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - total
+                  - limit
+                  - offset
+                  - items
+                properties:
+                  total:
+                    type: integer
+                    description: |
+                      Total number of entries matching the current
+                      filters (ignoring limit and offset). Use this
+                      to calculate page count for your UI.
+                    example: 42
+                  limit:
+                    type: integer
+                    description: The page size that was applied.
+                    example: 10
+                  offset:
+                    type: integer
+                    description: The offset that was applied.
+                    example: 0
+                  items:
+                    type: array
+                    description: The entries for this page.
+                    items:
+                      $ref: "./components.yaml#/components/schemas/NewsletterSummary"
+
+    post:
+      summary: Refresh newsletter
+      description: |
+        Triggers an immediate re-fetch of the RSS feed from
+        meetgor.com. Every item found in the feed is inserted into
+        the database.
+
+      operationId: refreshNewsletters
+      tags:
+        - Newsletters
+      responses:
+        "200":
+          description: |
+            A confirmation message and a count of how many items
+            were found in the RSS feed (not how many were newly
+            inserted duplicates are ignored).
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Human-readable confirmation.
+                    example: Newsletter refreshed
+                  count:
+                    type: integer
+                    description: Number of items found in the RSS feed.
+                    example: 3
+        "405":
+          description: |
+            This endpoint only accepts POST requests. If you send a
+            GET, PUT, PATCH, or DELETE, you will get a 405 with a
+            message telling you to use POST instead.
+          content:
+            application/json:
+              schema:
+                $ref: ./components.yaml#/components/schemas/ErrorBody
+
+  /my/newsletter/{slug}:
+    get:
+      summary: Get a single newsletter by its URL slug
+      description: |
+        Fetch the complete newsletter entry including the full
+        markdown content by providing its URL slug. The slug is
+        the last segment of the newsletter's URL path on meetgor.com.
+
+
+        For example, the newsletter at
+        `https://www.meetgor.com/newsletter/techstructive-weekly-97`
+        has the slug `techstructive-weekly-97`.
+
+
+        This endpoint returns everything we have on that issue:
+        the full markdown body, metadata, publication date, and
+        database timestamps. Perfect for rendering a single
+        newsletter page in your app.
+      operationId: getNewsletterBySlug
+      tags:
+        - Newsletters
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          description: |
+            The URL-friendly slug of the newsletter. This is the
+            part of the URL after `/newsletter/` on meetgor.com.
+            Hyphenated, all lowercase, no trailing slash.
+          schema:
+            type: string
+          example: techstructive-weekly-97
+      responses:
+        "200":
+          description: |
+            The complete newsletter entry, including the full markdown
+            content, wrapped in a top-level `item` key.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  item:
+                    $ref: ./components.yaml#/components/schemas/NewsletterFull
+        "404":
+          description: |
+            No newsletter entry matches the provided slug. Either
+            the slug is misspelled, or the issue has not been
+            fetched from RSS yet.
+          content:
+            application/json:
+              schema:
+                $ref: ./components.yaml#/components/schemas/ErrorBody
+
+  /my/newsletter/stats:
+    get:
+      summary: Get newsletter archive statistics
+      description: |
+        Returns aggregate statistics about the entire newsletter
+        archive: the total number of issues, the publication date
+        of the earliest issue, and the publication date of the
+        latest issue.
+
+
+        This is a fast, lightweight endpoint backed by a single SQL
+        aggregate query. Use it to populate a sidebar widget, a
+        "since" counter, or just to satisfy your curiosity about
+        how many weeks I have been writing these things.
+      operationId: getNewsletterStats
+      tags:
+        - Newsletters
+      responses:
+        "200":
+          description: |
+            A stats object with total count and date range of the
+            newsletter archive.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  stats:
+                    type: object
+                    required:
+                      - total
+                      - earliest
+                      - latest
+                    properties:
+                      total:
+                        type: integer
+                        description: Total number of newsletter issues in the archive.
+                        example: 42
+                      earliest:
+                        type: string
+                        format: date-time
+                        description: |
+                          Publication date of the very first newsletter
+                          issue in the archive.
+                        example: Fri, 15 May 2026 00:00:00 UTC
+                      latest:
+                        type: string
+                        format: date-time
+                        description: |
+                          Publication date of the most recent newsletter
+                          issue in the archive.
+                        example: Fri, 05 Jun 2026 00:00:00 UTC

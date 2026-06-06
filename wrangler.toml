@@ -2,6 +2,9 @@ name = "apis-meetgor-com"
 main = "src/index.ts"
 compatibility_date = "2026-06-06"
 
+[assets]
+directory = "./assets"
+
 [[d1_databases]]
 binding = "DB"
 database_name = "apis-meetgor-db"
