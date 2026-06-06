@@ -14,12 +14,18 @@ const allSpecs = [
   { file: "newsletter.yaml", tag: "Newsletter", group: "My Profile" },
   { file: "games.yaml", tag: "Games", group: "Games" },
   { file: "tic-tac-toe.yaml", tag: "Tic Tac Toe", group: "Games" },
+  { file: "chess.yaml", tag: "Chess", group: "Games" },
+  { file: "rock-paper-scissors.yaml", tag: "Rock Paper Scissors", group: "Games" },
+  { file: "handy-cricket.yaml", tag: "Handy Cricket", group: "Games" },
+  { file: "virtual-fight.yaml", tag: "Virtual Fight", group: "Games" },
+  { file: "quiz.yaml", tag: "Quiz", group: "Quiz" },
   { file: "llamaline.yaml", tag: null, group: "Llamaline API", tagsFromSpec: true },
 ]
 
 const tagGroups = [
   { name: "My Profile", tags: ["My Profile", "Newsletter"] },
-  { name: "Games", tags: ["Games", "Tic Tac Toe"] },
+  { name: "Games", tags: ["Games", "Tic Tac Toe", "Chess", "Rock Paper Scissors", "Handy Cricket", "Virtual Fight"] },
+  { name: "Quiz", tags: ["Quiz"] },
   { name: "Llamaline API", tags: ["Providers", "Models", "Timeline"] },
 ]
 
@@ -28,6 +34,11 @@ const perApiSpecs = [
   { file: "newsletter.yaml", out: "my/newsletter/docs/openapi.yaml" },
   { file: "games.yaml", out: "games/docs/openapi.yaml" },
   { file: "tic-tac-toe.yaml", out: "games/tic-tac-toe/docs/openapi.yaml" },
+  { file: "chess.yaml", out: "games/chess/docs/openapi.yaml" },
+  { file: "rock-paper-scissors.yaml", out: "games/rock-paper-scissors/docs/openapi.yaml" },
+  { file: "handy-cricket.yaml", out: "games/handy-cricket/docs/openapi.yaml" },
+  { file: "virtual-fight.yaml", out: "games/virtual-fight/docs/openapi.yaml" },
+  { file: "quiz.yaml", out: "quiz/docs/openapi.yaml" },
   { file: "llamaline.yaml", out: "llamaline/docs/openapi.yaml" },
 ]
 

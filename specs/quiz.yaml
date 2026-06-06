@@ -1,0 +1,200 @@
+---
+openapi: "3.1.0"
+info:
+  title: Quiz API
+  description: |
+    A Quiz API with predefined topics. Pick a topic and answer
+    multiple-choice questions.
+
+    How it works:
+    1. GET /quiz to list all available topics.
+    2. GET /quiz/{topic} to get questions for a topic.
+    3. POST /quiz/{topic}/submit to submit answers and get score.
+
+    Topics:
+    - general-knowledge: General knowledge and trivia.
+    - science: Physics, chemistry, biology.
+    - history: World history and events.
+    - technology: Computers and programming.
+    - movies: Movies and cinema trivia.
+    - geography: Countries and geography facts.
+  version: "0.0.1"
+  contact:
+    name: Meet Gor
+    url: https://meetgor.com
+
+servers:
+  - url: https://apis.meetgor.com
+    description: Production server
+
+tags:
+  - name: Quiz
+    description: Quiz game endpoints
+
+paths:
+  /quiz:
+    get:
+      summary: List all quiz topics
+      description: Returns all available quiz topics with question counts.
+      operationId: listQuizTopics
+      tags:
+        - Quiz
+      responses:
+        "200":
+          description: List of quiz topics.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  description:
+                    type: string
+                  topics:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        name:
+                          type: string
+                        description:
+                          type: string
+                        questionCount:
+                          type: integer
+  /quiz/{topic}:
+    get:
+      summary: Get questions for a topic
+      description: Returns all questions for the specified topic.
+      operationId: getQuizQuestions
+      tags:
+        - Quiz
+      parameters:
+        - name: topic
+          in: path
+          required: true
+          schema:
+            type: string
+            enum:
+              - general-knowledge
+              - science
+              - history
+              - technology
+              - movies
+              - geography
+          description: Topic ID.
+      responses:
+        "200":
+          description: Questions for the topic.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  topic:
+                    type: string
+                  name:
+                    type: string
+                  questionCount:
+                    type: integer
+                  questions:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        question:
+                          type: string
+                        options:
+                          type: array
+                          items:
+                            type: string
+        "404":
+          description: Topic not found.
+          content:
+            application/json:
+              schema:
+                $ref: ./components.yaml#/components/schemas/ErrorBody
+  /quiz/{topic}/submit:
+    post:
+      summary: Submit answers and get score
+      description: |
+        Submit your answers for a topic and get your score, percentage,
+        and per-question results.
+      operationId: submitQuizAnswers
+      tags:
+        - Quiz
+      parameters:
+        - name: topic
+          in: path
+          required: true
+          schema:
+            type: string
+            enum:
+              - general-knowledge
+              - science
+              - history
+              - technology
+              - movies
+              - geography
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - answers
+              properties:
+                answers:
+                  type: object
+                  description: |
+                    Object mapping question IDs to answer indices.
+                  example:
+                    "1": 1
+                    "2": 2
+                    "3": 0
+      responses:
+        "200":
+          description: Quiz results with score and per-question feedback.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  topic:
+                    type: string
+                  name:
+                    type: string
+                  score:
+                    type: integer
+                  total:
+                    type: integer
+                  percentage:
+                    type: integer
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        correct:
+                          type: boolean
+                        correctAnswer:
+                          type: integer
+        "400":
+          description: Invalid answers format.
+          content:
+            application/json:
+              schema:
+                $ref: ./components.yaml#/components/schemas/ErrorBody
+        "404":
+          description: Topic not found.
+          content:
+            application/json:
+              schema:
+                $ref: ./components.yaml#/components/schemas/ErrorBody

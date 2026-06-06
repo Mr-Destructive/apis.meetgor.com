@@ -656,23 +656,23 @@ components:
       properties:
         self:
           type: string
-          format: uri
+          format: uri-reference
           description: Link to this resource.
         timeline:
           type: string
-          format: uri
+          format: uri-reference
           description: Link to the timeline events for this resource.
         provider:
           type: string
-          format: uri
+          format: uri-reference
           description: Link to the associated provider.
         model:
           type: string
-          format: uri
+          format: uri-reference
           description: Link to the associated model.
         models:
           type: string
-          format: uri
+          format: uri-reference
           description: Link to the models list for this provider.
 
     ProviderCollection:
@@ -804,7 +804,7 @@ components:
           example: The requested resource does not exist.
         instance:
           type: string
-          format: uri
+          format: uri-reference
           description: URI identifying the specific occurrence.
       example:
         type: https://apis.meetgor.com/problems/not-found

@@ -17,6 +17,10 @@ servers:
   - url: https://apis.meetgor.com
     description: Production server
 
+tags:
+  - name: Newsletters
+    description: Newsletter archive endpoints
+
 paths:
   /my/newsletter:
     get:
@@ -268,11 +272,11 @@ paths:
                         description: |
                           Publication date of the very first newsletter
                           issue in the archive.
-                        example: Fri, 15 May 2026 00:00:00 UTC
+                        example: 2026-05-15T00:00:00Z
                       latest:
                         type: string
                         format: date-time
                         description: |
                           Publication date of the most recent newsletter
                           issue in the archive.
-                        example: Fri, 05 Jun 2026 00:00:00 UTC
+                        example: 2026-06-05T00:00:00Z

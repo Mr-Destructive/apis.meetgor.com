@@ -1,13 +1,9 @@
 extends: spectral:oas
-rules:
-  info-contact: off
-  oas3-valid-schema-example: off
-  operation-tag-defined: off
 overrides:
   - files:
       - "specs/components.yaml"
     rules:
       oas3-api-servers: off
       info-description: off
+      info-contact: off
       oas3-unused-component: off
-

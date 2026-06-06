@@ -29,6 +29,10 @@ servers:
   - url: https://apis.meetgor.com
     description: Production server
 
+tags:
+  - name: Tic Tac Toe
+    description: Tic Tac Toe game endpoints
+
 paths:
   /games/tic-tac-toe:
     get:

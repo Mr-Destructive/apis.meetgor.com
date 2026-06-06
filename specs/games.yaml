@@ -14,6 +14,10 @@ servers:
   - url: https://apis.meetgor.com
     description: Production server
 
+tags:
+  - name: Games
+    description: Game-related endpoints
+
 paths:
   /games:
     get:

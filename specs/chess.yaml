@@ -1,0 +1,146 @@
+---
+openapi: "3.1.0"
+info:
+  title: Chess
+  description: |
+    A Chess API game. Board is represented in FEN notation.
+
+    How it works:
+    1. GET /games/chess to get the initial board and FEN.
+    2. POST /games/chess with the FEN string and your move in UCI
+       notation (e.g. e2e4).
+    3. Server validates the move and returns the updated FEN.
+
+    Rules:
+    - Standard chess piece movement rules apply.
+    - No check/checkmate detection yet (MVP).
+    - Game ends when all pieces of one color are captured.
+  version: "0.0.1"
+  contact:
+    name: Meet Gor
+    url: https://meetgor.com
+
+servers:
+  - url: https://apis.meetgor.com
+    description: Production server
+
+tags:
+  - name: Chess
+    description: Chess game endpoints
+
+paths:
+  /games/chess:
+    get:
+      summary: Get chess rules and initial board
+      description: |
+        Returns game rules, usage guide, and the initial board
+        in FEN notation. Optionally pass fen query param to
+        inspect a specific board state.
+      operationId: getChessInfo
+      tags:
+        - Chess
+      parameters:
+        - name: fen
+          in: query
+          description: FEN string to inspect (optional, defaults to starting position).
+          schema:
+            type: string
+            example: rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w
+      responses:
+        "200":
+          description: Game info with FEN and board array.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  game:
+                    type: string
+                    example: Chess
+                  description:
+                    type: string
+                  usage:
+                    type: object
+                  fen:
+                    type: string
+                  turn:
+                    type: string
+                  board:
+                    type: array
+                    description: 8x8 board array.
+                    items:
+                      type: array
+                      items:
+                        type:
+                          - string
+                          - "null"
+    post:
+      summary: Make a move
+      description: |
+        Submit a FEN string and a UCI move (e.g. e2e4). The server
+        validates the move against chess piece movement rules and
+        returns the updated FEN.
+
+        Validation rules:
+        - Source square must contain a piece of your color.
+        - Move must follow piece movement patterns.
+        - Path must not be blocked (for sliding pieces).
+      operationId: makeChessMove
+      tags:
+        - Chess
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - fen
+                - move
+              properties:
+                fen:
+                  type: string
+                  description: Current board state in FEN notation.
+                  example: rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w
+                move:
+                  type: string
+                  description: Move in UCI notation (e.g. e2e4).
+                  example: e2e4
+      responses:
+        "200":
+          description: Move was valid.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  fen:
+                    type: string
+                  turn:
+                    type: string
+                  gameOver:
+                    type: boolean
+                  result:
+                    type: string
+                    nullable: true
+                  lastMove:
+                    type: string
+        "400":
+          description: Invalid move or request.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                  fen:
+                    type: string
+                  turn:
+                    type: string
+        "405":
+          description: Only GET and POST are accepted.
+          content:
+            application/json:
+              schema:
+                $ref: ./components.yaml#/components/schemas/ErrorBody

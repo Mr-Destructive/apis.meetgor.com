@@ -19,6 +19,10 @@ servers:
   - url: https://apis.meetgor.com
     description: Production server for all live endpoints
 
+tags:
+  - name: Discovery
+    description: Platform discovery and directory endpoints
+
 paths:
   /:
     get:

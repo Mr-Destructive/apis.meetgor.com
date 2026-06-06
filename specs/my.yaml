@@ -17,6 +17,10 @@ servers:
   - url: https://apis.meetgor.com
     description: Production server
 
+tags:
+  - name: Profile
+    description: Personal profile and information endpoints
+
 paths:
   /my:
     get:

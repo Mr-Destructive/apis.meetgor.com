@@ -1,0 +1,129 @@
+---
+openapi: "3.1.0"
+info:
+  title: Handy Cricket
+  description: |
+    A Hand Cricket API game. Play the classic hand cricket game
+    against the computer.
+
+    How it works:
+    1. GET /games/handy-cricket to get rules and initial state.
+    2. POST /games/handy-cricket with your chosen run (1-6) and
+       the current game state.
+    3. Server generates a random run. If both numbers match,
+       you're out. Otherwise you score those runs.
+    4. After 10 wickets, computer bats with the same target.
+
+    Rules:
+    - Choose a number 1-6 for each ball.
+    - Computer randomly picks 1-6.
+    - Same number = OUT.
+    - Different number = score those runs.
+    - Bat first, then bowl defending your total.
+  version: "0.0.1"
+  contact:
+    name: Meet Gor
+    url: https://meetgor.com
+
+servers:
+  - url: https://apis.meetgor.com
+    description: Production server
+
+tags:
+  - name: Handy Cricket
+    description: Hand Cricket game endpoints
+
+paths:
+  /games/handy-cricket:
+    get:
+      summary: Get game rules and initial state
+      description: Returns game rules and a fresh initial game state.
+      operationId: getHandyCricketInfo
+      tags:
+        - Handy Cricket
+      responses:
+        "200":
+          description: Game info with rules and initial state.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  game:
+                    type: string
+                  rules:
+                    type: array
+                    items:
+                      type: string
+                  state:
+                    type: object
+    post:
+      summary: Play a ball
+      description: |
+        Submit your run choice (1-6) and the current game state.
+        Server generates a random run and updates the game.
+      operationId: playHandyCricket
+      tags:
+        - Handy Cricket
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - run
+              properties:
+                run:
+                  type: integer
+                  minimum: 1
+                  maximum: 6
+                  description: Your chosen run (1-6).
+                  example: 4
+                state:
+                  type: object
+                  nullable: true
+                  description: Current game state (omit for first ball).
+      responses:
+        "200":
+          description: Updated game state.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  state:
+                    type: object
+                    properties:
+                      playerRuns:
+                        type: integer
+                      computerRuns:
+                        type: integer
+                      playerWickets:
+                        type: integer
+                      computerWickets:
+                        type: integer
+                      ballsBowled:
+                        type: integer
+                      isBatting:
+                        type: boolean
+                      isOver:
+                        type: boolean
+                      winner:
+                        type: string
+                        nullable: true
+                      lastBall:
+                        type: string
+                        nullable: true
+        "400":
+          description: Invalid run or game over.
+          content:
+            application/json:
+              schema:
+                $ref: ./components.yaml#/components/schemas/ErrorBody
+        "405":
+          description: Only GET and POST are accepted.
+          content:
+            application/json:
+              schema:
+                $ref: ./components.yaml#/components/schemas/ErrorBody

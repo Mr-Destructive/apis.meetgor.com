@@ -1,0 +1,150 @@
+---
+openapi: "3.1.0"
+info:
+  title: Virtual Fight
+  description: |
+    A Virtual Fight API game. Choose a character and fight a robot
+    AI in turn-based combat.
+
+    How it works:
+    1. GET /games/virtual-fight to see available characters and rules.
+    2. POST /games/virtual-fight with characterId to start a game.
+    3. POST /games/virtual-fight with state and action to make a move.
+
+    Actions:
+    - attack: Basic attack based on your attack stat.
+    - special: Powerful special move (higher damage).
+    - defend: Reduce incoming damage and recover a bit.
+    - heal: Recover 20% of max health.
+
+    Characters:
+    - Cyber Samurai: Balanced, good all-rounder.
+    - Flame Titan: High attack, lower defense.
+    - Frost Mage: Defense-focused with control.
+    - Shadow Assassin: High damage, low health.
+    - Iron Guardian: Tank with high health and defense.
+  version: "0.0.1"
+  contact:
+    name: Meet Gor
+    url: https://meetgor.com
+
+servers:
+  - url: https://apis.meetgor.com
+    description: Production server
+
+tags:
+  - name: Virtual Fight
+    description: Virtual Fight game endpoints
+
+paths:
+  /games/virtual-fight:
+    get:
+      summary: Get game info and character list
+      description: |
+        Returns game description, available characters with stats,
+        available actions, and usage guide.
+      operationId: getVirtualFightInfo
+      tags:
+        - Virtual Fight
+      responses:
+        "200":
+          description: Game info with characters and actions.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  game:
+                    type: string
+                  characters:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        name:
+                          type: string
+                        health:
+                          type: integer
+                        attack:
+                          type: integer
+                        defense:
+                          type: integer
+                        special:
+                          type: object
+                  actions:
+                    type: array
+                    items:
+                      type: object
+    post:
+      summary: Start a game or make a move
+      description: |
+        Send characterId to start a new game. Send state and action
+        to make a move in an existing game.
+      operationId: playVirtualFight
+      tags:
+        - Virtual Fight
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                characterId:
+                  type: string
+                  description: Character ID to start new game.
+                  example: cyber-samurai
+                state:
+                  type: object
+                  nullable: true
+                  description: Current fight state.
+                action:
+                  type: string
+                  enum:
+                    - attack
+                    - special
+                    - defend
+                    - heal
+                  description: Action to perform.
+      responses:
+        "200":
+          description: New fight state.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  state:
+                    type: object
+                    properties:
+                      player:
+                        type: object
+                      robot:
+                        type: object
+                      turn:
+                        type: string
+                      gameOver:
+                        type: boolean
+                      winner:
+                        type: string
+                        nullable: true
+                      log:
+                        type: array
+                        items:
+                          type: string
+                      round:
+                        type: integer
+        "400":
+          description: Invalid character, action, or game over.
+          content:
+            application/json:
+              schema:
+                $ref: ./components.yaml#/components/schemas/ErrorBody
+        "405":
+          description: Only GET and POST are accepted.
+          content:
+            application/json:
+              schema:
+                $ref: ./components.yaml#/components/schemas/ErrorBody

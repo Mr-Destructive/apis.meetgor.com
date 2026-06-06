@@ -1,0 +1,112 @@
+---
+openapi: "3.1.0"
+info:
+  title: Rock Paper Scissors
+  description: |
+    A Rock Paper Scissors API game.
+
+    How it works:
+    1. GET /games/rock-paper-scissors to get game rules.
+    2. POST /games/rock-paper-scissors with your choice.
+    3. Server picks a random choice and determines the winner.
+
+    Rules:
+    - Rock beats Scissors
+    - Scissors beats Paper
+    - Paper beats Rock
+    - Same choice is a draw
+  version: "0.0.1"
+  contact:
+    name: Meet Gor
+    url: https://meetgor.com
+
+servers:
+  - url: https://apis.meetgor.com
+    description: Production server
+
+tags:
+  - name: Rock Paper Scissors
+    description: Rock Paper Scissors game endpoints
+
+paths:
+  /games/rock-paper-scissors:
+    get:
+      summary: Get game rules
+      description: |
+        Returns game rules, available choices, and usage guide.
+      operationId: getRpsInfo
+      tags:
+        - Rock Paper Scissors
+      responses:
+        "200":
+          description: Game info with rules and choices.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  game:
+                    type: string
+                  description:
+                    type: string
+                  choices:
+                    type: array
+                    items:
+                      type: string
+    post:
+      summary: Play a round
+      description: |
+        Submit your choice (rock, paper, or scissors). Server picks
+        a random choice and returns the result.
+      operationId: playRps
+      tags:
+        - Rock Paper Scissors
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - choice
+              properties:
+                choice:
+                  type: string
+                  enum:
+                    - rock
+                    - paper
+                    - scissors
+                  description: Your move.
+                  example: rock
+      responses:
+        "200":
+          description: Round result.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  player:
+                    type: string
+                  computer:
+                    type: string
+                  result:
+                    type: string
+                    enum:
+                      - win
+                      - lose
+                      - draw
+                  message:
+                    type: string
+        "400":
+          description: Invalid choice.
+          content:
+            application/json:
+              schema:
+                $ref: ./components.yaml#/components/schemas/ErrorBody
+        "405":
+          description: Only GET and POST are accepted.
+          content:
+            application/json:
+              schema:
+                $ref: ./components.yaml#/components/schemas/ErrorBody

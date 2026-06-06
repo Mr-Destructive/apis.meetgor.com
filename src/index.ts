@@ -1,5 +1,10 @@
 import { handleTicTacToe } from "./games/tic-tac-toe"
+import { handleChess } from "./games/chess"
+import { handleRockPaperScissors } from "./games/rock-paper-scissors"
+import { handleHandyCricket } from "./games/handy-cricket"
+import { handleVirtualFight } from "./games/virtual-fight"
 import { handleLlamaline } from "./llamaline"
+import { handleQuiz } from "./quiz"
 import { scalarHtml } from "./openapi/docs"
 
 const RSS_URL = "https://www.meetgor.com/type/newsletter/rss.xml"
@@ -44,7 +49,13 @@ const apis: ApiEntry[] = [
     name: "Games API",
     description: "Game-related endpoints",
     path: "/games",
-    endpoints: ["/games", "/games/tic-tac-toe", "/games/docs"],
+    endpoints: ["/games", "/games/tic-tac-toe", "/games/chess", "/games/rock-paper-scissors", "/games/handy-cricket", "/games/virtual-fight", "/games/docs"],
+  },
+  {
+    name: "Quiz API",
+    description: "Quiz with predefined topics",
+    path: "/quiz",
+    endpoints: ["/quiz", "/quiz/{topic}", "/quiz/{topic}/submit", "/quiz/docs"],
   },
   {
     name: "Llamaline API",
@@ -275,14 +286,18 @@ function handleGames(): Response {
     endpoints: [
       { path: "/games", description: "List games" },
       { path: "/games/tic-tac-toe", description: "Play tic-tac-toe" },
+      { path: "/games/chess", description: "Play chess" },
+      { path: "/games/rock-paper-scissors", description: "Play rock paper scissors" },
+      { path: "/games/handy-cricket", description: "Play hand cricket" },
+      { path: "/games/virtual-fight", description: "Fight robot AI" },
       { path: "/games/docs", description: "API documentation" },
     ],
     games: [
-      {
-        name: "Tic Tac Toe",
-        path: "/games/tic-tac-toe",
-        description: "Play tic-tac-toe via API",
-      },
+      { name: "Tic Tac Toe", path: "/games/tic-tac-toe", description: "Play tic-tac-toe via API" },
+      { name: "Chess", path: "/games/chess", description: "Play chess with FEN notation" },
+      { name: "Rock Paper Scissors", path: "/games/rock-paper-scissors", description: "Play rock paper scissors against computer" },
+      { name: "Handy Cricket", path: "/games/handy-cricket", description: "Play hand cricket against computer" },
+      { name: "Virtual Fight", path: "/games/virtual-fight", description: "Fight robot AI with diverse characters" },
     ],
   })
 }
@@ -313,6 +328,27 @@ export default {
     if (pathname.startsWith("/games/tic-tac-toe")) {
       if (pathname === "/games/tic-tac-toe") return handleTicTacToe(request)
       if (pathname === "/games/tic-tac-toe/docs") return serveDocs("Tic Tac Toe", "/games/tic-tac-toe/docs/openapi.yaml")
+    }
+    if (pathname === "/games/chess" || pathname === "/games/chess/docs") {
+      if (pathname === "/games/chess/docs") return serveDocs("Chess", "/games/chess/docs/openapi.yaml")
+      return handleChess(request)
+    }
+    if (pathname === "/games/rock-paper-scissors" || pathname === "/games/rock-paper-scissors/docs") {
+      if (pathname === "/games/rock-paper-scissors/docs") return serveDocs("Rock Paper Scissors", "/games/rock-paper-scissors/docs/openapi.yaml")
+      return handleRockPaperScissors(request)
+    }
+    if (pathname === "/games/handy-cricket" || pathname === "/games/handy-cricket/docs") {
+      if (pathname === "/games/handy-cricket/docs") return serveDocs("Handy Cricket", "/games/handy-cricket/docs/openapi.yaml")
+      return handleHandyCricket(request)
+    }
+    if (pathname === "/games/virtual-fight" || pathname === "/games/virtual-fight/docs") {
+      if (pathname === "/games/virtual-fight/docs") return serveDocs("Virtual Fight", "/games/virtual-fight/docs/openapi.yaml")
+      return handleVirtualFight(request)
+    }
+
+    if (pathname === "/quiz" || pathname.startsWith("/quiz/")) {
+      if (pathname === "/quiz/docs") return serveDocs("Quiz API", "/quiz/docs/openapi.yaml")
+      return handleQuiz(request)
     }
 
     if (pathname === "/llamaline/docs") return serveDocs("Llamaline API", "/llamaline/docs/openapi.yaml")
