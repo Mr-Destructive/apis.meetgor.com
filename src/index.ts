@@ -19,6 +19,14 @@ interface NewsletterItem {
   pub_date: string
 }
 
+interface NewsletterListParams {
+  limit: number
+  offset: number
+  search: string | null
+  sort: string
+  order: string
+}
+
 interface Env {
   DB: D1Database
 }
@@ -37,6 +45,9 @@ const apis: ApiEntry[] = [
     endpoints: ["/games", "/games/tic-tac-toe"],
   },
 ]
+
+const ALLOWED_SORTS = ["pub_date", "title", "id"]
+const ALLOWED_ORDERS = ["asc", "desc"]
 
 function extractTag(text: string, tag: string): string {
   const match = text.match(new RegExp(`<${tag}[^>]*>([\\s\\S]*?)<\/${tag}>`))
@@ -95,12 +106,125 @@ async function fetchAndStoreRss(db: D1Database): Promise<NewsletterItem[]> {
   return items
 }
 
-async function getNewslettersFromDb(db: D1Database): Promise<NewsletterItem[]> {
-  const { results } = await db.prepare(
-    "SELECT * FROM newsletter_items ORDER BY pub_date DESC"
-  ).all<NewsletterItem>()
+function parseListParams(url: URL): NewsletterListParams {
+  const limit = Math.min(Math.max(parseInt(url.searchParams.get("limit") || "10") || 10, 1), 50)
+  const offset = Math.max(parseInt(url.searchParams.get("offset") || "0") || 0, 0)
+  const search = url.searchParams.get("search")
+  let sort = url.searchParams.get("sort") || "pub_date"
+  let order = url.searchParams.get("order") || "desc"
 
-  return results
+  if (!ALLOWED_SORTS.includes(sort)) sort = "pub_date"
+  if (!ALLOWED_ORDERS.includes(order.toLowerCase())) order = "desc"
+
+  return { limit, offset, search, sort, order }
+}
+
+function getSlugFromLink(link: string): string {
+  const parts = link.replace(/\/$/, "").split("/")
+  return parts[parts.length - 1]
+}
+
+async function handleNewsletterList(url: URL, db: D1Database): Promise<Response> {
+  const { limit, offset, search, sort, order } = parseListParams(url)
+  const conditions: string[] = []
+  const bindParams: (string | number)[] = []
+
+  if (search) {
+    conditions.push("(title LIKE ? OR description LIKE ?)")
+    const pattern = `%${search}%`
+    bindParams.push(pattern, pattern)
+  }
+
+  const where = conditions.length > 0 ? `WHERE ${conditions.join(" AND ")}` : ""
+  const orderClause = `${sort} ${order.toUpperCase()}`
+
+  const [{ total }] = (await db.prepare(
+    `SELECT COUNT(*) as total FROM newsletter_items ${where}`
+  ).bind(...bindParams).all<{ total: number }>()).results
+
+  const { results: items } = await db.prepare(
+    `SELECT id, title, link, description, type, pub_date FROM newsletter_items ${where} ORDER BY ${orderClause} LIMIT ? OFFSET ?`
+  ).bind(...bindParams, limit, offset).all<NewsletterItem>()
+
+  if (items.length === 0 && !search && offset === 0) {
+    const rssItems = await fetchAndStoreRss(db)
+
+    const { results: fresh } = await db.prepare(
+      `SELECT id, title, link, description, type, pub_date FROM newsletter_items ORDER BY ${orderClause} LIMIT ? OFFSET ?`
+    ).bind(limit, offset).all<NewsletterItem>()
+
+    return Response.json({
+      total: fresh.length,
+      limit,
+      offset,
+      items: fresh.map(item => ({ ...item, slug: getSlugFromLink(item.link) })),
+    })
+  }
+
+  return Response.json({
+    total,
+    limit,
+    offset,
+    items: items.map(item => ({ ...item, slug: getSlugFromLink(item.link) })),
+  })
+}
+
+async function handleNewsletterSingle(pathSegments: string[], db: D1Database): Promise<Response> {
+  const slug = pathSegments.join("/")
+
+  const linkPattern = `%/${slug}`
+  const { results } = await db.prepare(
+    `SELECT * FROM newsletter_items WHERE link LIKE ? LIMIT 1`
+  ).bind(linkPattern).all<NewsletterItem>()
+
+  if (results.length === 0) {
+    return Response.json({ error: "Newsletter not found" }, { status: 404 })
+  }
+
+  const item = results[0]
+  return Response.json({ item: { ...item, slug: getSlugFromLink(item.link) } })
+}
+
+async function handleNewsletterRefresh(db: D1Database): Promise<Response> {
+  const items = await fetchAndStoreRss(db)
+  return Response.json({ message: "Newsletter refreshed", count: items.length })
+}
+
+async function handleNewsletterStats(db: D1Database): Promise<Response> {
+  const stats = await db.prepare(
+    `SELECT 
+       COUNT(*) as total,
+       MIN(pub_date) as earliest,
+       MAX(pub_date) as latest
+     FROM newsletter_items`
+  ).first()
+
+  return Response.json({ stats })
+}
+
+async function handleNewsletter(request: Request, url: URL, db: D1Database): Promise<Response> {
+  const path = url.pathname.replace(/\/$/, "")
+  const basePath = "/my/newsletter"
+
+  if (path === basePath) {
+    return handleNewsletterList(url, db)
+  }
+
+  const rest = path.slice(basePath.length + 1)
+  const segments = rest.split("/")
+
+  if (rest === "refresh") {
+    if (request.method !== "POST") {
+      return Response.json({ error: "Method not allowed. Use POST." }, { status: 405 })
+    }
+    return handleNewsletterRefresh(db)
+  }
+
+  if (rest === "stats") {
+    return handleNewsletterStats(db)
+  }
+
+  return handleNewsletterSingle(segments, db)
 }
 
 function handleRoot(): Response {
@@ -118,35 +242,15 @@ function handleMy(): Response {
     endpoints: [
       { path: "/my", description: "This info" },
       { path: "/my/newsletter", description: "Newsletter archive from RSS" },
+      { path: "/my/newsletter/<slug>", description: "Get single newsletter by slug" },
+      { path: "/my/newsletter/stats", description: "Newsletter stats" },
+      { path: "POST /my/newsletter/refresh", description: "Re-fetch RSS feed" },
     ],
     info: {
       name: "Meet Gor",
       handle: "@meetgor",
       website: "https://meetgor.com",
     },
-  })
-}
-
-async function handleNewsletter(url: URL, db: D1Database): Promise<Response> {
-  const refresh = url.searchParams.get("refresh") === "true"
-
-  if (refresh) {
-    const items = await fetchAndStoreRss(db)
-    return Response.json({ count: items.length, items })
-  }
-
-  let items = await getNewslettersFromDb(db)
-
-  if (items.length === 0) {
-    items = await fetchAndStoreRss(db)
-  }
-
-  return Response.json({
-    name: "Newsletter",
-    description: "Techstructive Weekly newsletters from meetgor.com",
-    source: RSS_URL,
-    count: items.length,
-    items,
   })
 }
 
@@ -167,20 +271,14 @@ function handleGames(): Response {
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url)
+    const pathname = url.pathname
 
-    switch (url.pathname) {
-      case "/":
-        return handleRoot()
-      case "/my":
-        return handleMy()
-      case "/my/newsletter":
-        return handleNewsletter(url, env.DB)
-      case "/games":
-        return handleGames()
-      case "/games/tic-tac-toe":
-        return handleTicTacToe(request)
-      default:
-        return Response.json({ error: "Not found" }, { status: 404 })
-    }
+    if (pathname === "/") return handleRoot()
+    if (pathname === "/my") return handleMy()
+    if (pathname.startsWith("/my/newsletter")) return handleNewsletter(request, url, env.DB)
+    if (pathname === "/games") return handleGames()
+    if (pathname === "/games/tic-tac-toe") return handleTicTacToe(request)
+
+    return Response.json({ error: "Not found" }, { status: 404 })
   },
 }
