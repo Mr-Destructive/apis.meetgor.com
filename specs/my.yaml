@@ -94,3 +94,305 @@ paths:
                         format: uri
                         description: My personal website.
                         example: https://meetgor.com
+                  blogroll:
+                    type: object
+                    description: A curated set of external blogs and feeds I like reading.
+                    properties:
+                      total:
+                        type: integer
+                      items:
+                        type: array
+                        items:
+                          $ref: "./components.yaml#/components/schemas/BlogrollEntry"
+
+  /my/books:
+    get:
+      summary: List Goodreads shelves
+      description: |
+        Returns a filtered view of my public Goodreads bookshelf RSS
+        feed. Use the `shelf` query parameter to focus on a specific
+        shelf like `read`, `to-read`, `currently-reading`, or `tbr`.
+      operationId: listGoodreadsBooks
+      tags:
+        - Profile
+      parameters:
+        - name: shelf
+          in: query
+          description: Shelf to filter by. `all` returns every item.
+          schema:
+            type: string
+            default: all
+            enum:
+              - all
+              - read
+              - to-read
+              - currently-reading
+              - tbr
+              - reading
+        - name: limit
+          in: query
+          description: Number of items to return
+          schema:
+            type: integer
+            default: 10
+            maximum: 50
+        - name: offset
+          in: query
+          description: Number of items to skip
+          schema:
+            type: integer
+            default: 0
+      responses:
+        "200":
+          description: Goodreads shelf list
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  shelf:
+                    type: string
+                  total:
+                    type: integer
+                  limit:
+                    type: integer
+                  offset:
+                    type: integer
+                  items:
+                    type: array
+                    items:
+                      $ref: "./components.yaml#/components/schemas/GoodreadsBookSummary"
+
+  /my/books/reviews:
+    get:
+      summary: List Goodreads reviews
+      description: |
+        Returns books from the Goodreads RSS feed that have either a
+        rating or a written review. This is the reviews-focused
+        endpoint for the same user id.
+      operationId: listGoodreadsReviews
+      tags:
+        - Profile
+      parameters:
+        - name: shelf
+          in: query
+          description: Shelf to filter by. `all` returns every reviewed item.
+          schema:
+            type: string
+            default: all
+            enum:
+              - all
+              - read
+              - to-read
+              - currently-reading
+              - tbr
+              - reading
+        - name: limit
+          in: query
+          description: Number of items to return
+          schema:
+            type: integer
+            default: 10
+            maximum: 50
+        - name: offset
+          in: query
+          description: Number of items to skip
+          schema:
+            type: integer
+            default: 0
+      responses:
+        "200":
+          description: Goodreads reviews
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  shelf:
+                    type: string
+                  total:
+                    type: integer
+                  limit:
+                    type: integer
+                  offset:
+                    type: integer
+                  items:
+                    type: array
+                    items:
+                      $ref: "./components.yaml#/components/schemas/GoodreadsBookReview"
+
+  /my/thoughts:
+    get:
+      summary: List thought posts
+      description: |
+        Returns posts from the public RSS feed whose URLs live under
+        `/thoughts/`.
+      operationId: listThoughtPosts
+      tags:
+        - Profile
+      parameters:
+        - name: limit
+          in: query
+          description: Number of items to return
+          schema:
+            type: integer
+            default: 10
+            maximum: 50
+        - name: offset
+          in: query
+          description: Number of items to skip
+          schema:
+            type: integer
+            default: 0
+        - name: search
+          in: query
+          description: Search by title or content
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Thought posts
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  section:
+                    type: string
+                    example: thoughts
+                  total:
+                    type: integer
+                  limit:
+                    type: integer
+                  offset:
+                    type: integer
+                  items:
+                    type: array
+                    items:
+                      $ref: "./components.yaml#/components/schemas/BlogPostSummary"
+
+  /my/links:
+    get:
+      summary: List link posts
+      description: |
+        Returns posts from the public RSS feed whose URLs live under
+        `/links/`.
+      operationId: listLinkPosts
+      tags:
+        - Profile
+      parameters:
+        - name: limit
+          in: query
+          description: Number of items to return
+          schema:
+            type: integer
+            default: 10
+            maximum: 50
+        - name: offset
+          in: query
+          description: Number of items to skip
+          schema:
+            type: integer
+            default: 0
+        - name: search
+          in: query
+          description: Search by title or content
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Link posts
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  section:
+                    type: string
+                    example: links
+                  total:
+                    type: integer
+                  limit:
+                    type: integer
+                  offset:
+                    type: integer
+                  items:
+                    type: array
+                    items:
+                      $ref: "./components.yaml#/components/schemas/BlogPostSummary"
+
+  /my/blogroll:
+    get:
+      summary: List curated blog feeds
+      description: |
+        Returns a hand-curated list of external blogs and RSS feeds
+        selected from the people and sites I keep linking to.
+      operationId: listBlogroll
+      tags:
+        - Profile
+      parameters:
+        - name: limit
+          in: query
+          description: Number of items to return
+          schema:
+            type: integer
+            default: 10
+            maximum: 50
+        - name: offset
+          in: query
+          description: Number of items to skip
+          schema:
+            type: integer
+            default: 0
+        - name: search
+          in: query
+          description: Search by name, site, feed, or note
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Blogroll feeds
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    example: Blogroll
+                  description:
+                    type: string
+                  total:
+                    type: integer
+                  limit:
+                    type: integer
+                  offset:
+                    type: integer
+                  items:
+                    type: array
+                    items:
+                      $ref: "./components.yaml#/components/schemas/BlogrollEntry"
+
+  /my/socials:
+    get:
+      summary: Get social link tree
+      description: |
+        Returns the personal social/profile link tree as a structured
+        list of links.
+      operationId: getSocialLinks
+      tags:
+        - Profile
+      responses:
+        "200":
+          description: Social links
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  tree:
+                    type: array
+                    items:
+                      $ref: "./components.yaml#/components/schemas/SocialLink"

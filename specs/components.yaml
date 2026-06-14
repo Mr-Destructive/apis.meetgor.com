@@ -83,6 +83,238 @@ components:
                 the database (ISO 8601 format).
               example: "2026-06-06 12:00:56"
 
+    GoodreadsBookSummary:
+      type: object
+      description: |
+        A compact Goodreads bookshelf entry from the public RSS feed.
+        This is the lightweight shape used by `/my/books`.
+      required:
+        - title
+        - link
+        - slug
+        - book_id
+        - author_name
+        - user_rating
+        - user_shelves
+      properties:
+        title:
+          type: string
+        link:
+          type: string
+          format: uri
+        slug:
+          type: string
+        book_id:
+          type: string
+        author_name:
+          type: string
+        book_image_url:
+          type: string
+          format: uri
+        average_rating:
+          type: string
+        user_rating:
+          type: string
+        user_read_at:
+          type: string
+        user_date_added:
+          type: string
+        user_shelves:
+          type: string
+        shelves:
+          type: array
+          items:
+            type: string
+
+    GoodreadsBookReview:
+      allOf:
+        - $ref: "#/components/schemas/GoodreadsBookSummary"
+        - type: object
+          properties:
+            book_description:
+              type: string
+            isbn:
+              type: string
+            user_review:
+              type: string
+            review:
+              type: string
+            book_published:
+              type: string
+            num_pages:
+              type: string
+            user_name:
+              type: string
+            user_date_created:
+              type: string
+            book_small_image_url:
+              type: string
+              format: uri
+            book_medium_image_url:
+              type: string
+              format: uri
+            book_large_image_url:
+              type: string
+              format: uri
+
+    BlogPostSummary:
+      type: object
+      description: |
+        A blog entry from the public RSS feed, used for thoughts and
+        links-style posts.
+      required:
+        - title
+        - link
+        - slug
+        - pub_date
+        - section
+      properties:
+        title:
+          type: string
+        link:
+          type: string
+          format: uri
+        content:
+          type: string
+        description:
+          type: string
+        pub_date:
+          type: string
+        slug:
+          type: string
+        section:
+          type: string
+          enum:
+            - thoughts
+            - links
+            - posts
+            - other
+
+    SocialLink:
+      type: object
+      description: |
+        A single entry in the personal link tree.
+      required:
+        - name
+        - handle
+        - url
+      properties:
+        name:
+          type: string
+        handle:
+          type: string
+        url:
+          type: string
+          format: uri
+
+    BlogrollEntry:
+      type: object
+      description: |
+        A curated external blog feed selected from the posts I have
+        linked to or highlighted on the site.
+      required:
+        - name
+        - site
+        - feed
+        - source
+      properties:
+        name:
+          type: string
+        site:
+          type: string
+          format: uri
+        feed:
+          type: string
+          format: uri
+        source:
+          type: string
+          format: uri
+        note:
+          type: string
+
+    DocletFileInfo:
+      type: object
+      required:
+        - name
+        - mimeType
+        - size
+        - extension
+      properties:
+        name:
+          type: string
+        mimeType:
+          type: string
+        size:
+          type: integer
+        extension:
+          type: string
+
+    DocletInspection:
+      type: object
+      required:
+        - file
+        - kind
+        - metadata
+        - supportedActions
+      properties:
+        file:
+          $ref: "#/components/schemas/DocletFileInfo"
+        kind:
+          type: string
+          description: Detected document kind.
+        metadata:
+          type: object
+          additionalProperties: true
+        supportedActions:
+          type: array
+          items:
+            type: string
+
+    DocletCapability:
+      type: object
+      required:
+        - action
+        - description
+        - kinds
+        - supported
+      properties:
+        action:
+          type: string
+        description:
+          type: string
+        kinds:
+          type: array
+          items:
+            type: string
+        supported:
+          type: boolean
+
+    DocletIntent:
+      type: object
+      required:
+        - action
+      properties:
+        action:
+          type: string
+          description: The operation to apply.
+        params:
+          type: object
+          additionalProperties: true
+        outputName:
+          type: string
+
+    DocletOperationResult:
+      type: object
+      properties:
+        name:
+          type: string
+        inspection:
+          $ref: "#/components/schemas/DocletInspection"
+        capabilities:
+          type: array
+          items:
+            $ref: "#/components/schemas/DocletCapability"
+
     Board:
       type: object
       description: |

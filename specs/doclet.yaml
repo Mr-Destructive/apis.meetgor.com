@@ -1,0 +1,198 @@
+---
+openapi: "3.1.0"
+info:
+  title: Doclet API
+  description: |
+    Doclet is a document toolkit API for working with PDFs, office files,
+    text files, and images. It is designed as a user-facing service that
+    can inspect documents, split and merge PDFs, rotate and crop pages,
+    add blank pages, apply layout transforms, and extract text from text-
+    like files.
+
+    OCR is part of the public contract, but it is intentionally marked as
+    unsupported until an OCR engine is attached.
+  version: "1.0.0"
+  contact:
+    name: Meet Gor
+    url: https://meetgor.com
+
+servers:
+  - url: https://apis.meetgor.com
+    description: Production
+
+tags:
+  - name: Doclet
+    description: Document inspection and transformation
+
+paths:
+  /doclet:
+    get:
+      summary: Get Doclet manifest
+      description: Returns a human-readable overview of the Doclet API.
+      operationId: getDocletManifest
+      tags:
+        - Doclet
+      responses:
+        "200":
+          description: Manifest
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /doclet/v1/capabilities:
+    get:
+      summary: List capabilities
+      description: Returns all supported document operations and file kinds.
+      operationId: listDocletCapabilities
+      tags:
+        - Doclet
+      responses:
+        "200":
+          description: Capability list
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  actions:
+                    type: array
+                    items:
+                      $ref: "./components.yaml#/components/schemas/DocletCapability"
+                  pageSizePresets:
+                    type: array
+                    items:
+                      type: string
+
+  /doclet/v1/inspect:
+    post:
+      summary: Inspect a document
+      description: |
+        Inspect a file upload or a remote URL and return document type,
+        metadata, and the operations that make sense for it.
+      operationId: inspectDoclet
+      tags:
+        - Doclet
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - file
+              properties:
+                file:
+                  type: string
+                  format: binary
+          application/json:
+            schema:
+              type: object
+              properties:
+                url:
+                  type: string
+                  format: uri
+                intent:
+                  $ref: "./components.yaml#/components/schemas/DocletIntent"
+      responses:
+        "200":
+          description: Inspection result
+          content:
+            application/json:
+              schema:
+                $ref: "./components.yaml#/components/schemas/DocletOperationResult"
+
+  /doclet/v1/operate:
+    post:
+      summary: Apply a document intent
+      description: |
+        Apply a named action to a document. For PDF actions, the
+        response is usually a transformed PDF. For text extraction,
+        the response is JSON text output.
+      operationId: operateDoclet
+      tags:
+        - Doclet
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - file
+                - intent
+              properties:
+                file:
+                  type: string
+                  format: binary
+                intent:
+                  $ref: "./components.yaml#/components/schemas/DocletIntent"
+          application/json:
+            schema:
+              type: object
+              required:
+                - url
+                - intent
+              properties:
+                url:
+                  type: string
+                  format: uri
+                intent:
+                  $ref: "./components.yaml#/components/schemas/DocletIntent"
+      responses:
+        "200":
+          description: Successful document operation
+          content:
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+            application/json:
+              schema:
+                type: object
+        "400":
+          description: Bad request
+          content:
+            application/problem+json:
+              schema:
+                $ref: "./components.yaml#/components/schemas/ErrorBody"
+        "415":
+          description: Unsupported media type
+        "501":
+          description: OCR or extraction capability not yet enabled
+
+  /doclet/v1/merge:
+    post:
+      summary: Merge multiple PDFs
+      description: |
+        Merge multiple PDF uploads into a single PDF file.
+      operationId: mergeDocletPdfs
+      tags:
+        - Doclet
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - files
+              properties:
+                files:
+                  type: array
+                  items:
+                    type: string
+                    format: binary
+                intent:
+                  $ref: "./components.yaml#/components/schemas/DocletIntent"
+      responses:
+        "200":
+          description: Merged PDF
+          content:
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+

@@ -22,6 +22,26 @@ curl $BASE/my
 
 # Docs
 curl $BASE/my/docs
+
+# Goodreads shelves
+curl $BASE/my/books
+curl "$BASE/my/books?shelf=read"
+curl "$BASE/my/books?shelf=to-read"
+
+# Goodreads reviews
+curl $BASE/my/books/reviews
+curl "$BASE/my/books/reviews?shelf=read"
+
+# Blog posts from RSS
+curl $BASE/my/thoughts
+curl $BASE/my/links
+
+# Curated blogroll
+curl $BASE/my/blogroll
+curl "$BASE/my/blogroll?search=rust"
+
+# Social link tree
+curl $BASE/my/socials
 ```
 
 ## Newsletter
@@ -258,4 +278,41 @@ curl "$BASE/llamaline/v1/models?limit=5&offset=0"
 
 # Docs
 curl $BASE/llamaline/docs
+```
+
+## Doclet
+
+```sh
+# Manifest
+curl $BASE/doclet
+
+# Capabilities
+curl $BASE/doclet/v1/capabilities
+
+# Inspect an upload
+curl -X POST $BASE/doclet/v1/inspect \
+  -F "file=@./sample.pdf"
+
+# Split selected pages from a PDF
+curl -X POST $BASE/doclet/v1/operate \
+  -F "file=@./sample.pdf" \
+  -F 'intent={"action":"split","params":{"pages":"1,3"}}'
+
+# Rotate a PDF
+curl -X POST $BASE/doclet/v1/operate \
+  -F "file=@./sample.pdf" \
+  -F 'intent={"action":"rotate","params":{"angle":90}}'
+
+# Merge PDFs
+curl -X POST $BASE/doclet/v1/merge \
+  -F "files=@./a.pdf" \
+  -F "files=@./b.pdf"
+
+# Extract text from DOCX or text-like files
+curl -X POST $BASE/doclet/v1/operate \
+  -F "file=@./notes.docx" \
+  -F 'intent={"action":"extract-text"}'
+
+# Docs
+curl $BASE/doclet/docs
 ```

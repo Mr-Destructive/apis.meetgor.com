@@ -20,6 +20,7 @@ const allSpecs = [
   { file: "virtual-fight.yaml", tag: "Virtual Fight", group: "Games" },
   { file: "quiz.yaml", tag: "Quiz", group: "Quiz" },
   { file: "llamaline.yaml", tag: null, group: "Llamaline API", tagsFromSpec: true },
+  { file: "doclet.yaml", tag: "Doclet", group: "Doclet API" },
 ]
 
 const tagGroups = [
@@ -27,6 +28,7 @@ const tagGroups = [
   { name: "Games", tags: ["Games", "Tic Tac Toe", "Chess", "Rock Paper Scissors", "Handy Cricket", "Virtual Fight"] },
   { name: "Quiz", tags: ["Quiz"] },
   { name: "Llamaline API", tags: ["Providers", "Models", "Timeline"] },
+  { name: "Doclet API", tags: ["Doclet"] },
 ]
 
 const perApiSpecs = [
@@ -40,6 +42,7 @@ const perApiSpecs = [
   { file: "virtual-fight.yaml", out: "games/virtual-fight/docs/openapi.yaml" },
   { file: "quiz.yaml", out: "quiz/docs/openapi.yaml" },
   { file: "llamaline.yaml", out: "llamaline/docs/openapi.yaml" },
+  { file: "doclet.yaml", out: "doclet/docs/openapi.yaml" },
 ]
 
 function resolveJsonPointer(obj, pointer) {
@@ -68,7 +71,8 @@ function derefNode(node, componentsObj, selfObj) {
         resolved = resolveJsonPointer(selfObj, ref.slice(1))
       }
       if (resolved !== undefined) {
-        return derefNode(structuredClone(resolved), componentsObj, selfObj)
+        const nextSelfObj = ref.startsWith("./components.yaml#") ? componentsObj : selfObj
+        return derefNode(structuredClone(resolved), componentsObj, nextSelfObj)
       }
       if (ref.startsWith("./components.yaml#") || ref.startsWith("#/")) {
         console.warn(`  Warning: Could not resolve ${ref}`)

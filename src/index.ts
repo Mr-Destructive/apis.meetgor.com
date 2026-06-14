@@ -4,10 +4,13 @@ import { handleRockPaperScissors } from "./games/rock-paper-scissors"
 import { handleHandyCricket } from "./games/handy-cricket"
 import { handleVirtualFight } from "./games/virtual-fight"
 import { handleLlamaline } from "./llamaline"
+import { handleDoclet } from "./doclet"
 import { handleQuiz } from "./quiz"
 import { scalarHtml } from "./openapi/docs"
 
 const RSS_URL = "https://www.meetgor.com/type/newsletter/rss.xml"
+const MEETGOR_RSS_URL = "https://www.meetgor.com/rss.xml"
+const GOODREADS_RSS_URL = "https://www.goodreads.com/review/list_rss/82596574"
 
 interface ApiEntry {
   name: string
@@ -34,6 +37,61 @@ interface NewsletterListParams {
   order: string
 }
 
+interface ListParams {
+  limit: number
+  offset: number
+  search: string | null
+}
+
+interface GoodreadsItem {
+  title: string
+  link: string
+  book_id: string
+  book_image_url: string
+  book_small_image_url: string
+  book_medium_image_url: string
+  book_large_image_url: string
+  book_description: string
+  author_name: string
+  isbn: string
+  user_name: string
+  user_rating: string
+  user_read_at: string
+  user_date_added: string
+  user_date_created: string
+  user_shelves: string
+  user_review: string
+  average_rating: string
+  book_published: string
+  num_pages: string
+  review: string
+  shelves: string[]
+}
+
+interface BlogItem {
+  title: string
+  link: string
+  content: string
+  description: string
+  pub_date: string
+  slug: string
+  section: "thoughts" | "links" | "posts" | "other"
+}
+
+interface SocialLink {
+  name: string
+  handle: string
+  url: string
+}
+
+interface BlogrollLink {
+  name: string
+  site: string
+  feed: string
+  source: string
+  note: string
+}
+
 interface Env {
   DB: D1Database
 }
@@ -41,9 +99,19 @@ interface Env {
 const apis: ApiEntry[] = [
   {
     name: "My API",
-    description: "Personal info, books, blog, newsletter",
+    description: "Personal info, books, blog, newsletter, socials, and blogroll",
     path: "/my",
-    endpoints: ["/my", "/my/newsletter", "/my/docs"],
+    endpoints: [
+      "/my",
+      "/my/books",
+      "/my/books/reviews",
+      "/my/thoughts",
+      "/my/links",
+      "/my/blogroll",
+      "/my/socials",
+      "/my/newsletter",
+      "/my/docs",
+    ],
   },
   {
     name: "Games API",
@@ -68,6 +136,19 @@ const apis: ApiEntry[] = [
       "/llamaline/docs",
     ],
   },
+  {
+    name: "Doclet API",
+    description: "Document toolkit for files",
+    path: "/doclet/v1",
+    endpoints: [
+      "/doclet",
+      "/doclet/v1/capabilities",
+      "/doclet/v1/inspect",
+      "/doclet/v1/operate",
+      "/doclet/v1/merge",
+      "/doclet/docs",
+    ],
+  },
 ]
 
 const ALLOWED_SORTS = ["pub_date", "title", "id"]
@@ -81,6 +162,24 @@ function extractTag(text: string, tag: string): string {
 function extractCdata(text: string): string {
   const match = text.match(/<!\[CDATA\[([\s\S]*?)\]\]>/)
   return match ? match[1].trim() : ""
+}
+
+function getPathnameFromLink(link: string): string {
+  try {
+    return new URL(link).pathname.replace(/\/$/, "")
+  } catch {
+    return link
+  }
+}
+
+function normalizeSlugFromLink(link: string): string {
+  const pathname = getPathnameFromLink(link)
+  const parts = pathname.split("/").filter(Boolean)
+  return parts[parts.length - 1] || ""
+}
+
+function normalizeSearchText(text: string): string {
+  return text.toLowerCase().replace(/\s+/g, " ").trim()
 }
 
 function parseRssItems(xml: string): NewsletterItem[] {
@@ -107,6 +206,341 @@ function parseRssItems(xml: string): NewsletterItem[] {
   }
 
   return items
+}
+
+function parseMeetGorItems(xml: string): BlogItem[] {
+  const items: BlogItem[] = []
+  const itemRegex = /<item>([\s\S]*?)<\/item>/g
+  let itemMatch
+
+  while ((itemMatch = itemRegex.exec(xml)) !== null) {
+    const raw = itemMatch[1]
+    const title = extractTag(raw, "title")
+    const link = extractTag(raw, "link")
+    if (!title || !link) continue
+
+    const rawDescription = extractTag(raw, "description")
+    const description = extractCdata(rawDescription) || rawDescription
+    const rawContent = extractTag(raw, "content")
+    const content = extractCdata(rawContent) || rawContent
+    const pubDate = extractTag(raw, "pubDate")
+    const pathname = getPathnameFromLink(link)
+    const section = pathname.includes("/thoughts/")
+      ? "thoughts"
+      : pathname.includes("/links/")
+        ? "links"
+        : pathname.includes("/posts/")
+          ? "posts"
+          : "other"
+
+    items.push({
+      title,
+      link,
+      content,
+      description,
+      pub_date: pubDate,
+      slug: normalizeSlugFromLink(link),
+      section,
+    })
+  }
+
+  return items
+}
+
+function parseGoodreadsItems(xml: string): GoodreadsItem[] {
+  const items: GoodreadsItem[] = []
+  const itemRegex = /<item>([\s\S]*?)<\/item>/g
+  let itemMatch
+
+  while ((itemMatch = itemRegex.exec(xml)) !== null) {
+    const raw = itemMatch[1]
+    const title = extractCdata(extractTag(raw, "title")) || extractTag(raw, "title")
+    const link = extractCdata(extractTag(raw, "link")) || extractTag(raw, "link")
+    if (!title || !link) continue
+
+    const review = extractCdata(extractTag(raw, "user_review")) || extractTag(raw, "user_review")
+    const userShelves = extractCdata(extractTag(raw, "user_shelves")) || extractTag(raw, "user_shelves")
+
+    items.push({
+      title,
+      link,
+      book_id: extractTag(raw, "book_id"),
+      book_image_url: extractCdata(extractTag(raw, "book_image_url")) || extractTag(raw, "book_image_url"),
+      book_small_image_url: extractCdata(extractTag(raw, "book_small_image_url")) || extractTag(raw, "book_small_image_url"),
+      book_medium_image_url: extractCdata(extractTag(raw, "book_medium_image_url")) || extractTag(raw, "book_medium_image_url"),
+      book_large_image_url: extractCdata(extractTag(raw, "book_large_image_url")) || extractTag(raw, "book_large_image_url"),
+      book_description: extractCdata(extractTag(raw, "book_description")) || extractTag(raw, "book_description"),
+      author_name: extractTag(raw, "author_name"),
+      isbn: extractTag(raw, "isbn"),
+      user_name: extractTag(raw, "user_name"),
+      user_rating: extractTag(raw, "user_rating"),
+      user_read_at: extractCdata(extractTag(raw, "user_read_at")) || extractTag(raw, "user_read_at"),
+      user_date_added: extractCdata(extractTag(raw, "user_date_added")) || extractTag(raw, "user_date_added"),
+      user_date_created: extractCdata(extractTag(raw, "user_date_created")) || extractTag(raw, "user_date_created"),
+      user_shelves: userShelves,
+      user_review: review,
+      average_rating: extractTag(raw, "average_rating"),
+      book_published: extractTag(raw, "book_published"),
+      num_pages: extractTag(raw, "num_pages"),
+      review,
+      shelves: userShelves
+        .split(",")
+        .map(shelf => shelf.trim())
+        .filter(Boolean),
+    })
+  }
+
+  return items
+}
+
+async function fetchXml(url: string, init?: RequestInit): Promise<string> {
+  const headers = new Headers(init?.headers)
+  headers.set("user-agent", "Mozilla/5.0 (apis.meetgor.com)")
+  const response = await fetch(url, {
+    ...init,
+    headers,
+  })
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch ${url}: ${response.status}`)
+  }
+
+  return response.text()
+}
+
+function parseListQuery(url: URL): ListParams {
+  const limit = Math.min(Math.max(parseInt(url.searchParams.get("limit") || "10") || 10, 1), 50)
+  const offset = Math.max(parseInt(url.searchParams.get("offset") || "0") || 0, 0)
+  const search = url.searchParams.get("search")
+  return { limit, offset, search }
+}
+
+function normalizeShelfName(shelf: string | null): string {
+  const value = (shelf || "all").toLowerCase().trim()
+  if (value === "tbr") return "to-read"
+  if (value === "reading") return "currently-reading"
+  return value
+}
+
+function matchesShelf(item: GoodreadsItem, shelf: string): boolean {
+  if (shelf === "all") return true
+  const explicitShelves = item.shelves.length > 0
+    ? item.shelves
+    : item.user_shelves.split(",").map(s => s.trim()).filter(Boolean)
+
+  if (shelf === "read") {
+    const hasReadSignal = Number(item.user_rating || "0") > 0 || item.user_review.trim().length > 0 || item.user_read_at.trim().length > 0
+    return explicitShelves.includes("read") || hasReadSignal
+  }
+
+  return explicitShelves.includes(shelf)
+}
+
+function matchesText(fields: string[], search: string | null): boolean {
+  if (!search) return true
+  const needle = normalizeSearchText(search)
+  return fields.some(field => normalizeSearchText(field).includes(needle))
+}
+
+function paginate<T>(items: T[], limit: number, offset: number): T[] {
+  return items.slice(offset, offset + limit)
+}
+
+function getGoodreadsBookSummary(item: GoodreadsItem) {
+  return {
+    title: item.title,
+    link: item.link,
+    slug: normalizeSlugFromLink(item.link),
+    book_id: item.book_id,
+    author_name: item.author_name,
+    book_image_url: item.book_image_url,
+    average_rating: item.average_rating,
+    user_rating: item.user_rating,
+    user_read_at: item.user_read_at,
+    user_date_added: item.user_date_added,
+    user_shelves: item.user_shelves,
+    shelves: item.shelves,
+  }
+}
+
+function getGoodreadsBookReview(item: GoodreadsItem) {
+  return {
+    ...getGoodreadsBookSummary(item),
+    book_description: item.book_description,
+    isbn: item.isbn,
+    user_review: item.user_review,
+    review: item.review,
+    book_published: item.book_published,
+    num_pages: item.num_pages,
+    user_name: item.user_name,
+    user_date_created: item.user_date_created,
+    book_small_image_url: item.book_small_image_url,
+    book_medium_image_url: item.book_medium_image_url,
+    book_large_image_url: item.book_large_image_url,
+    link: item.link,
+  }
+}
+
+async function fetchMeetGorPosts(): Promise<BlogItem[]> {
+  const xml = await fetchXml(MEETGOR_RSS_URL)
+  return parseMeetGorItems(xml)
+}
+
+async function fetchGoodreadsBooks(): Promise<GoodreadsItem[]> {
+  const xml = await fetchXml(GOODREADS_RSS_URL)
+  return parseGoodreadsItems(xml)
+}
+
+async function handleGoodreadsBooks(url: URL): Promise<Response> {
+  const { limit, offset, search } = parseListQuery(url)
+  const shelf = normalizeShelfName(url.searchParams.get("shelf"))
+  const books = await fetchGoodreadsBooks()
+
+  const filtered = books.filter(item => matchesShelf(item, shelf) && matchesText([item.title, item.author_name, item.user_review], search))
+  const items = paginate(filtered, limit, offset).map(getGoodreadsBookSummary)
+
+  return Response.json({
+    shelf,
+    total: filtered.length,
+    limit,
+    offset,
+    items,
+  })
+}
+
+async function handleGoodreadsReviews(url: URL): Promise<Response> {
+  const { limit, offset, search } = parseListQuery(url)
+  const shelf = normalizeShelfName(url.searchParams.get("shelf"))
+  const books = await fetchGoodreadsBooks()
+
+  const reviewed = books.filter(item => {
+    const hasReview = item.user_review.trim().length > 0
+    const hasRating = Number(item.user_rating || "0") > 0
+    return hasReview || hasRating
+  })
+
+  const filtered = reviewed.filter(item => matchesShelf(item, shelf) && matchesText([item.title, item.author_name, item.user_review], search))
+  const items = paginate(filtered, limit, offset).map(getGoodreadsBookReview)
+
+  return Response.json({
+    shelf,
+    total: filtered.length,
+    limit,
+    offset,
+    items,
+  })
+}
+
+async function handleMeetGorSection(url: URL, section: "thoughts" | "links"): Promise<Response> {
+  const { limit, offset, search } = parseListQuery(url)
+  const posts = await fetchMeetGorPosts()
+  const filtered = posts.filter(item => item.section === section && matchesText([item.title, item.description, item.content], search))
+  const items = paginate(filtered, limit, offset)
+
+  return Response.json({
+    section,
+    total: filtered.length,
+    limit,
+    offset,
+    items,
+  })
+}
+
+function getSocialLinks(): SocialLink[] {
+  return [
+    { name: "Email", handle: "gormeet711@gmail.com", url: "mailto:gormeet711@gmail.com" },
+    { name: "GitHub", handle: "Mr-Destructive", url: "https://github.com/Mr-Destructive" },
+    { name: "X", handle: "@MeetGor21", url: "https://twitter.com/MeetGor21" },
+    { name: "LinkedIn", handle: "meetgor", url: "https://www.linkedin.com/in/meetgor/" },
+    { name: "Bluesky", handle: "meetgor.bsky.social", url: "https://bsky.app/profile/meetgor.bsky.social" },
+    { name: "YouTube", handle: "Meet-Technically", url: "https://www.youtube.com/@Meet-Technically" },
+    { name: "Twitch", handle: "Meet_Gor", url: "https://www.twitch.tv/Meet_Gor" },
+    { name: "dev.to", handle: "mr_destructive", url: "https://dev.to/mr_destructive" },
+  ]
+}
+
+function getBlogrollLinks(): BlogrollLink[] {
+  return [
+    {
+      name: "Zed",
+      site: "https://zed.dev/blog",
+      feed: "https://zed.dev/blog.rss",
+      source: "https://www.meetgor.com/links/zed-blog-software-is-made-between-commits",
+      note: "High-signal product and engineering writing around the editor and agent workflows.",
+    },
+    {
+      name: "Sean Goedecke",
+      site: "https://www.seangoedecke.com",
+      feed: "https://www.seangoedecke.com/rss.xml",
+      source: "https://www.meetgor.com/links/sean-goedecke-wired-projects-i-shipped-with-ai",
+      note: "Clear, skeptical writing on software teams, product work, and AI.",
+    },
+    {
+      name: "API Evangelist",
+      site: "https://apievangelist.com",
+      feed: "https://apievangelist.com/feed.xml",
+      source: "https://www.meetgor.com/links/api-evangelist-replacing-the-petstore-openapi-with-the-train-travel-openapi-specs",
+      note: "Useful if you care about OpenAPI, API governance, and practical API design.",
+    },
+    {
+      name: "Lorna Jane Mitchell",
+      site: "https://lornajane.net/blog",
+      feed: "https://lornajane.net/feed",
+      source: "https://www.meetgor.com/links/lorna-jane-s-blog",
+      note: "Consistently strong API and developer-experience posts.",
+    },
+    {
+      name: "Bob Belderbos",
+      site: "https://belderbos.dev/blog",
+      feed: "https://belderbos.dev/atom.xml",
+      source: "https://www.meetgor.com/links/belderbos-dev-rust-is-for-people-who-want-to-be-punished-now-jochen-trusts-it-more-than-python",
+      note: "Python, Rust, and AI with a practical coaching angle.",
+    },
+    {
+      name: "Kevin Kelly",
+      site: "https://kk.org/thetechnium",
+      feed: "https://feedpress.me/thetechnium",
+      source: "https://www.meetgor.com/links/kevin-kelly-substack-your-most-improbable-life",
+      note: "Long-form thinking about tech, culture, and improbable futures.",
+    },
+    {
+      name: "Waylon Walker",
+      site: "https://waylonwalker.com",
+      feed: "https://waylonwalker.com/rss.xml",
+      source: "https://www.meetgor.com/links/why-building-my-blog-is-more-fun-than-filling-it",
+      note: "Thoughtful personal writing about RSS, self-hosting, and building his own web stack.",
+    },
+    {
+      name: "Dave Rupert",
+      site: "https://daverupert.com",
+      feed: "https://daverupert.com/atom.xml",
+      source: "https://daverupert.com/2025/03/tag-you-re-it/",
+      note: "Web craft, tooling, and browser-era writing with a strong RSS culture.",
+    },
+    {
+      name: "Chris Coyier",
+      site: "https://chriscoyier.net",
+      feed: "https://chriscoyier.net/feed/",
+      source: "https://chriscoyier.net/2026/06/01/social-rss-2/",
+      note: "Practical web publishing and RSS-adjacent notes from a long-time web author.",
+    },
+  ]
+}
+
+async function handleBlogroll(url: URL): Promise<Response> {
+  const { limit, offset, search } = parseListQuery(url)
+  const entries = getBlogrollLinks()
+  const filtered = entries.filter(item => matchesText([item.name, item.site, item.feed, item.note], search))
+  const items = paginate(filtered, limit, offset)
+
+  return Response.json({
+    name: "Blogroll",
+    description: "Curated RSS feeds selected from the links I actually read and like",
+    total: filtered.length,
+    limit,
+    offset,
+    items,
+  })
 }
 
 async function fetchAndStoreRss(db: D1Database): Promise<NewsletterItem[]> {
@@ -260,11 +694,18 @@ function handleRoot(): Response {
 }
 
 function handleMy(): Response {
+  const blogroll = getBlogrollLinks()
   return Response.json({
     name: "My API",
-    description: "Personal information and content APIs",
+    description: "Personal information, reading lists, blog feeds, social links, and a blogroll",
     endpoints: [
       { path: "/my", description: "This info" },
+      { path: "/my/books", description: "Goodreads shelf data" },
+      { path: "/my/books/reviews", description: "Goodreads reviews" },
+      { path: "/my/thoughts", description: "Thought posts from RSS" },
+      { path: "/my/links", description: "Link posts from RSS" },
+      { path: "/my/blogroll", description: "Curated RSS blogroll" },
+      { path: "/my/socials", description: "Social link tree" },
       { path: "/my/newsletter", description: "Newsletter archive from RSS" },
       { path: "/my/newsletter/<slug>", description: "Get single newsletter by slug" },
       { path: "/my/newsletter/stats", description: "Newsletter stats" },
@@ -275,6 +716,10 @@ function handleMy(): Response {
       name: "Meet Gor",
       handle: "@meetgor",
       website: "https://meetgor.com",
+    },
+    blogroll: {
+      total: blogroll.length,
+      items: blogroll,
     },
   })
 }
@@ -322,6 +767,27 @@ export default {
       if (pathname === "/my/newsletter/docs") return serveDocs("Newsletter API", "/my/newsletter/docs/openapi.yaml")
       return handleNewsletter(request, url, env.DB)
     }
+    if (pathname === "/my/books") {
+      return handleGoodreadsBooks(url)
+    }
+    if (pathname === "/my/books/reviews") {
+      return handleGoodreadsReviews(url)
+    }
+    if (pathname === "/my/thoughts") {
+      return handleMeetGorSection(url, "thoughts")
+    }
+    if (pathname === "/my/links") {
+      return handleMeetGorSection(url, "links")
+    }
+    if (pathname === "/my/blogroll") {
+      return handleBlogroll(url)
+    }
+    if (pathname === "/my/socials") {
+      return Response.json({
+        name: "Meet Gor",
+        tree: getSocialLinks(),
+      })
+    }
 
     if (pathname === "/games") return handleGames()
     if (pathname === "/games/docs") return serveDocs("Games API", "/games/docs/openapi.yaml")
@@ -354,6 +820,11 @@ export default {
     if (pathname === "/llamaline/docs") return serveDocs("Llamaline API", "/llamaline/docs/openapi.yaml")
     if (pathname.startsWith("/llamaline")) {
       return handleLlamaline(request, env)
+    }
+
+    if (pathname === "/doclet/docs") return serveDocs("Doclet API", "/doclet/docs/openapi.yaml")
+    if (pathname.startsWith("/doclet")) {
+      return handleDoclet(request)
     }
 
     return Response.json({ error: "Not found" }, { status: 404 })
