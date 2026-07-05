@@ -78,6 +78,26 @@ interface BlogItem {
   section: "thoughts" | "links" | "posts" | "other"
 }
 
+interface BlogQuery {
+  search?: string | {
+    query: string
+    mode?: "all" | "any"
+    fields?: ("title" | "description" | "content")[]
+  }
+  section?: "thoughts" | "links" | "posts" | "other"
+  date?: {
+    from?: string
+    to?: string
+  }
+  sort?: {
+    field: "pub_date" | "title"
+    order?: "asc" | "desc"
+  }
+  limit?: number
+  offset?: number
+  fields?: ("title" | "link" | "content" | "description" | "pub_date" | "slug" | "section")[]
+}
+
 interface SocialLink {
   name: string
   handle: string
@@ -107,6 +127,7 @@ const apis: ApiEntry[] = [
       "/my/books/reviews",
       "/my/thoughts",
       "/my/links",
+      "/my/blogs",
       "/my/blogroll",
       "/my/socials",
       "/my/newsletter",
@@ -153,6 +174,9 @@ const apis: ApiEntry[] = [
 
 const ALLOWED_SORTS = ["pub_date", "title", "id"]
 const ALLOWED_ORDERS = ["asc", "desc"]
+const BLOG_SORT_FIELDS = ["pub_date", "title"]
+const BLOG_QUERY_FIELDS = ["title", "link", "content", "description", "pub_date", "slug", "section"]
+const BLOG_SEARCH_FIELDS = ["title", "description", "content"]
 
 function extractTag(text: string, tag: string): string {
   const match = text.match(new RegExp(`<${tag}[^>]*>([\\s\\S]*?)<\/${tag}>`))
@@ -342,6 +366,40 @@ function matchesText(fields: string[], search: string | null): boolean {
   return fields.some(field => normalizeSearchText(field).includes(needle))
 }
 
+function matchesBlogQuery(item: BlogItem, q: BlogQuery): boolean {
+  if (q.search) {
+    const searchFields = typeof q.search === "object" && q.search.fields
+      ? q.search.fields
+      : BLOG_SEARCH_FIELDS
+    const rawQuery = typeof q.search === "string" ? q.search : q.search.query
+    const mode = typeof q.search === "object" && q.search.mode
+      ? q.search.mode
+      : "all"
+    const terms = rawQuery
+      .split(/\s+/)
+      .filter(Boolean)
+      .map(normalizeSearchText)
+
+    if (terms.length === 0) return false
+
+    const match = mode === "all"
+      ? terms.every(term => searchFields.some(field => normalizeSearchText(item[field as keyof BlogItem]).includes(term)))
+      : terms.some(term => searchFields.some(field => normalizeSearchText(item[field as keyof BlogItem]).includes(term)))
+
+    if (!match) return false
+  }
+
+  if (q.section && item.section !== q.section) return false
+
+  if (q.date) {
+    const itemDate = new Date(item.pub_date)
+    if (q.date.from && itemDate < new Date(q.date.from)) return false
+    if (q.date.to && itemDate > new Date(q.date.to)) return false
+  }
+
+  return true
+}
+
 function paginate<T>(items: T[], limit: number, offset: number): T[] {
   return items.slice(offset, offset + limit)
 }
@@ -444,6 +502,137 @@ async function handleMeetGorSection(url: URL, section: "thoughts" | "links"): Pr
     offset,
     items,
   })
+}
+
+async function handleBlogQuery(request: Request): Promise<Response> {
+  const contentType = request.headers.get("Content-Type") || ""
+
+  if (!contentType.includes("application/json")) {
+    return Response.json(
+      { error: "Content-Type must be application/json" },
+      {
+        status: 415,
+        headers: { "Accept-Query": "application/json" },
+      }
+    )
+  }
+
+  let query: BlogQuery
+  try {
+    query = await request.json()
+  } catch {
+    return Response.json(
+      { error: "Request body must be valid JSON" },
+      { status: 400 }
+    )
+  }
+
+  if (typeof query !== "object" || query === null || Object.keys(query).length === 0) {
+    return Response.json(
+      { error: "Query body must be a non-empty JSON object" },
+      { status: 422 }
+    )
+  }
+
+  if (query.limit !== undefined) {
+    if (!Number.isInteger(query.limit) || query.limit < 1 || query.limit > 100) {
+      return Response.json(
+        { error: "limit must be an integer between 1 and 100" },
+        { status: 422 }
+      )
+    }
+  }
+
+  if (query.offset !== undefined) {
+    if (!Number.isInteger(query.offset) || query.offset < 0) {
+      return Response.json(
+        { error: "offset must be a non-negative integer" },
+        { status: 422 }
+      )
+    }
+  }
+
+  if (query.sort) {
+    const { field, order } = query.sort
+    if (!BLOG_SORT_FIELDS.includes(field)) {
+      return Response.json(
+        { error: `sort.field must be one of: ${BLOG_SORT_FIELDS.join(", ")}` },
+        { status: 422 }
+      )
+    }
+    if (order && !ALLOWED_ORDERS.includes(order)) {
+      return Response.json(
+        { error: `sort.order must be one of: ${ALLOWED_ORDERS.join(", ")}` },
+        { status: 422 }
+      )
+    }
+  }
+
+  if (query.fields) {
+    const invalid = query.fields.filter(f => !BLOG_QUERY_FIELDS.includes(f))
+    if (invalid.length > 0) {
+      return Response.json(
+        { error: `Invalid fields: ${invalid.join(", ")}. Allowed: ${BLOG_QUERY_FIELDS.join(", ")}` },
+        { status: 422 }
+      )
+    }
+  }
+
+  if (query.date) {
+    const { from, to } = query.date
+    if (from && isNaN(Date.parse(from))) {
+      return Response.json({ error: "date.from is not a valid date string" }, { status: 422 })
+    }
+    if (to && isNaN(Date.parse(to))) {
+      return Response.json({ error: "date.to is not a valid date string" }, { status: 422 })
+    }
+    if (from && to && new Date(from) > new Date(to)) {
+      return Response.json({ error: "date.from must be before date.to" }, { status: 422 })
+    }
+  }
+
+  const posts = await fetchMeetGorPosts()
+  let filtered = posts.filter(item => matchesBlogQuery(item, query))
+
+  if (query.sort) {
+    const { field, order = "desc" } = query.sort
+    const multiplier = order === "asc" ? 1 : -1
+    filtered = [...filtered].sort((a, b) => {
+      const aVal = a[field as keyof BlogItem]
+      const bVal = b[field as keyof BlogItem]
+      return String(aVal).localeCompare(String(bVal)) * multiplier
+    })
+  }
+
+  const limit = query.limit ?? 10
+  const offset = query.offset ?? 0
+  const paginated = paginate(filtered, limit, offset)
+
+  const selectedFields = query.fields
+  const items = selectedFields
+    ? paginated.map(item => {
+        const projected: Record<string, unknown> = {}
+        for (const field of selectedFields) {
+          projected[field] = (item as unknown as Record<string, unknown>)[field]
+        }
+        return projected
+      })
+    : paginated
+
+  return Response.json(
+    {
+      total: filtered.length,
+      limit,
+      offset,
+      items,
+    },
+    {
+      headers: {
+        "Accept-Query": "application/json",
+        "Content-Type": "application/json",
+      },
+    }
+  )
 }
 
 function getSocialLinks(): SocialLink[] {
@@ -704,6 +893,7 @@ function handleMy(): Response {
       { path: "/my/books/reviews", description: "Goodreads reviews" },
       { path: "/my/thoughts", description: "Thought posts from RSS" },
       { path: "/my/links", description: "Link posts from RSS" },
+      { path: "QUERY /my/blogs", description: "Rich blog search with QUERY method (RFC 10008)" },
       { path: "/my/blogroll", description: "Curated RSS blogroll" },
       { path: "/my/socials", description: "Social link tree" },
       { path: "/my/newsletter", description: "Newsletter archive from RSS" },
@@ -778,6 +968,10 @@ export default {
     }
     if (pathname === "/my/links") {
       return handleMeetGorSection(url, "links")
+    }
+    if (pathname === "/my/blogs") {
+      if (request.method === "QUERY") return handleBlogQuery(request)
+      return Response.json({ error: "Method not allowed. Use QUERY." }, { status: 405 })
     }
     if (pathname === "/my/blogroll") {
       return handleBlogroll(url)

@@ -271,6 +271,70 @@ paths:
                     items:
                       $ref: "./components.yaml#/components/schemas/BlogPostSummary"
 
+  /my/blogs:
+    query:
+      summary: Query blog posts with rich filters
+      description: |
+        Uses the HTTP QUERY method (RFC 10008) to search and filter blog
+        posts from the public RSS feed. Unlike the GET-based `/my/thoughts`
+        and `/my/links` endpoints, this accepts a JSON body for expressive,
+        multi-dimensional queries.
+
+        The QUERY method is safe and idempotent — it can be cached, retried,
+        and does not mutate any server state.
+      operationId: queryBlogPosts
+      tags:
+        - Profile
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "./components.yaml#/components/schemas/BlogQuery"
+      responses:
+        "200":
+          description: |
+            Filtered blog posts matching the query, returned with
+            pagination metadata.
+          headers:
+            Accept-Query:
+              schema:
+                type: string
+              description: RFC 10008 — advertises supported QUERY media types
+              example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - total
+                  - limit
+                  - offset
+                  - items
+                properties:
+                  total:
+                    type: integer
+                    description: Total number of posts matching the query (before pagination)
+                  limit:
+                    type: integer
+                    description: Maximum number of items returned
+                  offset:
+                    type: integer
+                    description: Number of items skipped
+                  items:
+                    type: array
+                    description: The matching blog posts
+                    items:
+                      $ref: "./components.yaml#/components/schemas/BlogPostSummary"
+        "400":
+          description: Invalid JSON body
+        "415":
+          description: Unsupported media type (Content-Type must be application/json)
+        "422":
+          description: Unprocessable query parameters
+        "405":
+          description: Method not allowed (only QUERY is accepted)
+
   /my/links:
     get:
       summary: List link posts

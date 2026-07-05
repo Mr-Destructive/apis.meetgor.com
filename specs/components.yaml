@@ -190,6 +190,143 @@ components:
             - posts
             - other
 
+    BlogQuerySearch:
+      type: object
+      description: |
+        Advanced search configuration with control over match mode
+        and which fields to search.
+      properties:
+        query:
+          type: string
+          description: The search terms.
+          example: "typescript rust"
+        mode:
+          type: string
+          enum:
+            - all
+            - any
+          default: all
+          description: |
+            `all` requires every term to match (AND); `any` returns
+            posts matching at least one term (OR).
+        fields:
+          type: array
+          description: Which fields to search. Defaults to all text fields.
+          items:
+            type: string
+            enum:
+              - title
+              - description
+              - content
+
+    BlogQuerySort:
+      type: object
+      description: |
+        Sort specification for ordering the query results.
+      properties:
+        field:
+          type: string
+          enum:
+            - pub_date
+            - title
+          description: The field to sort by.
+        order:
+          type: string
+          enum:
+            - asc
+            - desc
+          default: desc
+          description: Sort direction.
+
+    BlogQueryDate:
+      type: object
+      description: Date range filter for blog posts.
+      properties:
+        from:
+          type: string
+          format: date
+          description: Include posts published on or after this date (ISO 8601).
+          example: "2025-01-01"
+        to:
+          type: string
+          format: date
+          description: Include posts published on or before this date (ISO 8601).
+          example: "2025-12-31"
+
+    BlogQuery:
+      type: object
+      description: |
+        The JSON body for a QUERY request to `/my/blogs`. Every field
+        is optional — omitting all filters returns all posts paginated.
+      properties:
+        search:
+          oneOf:
+            - type: string
+              description: Simple case-insensitive substring search across title, description, and content.
+            - $ref: "#/components/schemas/BlogQuerySearch"
+          description: |
+            When a string, performs a case-insensitive substring match
+            across all text fields. When an object, enables advanced
+            multi-term and field-scoped search.
+          example: "typescript"
+        section:
+          type: string
+          enum:
+            - thoughts
+            - links
+            - posts
+            - other
+          description: Filter posts to a specific section.
+        date:
+          $ref: "#/components/schemas/BlogQueryDate"
+        sort:
+          $ref: "#/components/schemas/BlogQuerySort"
+        limit:
+          type: integer
+          default: 10
+          maximum: 100
+          description: Maximum number of posts to return.
+        offset:
+          type: integer
+          default: 0
+          description: Number of posts to skip for pagination.
+        fields:
+          type: array
+          description: |
+            Restrict the response to only these fields. Useful for
+            reducing response size when you only need specific data.
+          items:
+            type: string
+            enum:
+              - title
+              - link
+              - content
+              - description
+              - pub_date
+              - slug
+              - section
+      example:
+        search:
+          query: "typescript rust"
+          mode: "any"
+          fields:
+            - title
+            - description
+        section: posts
+        date:
+          from: "2025-01-01"
+          to: "2025-12-31"
+        sort:
+          field: pub_date
+          order: desc
+        limit: 20
+        offset: 0
+        fields:
+          - title
+          - slug
+          - pub_date
+          - section
+
     SocialLink:
       type: object
       description: |

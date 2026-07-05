@@ -7,3 +7,7 @@ overrides:
       info-description: off
       info-contact: off
       oas3-unused-component: off
+  - files:
+      - "specs/my.yaml"
+    rules:
+      oas3-schema: off  # QUERY is a valid RFC 10008 method, but Spectral doesn't know it

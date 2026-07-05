@@ -36,6 +36,61 @@ curl "$BASE/my/books/reviews?shelf=read"
 curl $BASE/my/thoughts
 curl $BASE/my/links
 
+# RFC 10008 QUERY method — rich blog search with filters
+# (QUERY is safe & idempotent like GET, but uses a request body)
+
+# Simple text search across all fields
+curl -X QUERY $BASE/my/blogs \
+  -H "Content-Type: application/json" \
+  -d '{"search":"typescript"}'
+
+# Multi-term search with AND/OR mode
+curl -X QUERY $BASE/my/blogs \
+  -H "Content-Type: application/json" \
+  -d '{"search":{"query":"typescript rust go","mode":"any"}}'
+
+# Field-scoped search (title + description only)
+curl -X QUERY $BASE/my/blogs \
+  -H "Content-Type: application/json" \
+  -d '{"search":{"query":"api","fields":["title"]}}'
+
+# Filter by section
+curl -X QUERY $BASE/my/blogs \
+  -H "Content-Type: application/json" \
+  -d '{"section":"thoughts"}'
+
+# Date range filter
+curl -X QUERY $BASE/my/blogs \
+  -H "Content-Type: application/json" \
+  -d '{"date":{"from":"2025-01-01","to":"2025-06-30"}}'
+
+# Sort by title ascending
+curl -X QUERY $BASE/my/blogs \
+  -H "Content-Type: application/json" \
+  -d '{"sort":{"field":"title","order":"asc"}}'
+
+# Field projection (only specific fields returned)
+curl -X QUERY $BASE/my/blogs \
+  -H "Content-Type: application/json" \
+  -d '{"fields":["title","slug","pub_date"],"limit":5}'
+
+# Combined: section + date range + search + sort + pagination
+curl -X QUERY $BASE/my/blogs \
+  -H "Content-Type: application/json" \
+  -d '{
+    "search": {"query":"web rust","mode":"all","fields":["title","description"]},
+    "section":"posts",
+    "date":{"from":"2024-01-01"},
+    "sort":{"field":"pub_date","order":"desc"},
+    "limit":10,
+    "offset":0
+  }'
+
+# Pagination with limit/offset
+curl -X QUERY $BASE/my/blogs \
+  -H "Content-Type: application/json" \
+  -d '{"limit":3,"offset":2}'
+
 # Curated blogroll
 curl $BASE/my/blogroll
 curl "$BASE/my/blogroll?search=rust"
