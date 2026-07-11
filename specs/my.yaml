@@ -272,6 +272,55 @@ paths:
                       $ref: "./components.yaml#/components/schemas/BlogPostSummary"
 
   /my/blogs:
+    get:
+      summary: List all blog posts
+      description: |
+        Returns all blog posts from the public RSS feed across every
+        section (thoughts, links, posts, other). Supports simple
+        search and pagination via query parameters.
+
+        For advanced filtering with a request body, use the
+        `QUERY` method on this same path.
+      operationId: listAllBlogPosts
+      tags:
+        - Profile
+      parameters:
+        - name: search
+          in: query
+          description: Search by title, description, or content
+          schema:
+            type: string
+        - name: limit
+          in: query
+          description: Number of items to return
+          schema:
+            type: integer
+            default: 10
+            maximum: 50
+        - name: offset
+          in: query
+          description: Number of items to skip
+          schema:
+            type: integer
+            default: 0
+      responses:
+        "200":
+          description: Blog posts
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  total:
+                    type: integer
+                  limit:
+                    type: integer
+                  offset:
+                    type: integer
+                  items:
+                    type: array
+                    items:
+                      $ref: "./components.yaml#/components/schemas/BlogPostSummary"
     query:
       summary: Query blog posts with rich filters
       description: |

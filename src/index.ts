@@ -445,8 +445,18 @@ async function fetchMeetGorPosts(): Promise<BlogItem[]> {
 }
 
 async function fetchGoodreadsBooks(): Promise<GoodreadsItem[]> {
-  const xml = await fetchXml(GOODREADS_RSS_URL)
-  return parseGoodreadsItems(xml)
+  const allItems: GoodreadsItem[] = []
+  const PER_PAGE = 200
+
+  for (let page = 1; page <= 10; page++) {
+    const url = `${GOODREADS_RSS_URL}?per_page=${PER_PAGE}&page=${page}`
+    const xml = await fetchXml(url)
+    const items = parseGoodreadsItems(xml)
+    if (items.length === 0) break
+    allItems.push(...items)
+  }
+
+  return allItems
 }
 
 async function handleGoodreadsBooks(url: URL): Promise<Response> {
@@ -497,6 +507,20 @@ async function handleMeetGorSection(url: URL, section: "thoughts" | "links"): Pr
 
   return Response.json({
     section,
+    total: filtered.length,
+    limit,
+    offset,
+    items,
+  })
+}
+
+async function handleAllBlogPosts(url: URL): Promise<Response> {
+  const { limit, offset, search } = parseListQuery(url)
+  const posts = await fetchMeetGorPosts()
+  const filtered = posts.filter(item => matchesText([item.title, item.description, item.content], search))
+  const items = paginate(filtered, limit, offset)
+
+  return Response.json({
     total: filtered.length,
     limit,
     offset,
@@ -893,6 +917,7 @@ function handleMy(): Response {
       { path: "/my/books/reviews", description: "Goodreads reviews" },
       { path: "/my/thoughts", description: "Thought posts from RSS" },
       { path: "/my/links", description: "Link posts from RSS" },
+      { path: "/my/blogs", description: "All blog posts from RSS (GET for simple, QUERY for rich filters)" },
       { path: "QUERY /my/blogs", description: "Rich blog search with QUERY method (RFC 10008)" },
       { path: "/my/blogroll", description: "Curated RSS blogroll" },
       { path: "/my/socials", description: "Social link tree" },
@@ -970,8 +995,9 @@ export default {
       return handleMeetGorSection(url, "links")
     }
     if (pathname === "/my/blogs") {
+      if (request.method === "GET") return handleAllBlogPosts(url)
       if (request.method === "QUERY") return handleBlogQuery(request)
-      return Response.json({ error: "Method not allowed. Use QUERY." }, { status: 405 })
+      return Response.json({ error: "Method not allowed. Use GET or QUERY." }, { status: 405 })
     }
     if (pathname === "/my/blogroll") {
       return handleBlogroll(url)
