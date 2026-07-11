@@ -21,6 +21,7 @@ const allSpecs = [
   { file: "quiz.yaml", tag: "Quiz", group: "Quiz" },
   { file: "llamaline.yaml", tag: null, group: "Llamaline API", tagsFromSpec: true },
   { file: "doclet.yaml", tag: "Doclet", group: "Doclet API" },
+  { file: "flights.yaml", tag: "Flights", group: "Flight Observatory" },
 ]
 
 const tagGroups = [
@@ -29,6 +30,7 @@ const tagGroups = [
   { name: "Quiz", tags: ["Quiz"] },
   { name: "Llamaline API", tags: ["Providers", "Models", "Timeline"] },
   { name: "Doclet API", tags: ["Doclet"] },
+  { name: "Flight Observatory", tags: ["Flights"] },
 ]
 
 const perApiSpecs = [
@@ -43,6 +45,7 @@ const perApiSpecs = [
   { file: "quiz.yaml", out: "quiz/docs/openapi.yaml" },
   { file: "llamaline.yaml", out: "llamaline/docs/openapi.yaml" },
   { file: "doclet.yaml", out: "doclet/docs/openapi.yaml" },
+  { file: "flights.yaml", out: "flights/docs/openapi.yaml" },
 ]
 
 function resolveJsonPointer(obj, pointer) {

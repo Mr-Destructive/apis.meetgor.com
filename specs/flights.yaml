@@ -1,0 +1,152 @@
+---
+openapi: "3.1.0"
+info:
+  title: Flight Observatory API
+  description: |
+    Query live global flight data from the OpenSky Network using the HTTP
+    QUERY method (RFC 10008).
+
+    Unlike GET, QUERY accepts a JSON body, making it possible to express
+    complex multi-dimensional filters (altitude ranges, speed ranges,
+    bounding boxes, airlines, countries, etc.) that would be unwieldy or
+    impossible in URL query parameters.
+
+    QUERY is safe and idempotent — it can be cached and retried without
+    side effects, unlike POST.
+  version: "1.0.0"
+  contact:
+    name: Meet Gor
+    url: https://meetgor.com
+
+servers:
+  - url: https://apis.meetgor.com
+    description: Production server
+
+tags:
+  - name: Flights
+    description: Live flight data queries via the HTTP QUERY method
+
+paths:
+  /flights:
+    get:
+      summary: Flight API information
+      description: Returns metadata about the Flight Observatory API and how to use it.
+      operationId: getFlightsInfo
+      tags:
+        - Flights
+      responses:
+        "200":
+          description: API information
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  description:
+                    type: string
+                  usage:
+                    type: string
+                  methods:
+                    type: array
+                    items:
+                      type: string
+                  docs:
+                    type: string
+
+    query:
+      summary: Query live flights
+      description: |
+        Query the latest snapshot of global flight data from the OpenSky
+        Network. The request body is a JSON object where every filter
+        field is optional.
+
+        **Why QUERY instead of GET or POST?**
+
+        A GET request for the same filters would look like:
+
+        ```
+        GET /flights?callsign=AXB&airline=Air+India&altitude_min=3000&altitude_max=12000&speed_min=100&bbox.south=18.5&bbox.north=19.5&bbox.west=72.5&bbox.east=73.5&on_ground=false&sort=-altitude&limit=50&fields=callsign,airline,altitude,lat,lon
+        ```
+
+        This is:
+        - Unwieldy (long URLs, encoding issues, logging noise)
+        - Flattened (nested structures like bounding boxes are unnatural)
+        - Not cacheable by content
+
+        POST is not ideal because it is not safe or idempotent —
+        searching data should not imply resource creation.
+
+        QUERY solves all of these: structured JSON body, safe & idempotent,
+        cacheable, and self-documenting via the `Accept-Query` header.
+      operationId: queryFlights
+      tags:
+        - Flights
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "./components.yaml#/components/schemas/FlightQuery"
+      responses:
+        "200":
+          description: |
+            Flights matching the query, with pagination metadata and a
+            summary of the current airspace snapshot.
+          headers:
+            Accept-Query:
+              schema:
+                type: string
+              description: RFC 10008 — advertises supported QUERY media types
+              example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - total
+                  - limit
+                  - offset
+                  - summary
+                  - items
+                properties:
+                  total:
+                    type: integer
+                    description: Number of flights matching the query (before pagination)
+                  limit:
+                    type: integer
+                    description: Maximum items returned in this response
+                  offset:
+                    type: integer
+                    description: Number of items skipped
+                  summary:
+                    type: object
+                    description: Airspace snapshot metadata
+                    properties:
+                      generated_at:
+                        type: string
+                        format: date-time
+                      total_flights:
+                        type: integer
+                      unique_airlines:
+                        type: integer
+                      unique_airports:
+                        type: integer
+                      airborne:
+                        type: integer
+                      on_ground:
+                        type: integer
+                  items:
+                    type: array
+                    description: The matching flights
+                    items:
+                      $ref: "./components.yaml#/components/schemas/Flight"
+        "400":
+          description: Invalid JSON body
+        "415":
+          description: Unsupported media type (Content-Type must be application/json)
+        "422":
+          description: Unprocessable query parameters
+        "502":
+          description: Upstream flight data source unavailable

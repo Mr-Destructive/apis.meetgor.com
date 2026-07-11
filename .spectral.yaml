@@ -9,5 +9,6 @@ overrides:
       oas3-unused-component: off
   - files:
       - "specs/my.yaml"
+      - "specs/flights.yaml"
     rules:
       oas3-schema: off  # QUERY is a valid RFC 10008 method, but Spectral doesn't know it

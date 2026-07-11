@@ -504,3 +504,240 @@ components:
         turn: O
         winner: X
         draw: false
+
+    Flight:
+      type: object
+      description: |
+        A single aircraft state vector from the OpenSky Network. All
+        position fields (lat, lon, altitude, velocity, heading) may be
+        null if the aircraft has not recently transmitted position data.
+      required:
+        - timestamp
+        - icao24
+        - callsign
+        - airline
+        - origin_country
+        - on_ground
+        - airport
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+          description: When this state was observed by the pipeline
+        icao24:
+          type: string
+          description: ICAO 24-bit transponder address (hex)
+          example: "80162c"
+        callsign:
+          type: string
+          description: Flight callsign (e.g. AXB1253)
+          example: "AXB1253"
+        airline:
+          type: string
+          description: Resolved airline name
+          example: "Air India Express"
+        origin_country:
+          type: string
+          description: Country associated with the aircraft's ICAO address
+          example: "India"
+        lat:
+          type: number
+          format: double
+          nullable: true
+          description: WGS-84 latitude (decimal degrees)
+        lon:
+          type: number
+          format: double
+          nullable: true
+          description: WGS-84 longitude (decimal degrees)
+        altitude:
+          type: number
+          format: double
+          nullable: true
+          description: Barometric altitude in meters
+        on_ground:
+          type: boolean
+          description: Whether the aircraft is on the ground
+        velocity:
+          type: number
+          format: double
+          nullable: true
+          description: Ground speed in m/s
+        heading:
+          type: number
+          format: double
+          nullable: true
+          description: True track heading in degrees from north (0-360)
+        airport:
+          type: string
+          description: Nearest airport ICAO code
+          example: "VIDP"
+
+    FlightQueryBbox:
+      type: object
+      description: Geographic bounding box filter
+      required:
+        - south
+        - west
+        - north
+        - east
+      properties:
+        south:
+          type: number
+          format: double
+          description: Southern latitude bound (-90 to 90)
+          example: 18.5
+        west:
+          type: number
+          format: double
+          description: Western longitude bound (-180 to 180)
+          example: 72.5
+        north:
+          type: number
+          format: double
+          description: Northern latitude bound (-90 to 90)
+          example: 19.5
+        east:
+          type: number
+          format: double
+          description: Eastern longitude bound (-180 to 180)
+          example: 73.5
+
+    FlightQueryRange:
+      type: object
+      description: A numeric range filter with optional min and/or max
+      properties:
+        min:
+          type: number
+          description: Lower bound (inclusive)
+        max:
+          type: number
+          description: Upper bound (inclusive)
+
+    FlightQuerySort:
+      type: object
+      description: Sort specification for ordering results
+      properties:
+        field:
+          type: string
+          enum:
+            - altitude
+            - velocity
+            - heading
+            - callsign
+            - airline
+            - timestamp
+          description: The field to sort by
+        order:
+          type: string
+          enum:
+            - asc
+            - desc
+          default: desc
+          description: Sort direction
+
+    FlightQuery:
+      type: object
+      description: |
+        The JSON body for a QUERY request to `/flights`. Every field
+        is optional. The more filters you specify, the more targeted
+        your results.
+
+        Compare this to the equivalent GET query string:
+
+        ```
+        ?callsign=AXB&airline=Air+India&altitude.min=3000&altitude.max=12000&speed.min=100&bbox.south=18.5&bbox.north=19.5&bbox.west=72.5&bbox.east=73.5&on_ground=false&sort.field=altitude&sort.order=desc&limit=50&fields=callsign,airline,altitude,lat,lon
+        ```
+
+        The QUERY version is cleaner, avoids URL encoding issues, and
+        keeps sensitive or complex filter logic out of server logs.
+      properties:
+        callsign:
+          type: string
+          description: Substring match on flight callsign
+          example: "AXB"
+        airline:
+          type: string
+          description: Substring match on airline name
+          example: "Air India"
+        country:
+          type: string
+          description: Substring match on origin country
+          example: "India"
+        airport:
+          type: string
+          description: Exact match on nearest airport ICAO code
+          example: "VIDP"
+        search:
+          type: string
+          description: Full-text search across callsign, airline, country, and airport
+          example: "Air India DEL"
+        altitude:
+          $ref: "#/components/schemas/FlightQueryRange"
+          description: Filter by barometric altitude range (meters)
+        speed:
+          $ref: "#/components/schemas/FlightQueryRange"
+          description: Filter by ground speed range (m/s)
+        heading:
+          $ref: "#/components/schemas/FlightQueryRange"
+          description: Filter by heading range (degrees from north)
+        bbox:
+          $ref: "#/components/schemas/FlightQueryBbox"
+          description: Geographic bounding box filter
+        on_ground:
+          type: boolean
+          description: Filter by ground/airborne status
+        sort:
+          $ref: "#/components/schemas/FlightQuerySort"
+        limit:
+          type: integer
+          default: 50
+          maximum: 500
+          description: Maximum flights to return
+        offset:
+          type: integer
+          default: 0
+          description: Number of flights to skip
+        fields:
+          type: array
+          description: Restrict response to only these fields
+          items:
+            type: string
+            enum:
+              - timestamp
+              - icao24
+              - callsign
+              - airline
+              - origin_country
+              - lat
+              - lon
+              - altitude
+              - on_ground
+              - velocity
+              - heading
+              - airport
+      example:
+        callsign: "AXB"
+        airline: "Air India"
+        altitude:
+          min: 3000
+          max: 12000
+        speed:
+          min: 100
+        bbox:
+          south: 18.5
+          west: 72.5
+          north: 19.5
+          east: 73.5
+        on_ground: false
+        sort:
+          field: altitude
+          order: desc
+        limit: 20
+        offset: 0
+        fields:
+          - callsign
+          - airline
+          - altitude
+          - lat
+          - lon

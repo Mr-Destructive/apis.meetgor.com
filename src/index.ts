@@ -6,6 +6,7 @@ import { handleVirtualFight } from "./games/virtual-fight"
 import { handleLlamaline } from "./llamaline"
 import { handleDoclet } from "./doclet"
 import { handleQuiz } from "./quiz"
+import { handleFlights } from "./flights"
 import { scalarHtml } from "./openapi/docs"
 
 const RSS_URL = "https://www.meetgor.com/type/newsletter/rss.xml"
@@ -168,6 +169,15 @@ const apis: ApiEntry[] = [
       "/doclet/v1/operate",
       "/doclet/v1/merge",
       "/doclet/docs",
+    ],
+  },
+  {
+    name: "Flight Observatory",
+    description: "Live flight data from OpenSky Network queried via the HTTP QUERY method (RFC 10008)",
+    path: "/flights",
+    endpoints: [
+      "/flights",
+      "/flights/docs",
     ],
   },
 ]
@@ -1046,6 +1056,19 @@ export default {
     if (pathname.startsWith("/doclet")) {
       return handleDoclet(request)
     }
+
+    if (pathname === "/flights") {
+      if (request.method === "QUERY") return handleFlights(request)
+      if (request.method === "GET") return Response.json({
+        name: "Flight Observatory API",
+        description: "Query live global flight data from the OpenSky Network via the HTTP QUERY method (RFC 10008). Supports rich multi-dimensional filters on altitude, speed, heading, airline, country, bounding box, and more.",
+        usage: "Send a QUERY request with Content-Type: application/json and a JSON body of filters.",
+        methods: ["QUERY"],
+        docs: "/flights/docs",
+      })
+      return Response.json({ error: "Method not allowed. Use QUERY." }, { status: 405 })
+    }
+    if (pathname === "/flights/docs") return serveDocs("Flight Observatory", "/flights/docs/openapi.yaml")
 
     return Response.json({ error: "Not found" }, { status: 404 })
   },
