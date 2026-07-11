@@ -335,6 +335,149 @@ curl "$BASE/llamaline/v1/models?limit=5&offset=0"
 curl $BASE/llamaline/docs
 ```
 
+## Flight Observatory
+
+The `/flights` endpoint uses the HTTP QUERY method (RFC 10008) for rich multi-dimensional flight queries. This is a perfect showcase of why QUERY is superior to GET or POST for complex filtering.
+
+```sh
+BASE=https://apis.meetgor.com
+
+# API info (GET returns metadata)
+curl $BASE/flights
+
+# Docs
+curl $BASE/flights/docs
+
+# --- Simple filters ---
+
+# Flights by airline
+curl -X QUERY $BASE/flights \
+  -H "Content-Type: application/json" \
+  -d '{"airline":"Air India","limit":5}'
+
+# Flights by callsign prefix
+curl -X QUERY $BASE/flights \
+  -H "Content-Type: application/json" \
+  -d '{"callsign":"AXB","limit":5}'
+
+# Flights by country
+curl -X QUERY $BASE/flights \
+  -H "Content-Type: application/json" \
+  -d '{"country":"India","limit":5}'
+
+# Flights at a specific airport
+curl -X QUERY $BASE/flights \
+  -H "Content-Type: application/json" \
+  -d '{"airport":"VIDP","limit":5}'
+
+# Full-text search across all text fields
+curl -X QUERY $BASE/flights \
+  -H "Content-Type: application/json" \
+  -d '{"search":"Emirates","limit":3}'
+
+# --- Numeric range filters ---
+
+# High altitude flights (cruising)
+curl -X QUERY $BASE/flights \
+  -H "Content-Type: application/json" \
+  -d '{"altitude":{"min":10000,"max":14000},"limit":10}'
+
+# Low & slow (approach/landing)
+curl -X QUERY $BASE/flights \
+  -H "Content-Type: application/json" \
+  -d '{"altitude":{"max":500},"speed":{"max":80},"limit":10}'
+
+# Heading northbound (0-45 degrees)
+curl -X QUERY $BASE/flights \
+  -H "Content-Type: application/json" \
+  -d '{"heading":{"min":0,"max":45},"limit":10}'
+
+# --- Geographic filters ---
+
+# Mumbai airspace bounding box
+curl -X QUERY $BASE/flights \
+  -H "Content-Type: application/json" \
+  -d '{"bbox":{"south":18.5,"west":72.5,"north":19.5,"east":73.5},"limit":20}'
+
+# Delhi airspace
+curl -X QUERY $BASE/flights \
+  -H "Content-Type: application/json" \
+  -d '{"bbox":{"south":28.0,"west":76.5,"north":29.0,"east":77.5},"limit":20}'
+
+# --- Status filters ---
+
+# Only airborne flights
+curl -X QUERY $BASE/flights \
+  -H "Content-Type: application/json" \
+  -d '{"on_ground":false,"limit":10}'
+
+# Only grounded flights (at airports)
+curl -X QUERY $BASE/flights \
+  -H "Content-Type: application/json" \
+  -d '{"on_ground":true,"limit":10}'
+
+# --- Sorting ---
+
+# Fastest flights first
+curl -X QUERY $BASE/flights \
+  -H "Content-Type: application/json" \
+  -d '{"sort":{"field":"velocity","order":"desc"},"limit":10}'
+
+# Highest altitude first
+curl -X QUERY $BASE/flights \
+  -H "Content-Type: application/json" \
+  -d '{"sort":{"field":"altitude","order":"desc"},"limit":10}'
+
+# Alphabetical by airline
+curl -X QUERY $BASE/flights \
+  -H "Content-Type: application/json" \
+  -d '{"sort":{"field":"airline","order":"asc"},"limit":10}'
+
+# --- Field projection ---
+
+# Only position data
+curl -X QUERY $BASE/flights \
+  -H "Content-Type: application/json" \
+  -d '{"fields":["callsign","lat","lon","altitude","heading"],"limit":5}'
+
+# Only identity data
+curl -X QUERY $BASE/flights \
+  -H "Content-Type: application/json" \
+  -d '{"fields":["callsign","airline","origin_country","airport"],"limit":5}'
+
+# --- Pagination ---
+
+curl -X QUERY $BASE/flights \
+  -H "Content-Type: application/json" \
+  -d '{"limit":3,"offset":5}'
+
+# --- Combined: everything ---
+
+# All IndiGo flights over Mumbai, airborne, above 3000m, sorted by altitude
+curl -X QUERY $BASE/flights \
+  -H "Content-Type: application/json" \
+  -d '{
+    "airline":"IndiGo",
+    "bbox":{"south":18.5,"west":72.5,"north":19.5,"east":73.5},
+    "altitude":{"min":3000},
+    "on_ground":false,
+    "sort":{"field":"altitude","order":"desc"},
+    "limit":10,
+    "fields":["callsign","altitude","velocity","heading","lat","lon"]
+  }'
+
+# --- Why QUERY over GET? ---
+# The equivalent GET URL for that last query would be:
+#
+#   GET /flights?airline=IndiGo&bbox.south=18.5&bbox.west=72.5&bbox.north=19.5
+#          &bbox.east=73.5&altitude.min=3000&on_ground=false&sort.field=altitude
+#          &sort.order=desc&limit=10&fields=callsign,altitude,velocity,heading,lat,lon
+#
+# That's unwieldy, prone to URL truncation/encoding issues, and pollutes logs.
+# QUERY keeps the filter logic in the body where it belongs.
+# And unlike POST, QUERY is safe & idempotent — identical queries can be cached and retried.
+```
+
 ## Doclet
 
 ```sh
