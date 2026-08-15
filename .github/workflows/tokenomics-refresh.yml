@@ -1,0 +1,90 @@
+name: Tokenomics Pricing Refresh
+
+on:
+  schedule:
+    # Run daily at 06:00 UTC (11:30 IST)
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run — print diff without committing"
+        required: false
+        default: "false"
+        type: boolean
+
+jobs:
+  refresh-pricing:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run pricing scraper
+        run: node scripts/scrape-pricing.mjs
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+
+      - name: Run news scraper
+        run: node scripts/scrape-news.mjs
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet src/tokenomics/or-models.ts src/tokenomics/news-models.ts; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No pricing changes detected."
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Pricing changes detected."
+            git diff src/tokenomics/or-models.ts src/tokenomics/news-models.ts
+          fi
+
+      - name: Typecheck after update
+        if: steps.changes.outputs.changed == 'true' && github.event.inputs.dry_run != 'true'
+        run: npm run build:specs && npm run typecheck
+
+      - name: Commit and push pricing update
+        if: steps.changes.outputs.changed == 'true' && github.event.inputs.dry_run != 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/tokenomics/or-models.ts src/tokenomics/news-models.ts
+          git commit -m "chore(tokenomics): refresh pricing data [$(date -u +%Y-%m-%d)]
+
+          Automated daily pricing refresh from:
+          - OpenRouter API (openrouter.ai/api/v1/models)
+          - Hacker News + official lab RSS feeds (scripts/scrape-news.mjs)
+
+          [skip ci]"
+          git push
+
+      - name: Summarize changes
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          echo "## Pricing refresh summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Date:** $(date -u +%Y-%m-%d)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Changed models:" >> $GITHUB_STEP_SUMMARY
+          git diff HEAD~1 -- src/tokenomics/or-models.ts src/tokenomics/news-models.ts | grep "^[+-].*Per1M\|effectiveDate" | head -50 >> $GITHUB_STEP_SUMMARY || true
+
+      - name: No changes summary
+        if: steps.changes.outputs.changed == 'false'
+        run: |
+          echo "## Pricing refresh summary" >> $GITHUB_STEP_SUMMARY
+          echo "No pricing changes detected on $(date -u +%Y-%m-%d)." >> $GITHUB_STEP_SUMMARY

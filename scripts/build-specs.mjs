@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, mkdirSync, rmSync } from "fs"
+import { readFileSync, writeFileSync, mkdirSync, rmSync, copyFileSync, existsSync } from "fs"
 import { resolve, dirname } from "path"
 import { fileURLToPath } from "url"
 import yaml from "js-yaml"
@@ -22,6 +22,7 @@ const allSpecs = [
   { file: "llamaline.yaml", tag: null, group: "Llamaline API", tagsFromSpec: true },
   { file: "doclet.yaml", tag: "Doclet", group: "Doclet API" },
   { file: "flights.yaml", tag: "Flights", group: "Flight Observatory" },
+  { file: "tokenomics.yaml", tag: null, group: "Tokenomics API", tagsFromSpec: true },
 ]
 
 const tagGroups = [
@@ -31,6 +32,7 @@ const tagGroups = [
   { name: "Llamaline API", tags: ["Providers", "Models", "Timeline"] },
   { name: "Doclet API", tags: ["Doclet"] },
   { name: "Flight Observatory", tags: ["Flights"] },
+  { name: "Tokenomics API", tags: ["Pricing Providers", "Pricing Models", "Cost Estimation"] },
 ]
 
 const perApiSpecs = [
@@ -46,6 +48,7 @@ const perApiSpecs = [
   { file: "llamaline.yaml", out: "llamaline/docs/openapi.yaml" },
   { file: "doclet.yaml", out: "doclet/docs/openapi.yaml" },
   { file: "flights.yaml", out: "flights/docs/openapi.yaml" },
+  { file: "tokenomics.yaml", out: "tokenomics/docs/openapi.yaml" },
 ]
 
 function resolveJsonPointer(obj, pointer) {
@@ -119,6 +122,17 @@ function build() {
   console.log(`  Loaded shared components\n`)
 
   rmSync(OUT_DIR, { recursive: true, force: true })
+  mkdirSync(OUT_DIR, { recursive: true })
+
+  // Copy Scalar standalone with QUERY method support (built from forked repo)
+  const scalarBundleSource = resolve(SPECS_DIR, "../scalar/packages/api-reference/dist/browser/standalone.js")
+  const scalarBundleDest = resolve(OUT_DIR, "scalar-standalone.js")
+  if (existsSync(scalarBundleSource)) {
+    copyFileSync(scalarBundleSource, scalarBundleDest)
+    console.log(`  scalar-standalone.js -> assets/scalar-standalone.js`)
+  } else {
+    console.warn(`  WARNING: scalar standalone bundle not found at ${scalarBundleSource}`)
+  }
 
   // Build combined spec for /docs (all APIs in one Scalar UI)
   const combined = {

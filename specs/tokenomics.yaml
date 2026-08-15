@@ -1,0 +1,1305 @@
+openapi: 3.1.0
+info:
+  title: Tokenomics API
+  summary: LLM pricing intelligence — cost models, estimation, and comparison
+  description: >
+    Tokenomics is a comprehensive LLM pricing API that provides accurate,
+    up-to-date cost models for AI language model providers and their models.
+
+    **What it does:** - Returns precise per-token pricing for all major LLM
+    providers (OpenAI,
+      Anthropic, Google, Mistral, DeepSeek, xAI, Cohere, Meta Llama)
+    - Supports full pricing schema: input, output, cache read/write, reasoning,
+      audio, image, and batch pricing tiers
+    - Covers model capabilities: context window, max output tokens, modalities -
+    Provides cost estimation for a given number of input and output tokens -
+    Enables multi-model cost comparison in a single request - Finds the cheapest
+    models for a given workload
+
+    **Data freshness:** Pricing data is refreshed daily via a GitHub Actions
+    cron job that scrapes the OpenRouter model catalogue and mines recent
+    pricing announcements from Hacker News and official lab RSS feeds. News-
+    derived facts are only published when they come from an official provider
+    domain or are corroborated by multiple independent sources, and are tagged
+    with `news`.
+
+    **Use cases:** - Cost analysis for LLM-powered applications - Provider
+    selection and budget planning - Real-time cost attribution in agentic
+    pipelines - Model benchmarking by cost efficiency
+  version: 0.1.0
+  contact:
+    name: Meet Gor
+    url: https://apis.meetgor.com/tokenomics
+    email: gormeet711@gmail.com
+servers:
+  - url: https://apis.meetgor.com/tokenomics/v1
+    description: Production
+  - url: http://localhost:8787/tokenomics/v1
+    description: Local development
+tags:
+  - name: Pricing Providers
+    description: LLM provider organisations with pricing metadata
+  - name: Pricing Models
+    description: Individual models with full pricing and capability details
+  - name: Cost Estimation
+    description: Token cost calculation and multi-model comparison
+paths:
+  /providers:
+    get:
+      tags:
+        - Pricing Providers
+      operationId: listPricingProviders
+      summary: List LLM providers
+      description: >
+        Returns a paginated list of LLM providers. Each provider includes a link
+        to its official pricing page and a count of tracked models.
+      parameters:
+        - $ref: '#/components/parameters/Search'
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+      responses:
+        '200':
+          description: Providers retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PricingProviderCollection'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+  /providers/{providerId}:
+    get:
+      tags:
+        - Pricing Providers
+      operationId: getPricingProvider
+      summary: Get provider by ID
+      description: Returns a single provider with pricing page URL and model count.
+      parameters:
+        - $ref: '#/components/parameters/ProviderId'
+      responses:
+        '200':
+          description: Provider retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PricingProvider'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /models:
+    get:
+      tags: &ref_0
+        - Pricing Models
+      operationId: listPricingModels
+      summary: List models with pricing
+      description: >
+        Returns a paginated list of LLM models with their current pricing.
+        Supports rich filtering by provider, family, status, modality, and price
+        ceiling. Sort by input/output price, context window, or name.
+      parameters:
+        - $ref: '#/components/parameters/Search'
+        - $ref: '#/components/parameters/ProviderIdFilter'
+        - $ref: '#/components/parameters/FamilyFilter'
+        - $ref: '#/components/parameters/ModelStatusFilter'
+        - $ref: '#/components/parameters/ModalityFilter'
+        - $ref: '#/components/parameters/MaxInputPrice'
+        - $ref: '#/components/parameters/MaxOutputPrice'
+        - $ref: '#/components/parameters/TagsFilter'
+        - $ref: '#/components/parameters/SortField'
+        - $ref: '#/components/parameters/SortOrder'
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+      responses: &ref_1
+        '200':
+          description: Models retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PricingModelCollection'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+    query:
+      tags: *ref_0
+      operationId: listPricingModelsQuery
+      summary: List models with pricing (QUERY)
+      description: >
+        Returns a paginated list of LLM models with their current pricing.
+        Supports rich filtering by provider, family, status, modality, and price
+        ceiling. Sort by input/output price, context window, or name.
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                providerId:
+                  type: string
+                family:
+                  type: string
+                status:
+                  type: string
+                modality:
+                  type: string
+                maxInputPrice:
+                  type: number
+                maxOutputPrice:
+                  type: number
+                tags:
+                  type: array
+                  items:
+                    type: string
+                sort:
+                  type: object
+                  properties:
+                    field:
+                      type: string
+                    order:
+                      type: string
+                limit:
+                  type: integer
+                offset:
+                  type: integer
+                search:
+                  type: string
+      responses: *ref_1
+  /models/{modelId}:
+    get:
+      tags:
+        - Pricing Models
+      operationId: getPricingModel
+      summary: Get model by ID
+      description: >
+        Returns a single model with full details including all pricing tiers,
+        modalities, context window, knowledge cutoff, and capability flags.
+      parameters:
+        - $ref: '#/components/parameters/ModelId'
+      responses:
+        '200':
+          description: Model retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PricingModelFull'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /models/{modelId}/pricing:
+    get:
+      tags:
+        - Pricing Models
+      operationId: getModelPricing
+      summary: Get pricing details for a model
+      description: >
+        Returns the complete pricing breakdown for a model including: current
+        pricing tier, full pricing history, and capability flags (supports
+        caching, batch, reasoning tokens, audio, image).
+      parameters:
+        - $ref: '#/components/parameters/ModelId'
+      responses:
+        '200':
+          description: Pricing details retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelPricingDetail'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /estimate:
+    post:
+      tags:
+        - Cost Estimation
+      operationId: estimateCost
+      summary: Estimate cost for a model
+      description: >
+        Calculates the total cost for a given number of input and output tokens
+        against a specific model. Supports all token types: input, output, cache
+        read/write, reasoning, audio. Returns a full cost breakdown per
+        component.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EstimateRequest'
+            examples:
+              simple:
+                summary: Simple input/output estimate
+                value:
+                  modelId: gpt-4.1-mini
+                  inputTokens: 10000
+                  outputTokens: 2000
+              with_caching:
+                summary: With prompt caching
+                value:
+                  modelId: claude-sonnet-4
+                  inputTokens: 50000
+                  outputTokens: 5000
+                  cacheReadTokens: 45000
+                  cacheWriteTokens: 50000
+              batch:
+                summary: Batch API pricing
+                value:
+                  modelId: gpt-4.1
+                  inputTokens: 1000000
+                  outputTokens: 200000
+                  useBatchPricing: true
+      responses:
+        '200':
+          description: Cost estimate calculated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CostEstimate'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    query:
+      tags:
+        - Cost Estimation
+      operationId: estimateCost
+      summary: Estimate cost for a model (QUERY)
+      description: >
+        Calculates the total cost for a given number of input and output tokens
+        against a specific model. Supports all token types: input, output, cache
+        read/write, reasoning, audio. Returns a full cost breakdown per
+        component.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EstimateRequest'
+            examples:
+              simple:
+                summary: Simple input/output estimate
+                value:
+                  modelId: gpt-4.1-mini
+                  inputTokens: 10000
+                  outputTokens: 2000
+              with_caching:
+                summary: With prompt caching
+                value:
+                  modelId: claude-sonnet-4
+                  inputTokens: 50000
+                  outputTokens: 5000
+                  cacheReadTokens: 45000
+                  cacheWriteTokens: 50000
+              batch:
+                summary: Batch API pricing
+                value:
+                  modelId: gpt-4.1
+                  inputTokens: 1000000
+                  outputTokens: 200000
+                  useBatchPricing: true
+      responses:
+        '200':
+          description: Cost estimate calculated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CostEstimate'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /compare:
+    post:
+      tags:
+        - Cost Estimation
+      operationId: compareCosts
+      summary: Compare costs across multiple models
+      description: >
+        Calculates and compares the total cost for a given token workload across
+        multiple models simultaneously. Returns estimates sorted by total cost
+        (cheapest first), with the cheapest and most expensive model identified.
+        Maximum 20 models per request.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompareRequest'
+            examples:
+              compare_flagships:
+                summary: Compare frontier models
+                value:
+                  modelIds:
+                    - gpt-4.1
+                    - claude-opus-4
+                    - gemini-2-5-pro
+                    - deepseek-r1
+                  inputTokens: 100000
+                  outputTokens: 20000
+              compare_efficient:
+                summary: Compare budget models
+                value:
+                  modelIds:
+                    - gpt-4.1-nano
+                    - claude-3-haiku
+                    - gemini-2-0-flash
+                    - mistral-small-3
+                  inputTokens: 1000000
+                  outputTokens: 100000
+      responses:
+        '200':
+          description: Cost comparison calculated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CostComparison'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+    query:
+      tags:
+        - Cost Estimation
+      operationId: compareCosts
+      summary: Compare costs across multiple models (QUERY)
+      description: >
+        Calculates and compares the total cost for a given token workload across
+        multiple models simultaneously. Returns estimates sorted by total cost
+        (cheapest first), with the cheapest and most expensive model identified.
+        Maximum 20 models per request.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompareRequest'
+            examples:
+              compare_flagships:
+                summary: Compare frontier models
+                value:
+                  modelIds:
+                    - gpt-4.1
+                    - claude-opus-4
+                    - gemini-2-5-pro
+                    - deepseek-r1
+                  inputTokens: 100000
+                  outputTokens: 20000
+              compare_efficient:
+                summary: Compare budget models
+                value:
+                  modelIds:
+                    - gpt-4.1-nano
+                    - claude-3-haiku
+                    - gemini-2-0-flash
+                    - mistral-small-3
+                  inputTokens: 1000000
+                  outputTokens: 100000
+      responses:
+        '200':
+          description: Cost comparison calculated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CostComparison'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+  /cheapest:
+    get:
+      tags: &ref_2
+        - Cost Estimation
+      operationId: findCheapestModels
+      summary: Find cheapest models for a workload
+      description: >
+        Ranks all tracked models by total cost for a given token workload.
+        Filter by provider, status, or required modality. Returns models sorted
+        cheapest first — ideal for budget-conscious provider selection.
+      parameters:
+        - name: inputTokens
+          in: query
+          description: Number of input tokens for cost calculation (default 1,000,000).
+          schema:
+            type: integer
+            minimum: 0
+            default: 1000000
+          example: 500000
+        - name: outputTokens
+          in: query
+          description: Number of output tokens for cost calculation (default 100,000).
+          schema:
+            type: integer
+            minimum: 0
+            default: 100000
+          example: 50000
+        - $ref: '#/components/parameters/ProviderIdFilter'
+        - $ref: '#/components/parameters/ModalityFilter'
+        - $ref: '#/components/parameters/ModelStatusFilter'
+        - $ref: '#/components/parameters/Limit'
+      responses: &ref_3
+        '200':
+          description: Cheapest models retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CheapestResult'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+    query:
+      tags: *ref_2
+      operationId: findCheapestModelsQuery
+      summary: Find cheapest models for a workload (QUERY)
+      description: >
+        Ranks all tracked models by total cost for a given token workload.
+        Filter by provider, status, or required modality. Returns models sorted
+        cheapest first — ideal for budget-conscious provider selection.
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                inputTokens:
+                  type: integer
+                outputTokens:
+                  type: integer
+                providerId:
+                  type: string
+                modality:
+                  type: string
+                status:
+                  type: string
+                limit:
+                  type: integer
+      responses: *ref_3
+components:
+  parameters:
+    Search:
+      name: search
+      in: query
+      description: Full-text search across name, family, and provider fields.
+      schema:
+        type: string
+      example: gemini
+    ProviderId:
+      name: providerId
+      in: path
+      required: true
+      description: Provider identifier (slug).
+      schema:
+        type: string
+      example: openai
+    ModelId:
+      name: modelId
+      in: path
+      required: true
+      description: Model identifier (slug).
+      schema:
+        type: string
+      example: gpt-4.1-mini
+    ProviderIdFilter:
+      name: providerId
+      in: query
+      description: Filter by provider identifier.
+      schema:
+        type: string
+      example: anthropic
+    FamilyFilter:
+      name: family
+      in: query
+      description: Filter by model family name (case-insensitive).
+      schema:
+        type: string
+      example: Claude 4
+    ModelStatusFilter:
+      name: status
+      in: query
+      description: Filter by model lifecycle status.
+      schema:
+        type: string
+        enum:
+          - active
+          - deprecated
+          - preview
+          - legacy
+          - retired
+      example: active
+    ModalityFilter:
+      name: modality
+      in: query
+      description: Filter by supported modality (input or output).
+      schema:
+        type: string
+        enum:
+          - text
+          - image
+          - audio
+          - video
+          - file
+          - pdf
+      example: image
+    MaxInputPrice:
+      name: maxInputPrice
+      in: query
+      description: >-
+        Maximum input price per 1M tokens (USD). Only returns models at or below
+        this price.
+      schema:
+        type: number
+        minimum: 0
+      example: 1
+    MaxOutputPrice:
+      name: maxOutputPrice
+      in: query
+      description: >-
+        Maximum output price per 1M tokens (USD). Only returns models at or
+        below this price.
+      schema:
+        type: number
+        minimum: 0
+      example: 5
+    TagsFilter:
+      name: tags
+      in: query
+      description: >-
+        Comma-separated list of tags. Returns models matching any of the
+        provided tags.
+      schema:
+        type: string
+      example: reasoning,open-weight
+    SortField:
+      name: sort
+      in: query
+      description: Field to sort by.
+      schema:
+        type: string
+        enum:
+          - providerId
+          - name
+          - inputPrice
+          - outputPrice
+          - contextWindow
+        default: providerId
+      example: inputPrice
+    SortOrder:
+      name: order
+      in: query
+      description: Sort direction.
+      schema:
+        type: string
+        enum:
+          - asc
+          - desc
+        default: asc
+    Limit:
+      name: limit
+      in: query
+      description: Maximum number of records to return (1–100).
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+        default: 20
+    Offset:
+      name: offset
+      in: query
+      description: Number of records to skip for pagination.
+      schema:
+        type: integer
+        minimum: 0
+        default: 0
+  responses:
+    BadRequest:
+      description: The request was malformed or contained invalid parameters.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+    NotFound:
+      description: The requested resource does not exist.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+  schemas:
+    PricingProvider:
+      type: object
+      description: An LLM provider with pricing metadata.
+      required:
+        - id
+        - name
+        - status
+        - links
+      properties:
+        id:
+          type: string
+          description: Stable provider identifier (slug).
+          example: openai
+        name:
+          type: string
+          example: OpenAI
+        description:
+          type: string
+          example: AI research and deployment company.
+        website:
+          type: string
+          format: uri
+          example: https://openai.com
+        pricingUrl:
+          type: string
+          format: uri
+          description: Link to the official pricing page.
+          example: https://openai.com/api/pricing/
+        countryCode:
+          type: string
+          description: ISO 3166-1 alpha-2 country code.
+          example: US
+        status:
+          type: string
+          enum:
+            - active
+            - inactive
+            - acquired
+          example: active
+        modelCount:
+          type: integer
+          description: Number of tracked models for this provider.
+          readOnly: true
+          example: 9
+        links:
+          $ref: '#/components/schemas/Links'
+      example:
+        id: openai
+        name: OpenAI
+        description: AI research and deployment company.
+        website: https://openai.com
+        pricingUrl: https://openai.com/api/pricing/
+        countryCode: US
+        status: active
+        modelCount: 9
+        links:
+          self: /tokenomics/v1/providers/openai
+          models: /tokenomics/v1/models?providerId=openai
+    PricingProviderCollection:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/PricingProvider'
+        total:
+          type: integer
+          example: 8
+        limit:
+          type: integer
+          example: 20
+        offset:
+          type: integer
+          example: 0
+    Modalities:
+      type: object
+      description: Input and output modalities supported by a model.
+      properties:
+        input:
+          type: array
+          items:
+            type: string
+            enum:
+              - text
+              - image
+              - audio
+              - video
+              - file
+              - pdf
+          example:
+            - text
+            - image
+        output:
+          type: array
+          items:
+            type: string
+            enum:
+              - text
+              - image
+              - audio
+          example:
+            - text
+    PricingTier:
+      type: object
+      description: >
+        A pricing tier snapshot for a model. All prices are in USD per 1,000,000
+        tokens. The `pricing` array on a model is ordered newest-first (index 0
+        = current pricing).
+      required:
+        - inputPricePer1M
+        - outputPricePer1M
+        - currency
+        - effectiveDate
+        - source
+      properties:
+        inputPricePer1M:
+          type: number
+          description: Standard input token price per 1M tokens (USD).
+          example: 2
+        outputPricePer1M:
+          type: number
+          description: Standard output token price per 1M tokens (USD).
+          example: 8
+        cacheReadPricePer1M:
+          type: number
+          description: >
+            Prompt cache read price per 1M tokens (USD). This is the discounted
+            rate applied when a prompt hits the cache.
+          example: 0.5
+        cacheWritePricePer1M:
+          type: number
+          description: >
+            Prompt cache write price per 1M tokens (USD). Applied when a new
+            prompt is written to the cache. May be higher than standard input
+            price (e.g. Anthropic charges 1.25× for cache writes).
+          example: 2
+        reasoningPricePer1M:
+          type: number
+          description: >
+            Reasoning/thinking token price per 1M tokens (USD), if different
+            from output. For models like claude-3.7-sonnet extended thinking or
+            gemini-2.5-pro thinking. If null, reasoning tokens are billed at the
+            standard output rate.
+          example: null
+        batchInputPricePer1M:
+          type: number
+          description: >
+            Batch API input price per 1M tokens (USD). Typically 50% off
+            standard input. Only applies when requests are submitted via the
+            asynchronous Batch API.
+          example: 1
+        batchOutputPricePer1M:
+          type: number
+          description: Batch API output price per 1M tokens (USD).
+          example: 4
+        audioPricePer1M:
+          type: number
+          description: Audio input token price per 1M tokens (USD).
+          example: 40
+        imagePrice:
+          type: object
+          description: Image input pricing structure (provider-dependent).
+          properties:
+            perTile:
+              type: number
+              description: Price per image tile (OpenAI tile-based model).
+              example: 0.001913
+            perImage:
+              type: number
+              description: Flat price per image.
+            per1MPixelTokens:
+              type: number
+              description: Price per 1M pixel-equivalent tokens (Gemini model).
+        currency:
+          type: string
+          enum:
+            - USD
+          example: USD
+        effectiveDate:
+          type: string
+          format: date
+          description: ISO date when this pricing tier became effective.
+          example: '2025-04-14'
+        source:
+          type: string
+          format: uri
+          description: URL of the official pricing page this data was sourced from.
+          example: https://openai.com/api/pricing/
+        notes:
+          type: string
+          description: Additional context about this pricing tier or special conditions.
+          example: Prompts >200K tokens billed at $2.50/M input, $15.00/M output.
+    PricingModelSummary:
+      type: object
+      description: A model with its current pricing snapshot for list views.
+      required:
+        - id
+        - name
+        - providerId
+        - status
+        - contextWindow
+        - maxOutputTokens
+        - modalities
+        - currentPricing
+        - links
+      properties:
+        id:
+          type: string
+          example: gpt-4.1-mini
+        name:
+          type: string
+          example: GPT-4.1 Mini
+        providerId:
+          type: string
+          example: openai
+        family:
+          type: string
+          example: GPT-4.1
+        status:
+          $ref: '#/components/schemas/ModelStatus'
+        contextWindow:
+          type: integer
+          description: Maximum number of input tokens.
+          example: 1047576
+        maxOutputTokens:
+          type: integer
+          description: Maximum number of output tokens per response.
+          example: 32768
+        modalities:
+          $ref: '#/components/schemas/Modalities'
+        tags:
+          type: array
+          items:
+            type: string
+          example:
+            - efficient
+            - coding
+        currentPricing:
+          $ref: '#/components/schemas/PricingTier'
+        links:
+          $ref: '#/components/schemas/Links'
+    PricingModelFull:
+      type: object
+      description: A model with full details, all pricing history, and capability metadata.
+      allOf:
+        - $ref: '#/components/schemas/PricingModelSummary'
+        - type: object
+          properties:
+            description:
+              type: string
+              example: Smaller, faster, and cheaper GPT-4.1 for high-throughput tasks.
+            knowledgeCutoff:
+              type: string
+              format: date
+              description: ISO date of the model's training data cutoff.
+              example: '2025-05-31'
+            releaseDate:
+              type: string
+              format: date
+              example: '2025-04-14'
+            deprecationDate:
+              type: string
+              format: date
+              description: ISO date when this model will be or was deprecated.
+            openWeightsUrl:
+              type: string
+              format: uri
+              description: URL to download model weights (for open-weight models).
+              example: https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct
+            pricing:
+              type: array
+              description: >
+                Full pricing history. Index 0 is the current/latest pricing
+                tier. Subsequent entries are historical tiers (newest to
+                oldest).
+              items:
+                $ref: '#/components/schemas/PricingTier'
+    ModelPricingDetail:
+      type: object
+      description: >-
+        Full pricing breakdown for a model including history and capability
+        flags.
+      required:
+        - modelId
+        - modelName
+        - providerId
+        - current
+        - history
+        - capabilities
+        - links
+      properties:
+        modelId:
+          type: string
+          example: claude-sonnet-4
+        modelName:
+          type: string
+          example: Claude Sonnet 4
+        providerId:
+          type: string
+          example: anthropic
+        current:
+          $ref: '#/components/schemas/PricingTier'
+        history:
+          type: array
+          description: All pricing tiers for this model, newest first.
+          items:
+            $ref: '#/components/schemas/PricingTier'
+        capabilities:
+          type: object
+          description: Pricing capabilities supported by this model.
+          properties:
+            supportsCaching:
+              type: boolean
+              description: Model supports prompt caching (cache read pricing available).
+              example: true
+            supportsBatch:
+              type: boolean
+              description: Model supports batch API pricing.
+              example: true
+            supportsReasoning:
+              type: boolean
+              description: Model has distinct reasoning/thinking token pricing.
+              example: false
+            supportsAudioInput:
+              type: boolean
+              description: Model supports audio input with dedicated pricing.
+              example: false
+            supportsImageInput:
+              type: boolean
+              description: Model supports image input with dedicated pricing.
+              example: false
+        links:
+          $ref: '#/components/schemas/Links'
+    ModelStatus:
+      type: string
+      description: Lifecycle status of a model.
+      enum:
+        - active
+        - deprecated
+        - preview
+        - legacy
+        - retired
+      example: active
+    EstimateRequest:
+      type: object
+      description: Input parameters for a cost estimate.
+      required:
+        - modelId
+        - inputTokens
+        - outputTokens
+      properties:
+        modelId:
+          type: string
+          description: The model identifier to estimate costs for.
+          example: gpt-4.1-mini
+        inputTokens:
+          type: integer
+          minimum: 0
+          description: Number of input/prompt tokens.
+          example: 10000
+        outputTokens:
+          type: integer
+          minimum: 0
+          description: Number of output/completion tokens.
+          example: 2000
+        cacheReadTokens:
+          type: integer
+          minimum: 0
+          description: Number of tokens read from prompt cache.
+          example: 8000
+        cacheWriteTokens:
+          type: integer
+          minimum: 0
+          description: Number of tokens written to prompt cache.
+          example: 10000
+        reasoningTokens:
+          type: integer
+          minimum: 0
+          description: >-
+            Number of reasoning/thinking tokens (for models that support
+            extended thinking).
+          example: 5000
+        audioTokens:
+          type: integer
+          minimum: 0
+          description: Number of audio input tokens.
+        useBatchPricing:
+          type: boolean
+          default: false
+          description: >
+            If true, uses Batch API pricing (typically 50% off) where supported.
+            Batch API has a 24-hour SLA.
+    CostBreakdownItem:
+      type: object
+      description: Cost breakdown for a single token component.
+      properties:
+        component:
+          type: string
+          description: Token component type.
+          enum:
+            - input
+            - output
+            - cache_read
+            - cache_write
+            - reasoning
+            - audio_input
+          example: input
+        tokens:
+          type: integer
+          example: 10000
+        pricePerM:
+          type: number
+          description: Price per 1M tokens for this component (USD).
+          example: 0.4
+        cost:
+          type: number
+          description: Total cost for this component (USD).
+          example: 0.004
+    CostEstimate:
+      type: object
+      description: Cost estimate result for a single model.
+      required:
+        - modelId
+        - providerId
+        - inputTokens
+        - outputTokens
+        - totalCost
+        - currency
+        - breakdown
+      properties:
+        modelId:
+          type: string
+          example: gpt-4.1-mini
+        modelName:
+          type: string
+          example: GPT-4.1 Mini
+        providerId:
+          type: string
+          example: openai
+        inputTokens:
+          type: integer
+          example: 10000
+        outputTokens:
+          type: integer
+          example: 2000
+        cacheReadTokens:
+          type: integer
+        cacheWriteTokens:
+          type: integer
+        reasoningTokens:
+          type: integer
+        audioTokens:
+          type: integer
+        useBatchPricing:
+          type: boolean
+          example: false
+        totalCost:
+          type: number
+          description: Total estimated cost in USD (6 decimal precision).
+          example: 0.0072
+        currency:
+          type: string
+          enum:
+            - USD
+          example: USD
+        breakdown:
+          type: array
+          items:
+            $ref: '#/components/schemas/CostBreakdownItem'
+        pricingSnapshot:
+          $ref: '#/components/schemas/PricingTier'
+      example:
+        modelId: gpt-4.1-mini
+        modelName: GPT-4.1 Mini
+        providerId: openai
+        inputTokens: 10000
+        outputTokens: 2000
+        useBatchPricing: false
+        totalCost: 0.0072
+        currency: USD
+        breakdown:
+          - component: input
+            tokens: 10000
+            pricePerM: 0.4
+            cost: 0.004
+          - component: output
+            tokens: 2000
+            pricePerM: 1.6
+            cost: 0.0032
+    CompareRequest:
+      type: object
+      description: Input parameters for a multi-model cost comparison.
+      required:
+        - modelIds
+        - inputTokens
+        - outputTokens
+      properties:
+        modelIds:
+          type: array
+          description: List of model IDs to compare (2–20).
+          minItems: 2
+          maxItems: 20
+          items:
+            type: string
+          example:
+            - gpt-4.1-mini
+            - claude-3-5-haiku
+            - gemini-2-5-flash
+        inputTokens:
+          type: integer
+          minimum: 0
+          example: 100000
+        outputTokens:
+          type: integer
+          minimum: 0
+          example: 20000
+        cacheReadTokens:
+          type: integer
+          minimum: 0
+        cacheWriteTokens:
+          type: integer
+          minimum: 0
+        reasoningTokens:
+          type: integer
+          minimum: 0
+        audioTokens:
+          type: integer
+          minimum: 0
+        useBatchPricing:
+          type: boolean
+          default: false
+    CostComparison:
+      type: object
+      description: Multi-model cost comparison sorted cheapest first.
+      required:
+        - inputTokens
+        - outputTokens
+        - estimates
+        - cheapest
+        - mostExpensive
+      properties:
+        inputTokens:
+          type: integer
+          example: 100000
+        outputTokens:
+          type: integer
+          example: 20000
+        estimates:
+          type: array
+          description: Cost estimates for each model, sorted by totalCost ascending.
+          items:
+            $ref: '#/components/schemas/CostEstimate'
+        cheapest:
+          type: string
+          description: Model ID of the cheapest option.
+          example: deepseek-v3
+        mostExpensive:
+          type: string
+          description: Model ID of the most expensive option.
+          example: claude-opus-4
+        notFound:
+          type: array
+          description: Model IDs that were not found (if any).
+          items:
+            type: string
+    CheapestResultItem:
+      type: object
+      description: A model ranked by cost for a given workload.
+      properties:
+        modelId:
+          type: string
+          example: deepseek-v3
+        modelName:
+          type: string
+          example: DeepSeek V3
+        providerId:
+          type: string
+          example: deepseek
+        family:
+          type: string
+          example: DeepSeek V
+        status:
+          $ref: '#/components/schemas/ModelStatus'
+        contextWindow:
+          type: integer
+          example: 163840
+        modalities:
+          $ref: '#/components/schemas/Modalities'
+        tags:
+          type: array
+          items:
+            type: string
+        totalCost:
+          type: number
+          description: Estimated total cost for the requested workload (USD).
+          example: 0.049
+        inputPricePer1M:
+          type: number
+          example: 0.27
+        outputPricePer1M:
+          type: number
+          example: 1.1
+        currency:
+          type: string
+          enum:
+            - USD
+        links:
+          $ref: '#/components/schemas/Links'
+    CheapestResult:
+      type: object
+      description: Ranked list of cheapest models for a given token workload.
+      properties:
+        inputTokens:
+          type: integer
+          example: 1000000
+        outputTokens:
+          type: integer
+          example: 100000
+        currency:
+          type: string
+          enum:
+            - USD
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/CheapestResultItem'
+        total:
+          type: integer
+          description: Total number of models evaluated before limit applied.
+          example: 24
+    PricingModelCollection:
+      type: object
+      description: Paginated collection of models with pricing.
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/PricingModelSummary'
+        total:
+          type: integer
+          example: 24
+        limit:
+          type: integer
+          example: 20
+        offset:
+          type: integer
+          example: 0
+    Links:
+      type: object
+      description: Hypermedia links for resource navigation.
+      properties:
+        self:
+          type: string
+          format: uri-reference
+        provider:
+          type: string
+          format: uri-reference
+        models:
+          type: string
+          format: uri-reference
+        pricing:
+          type: string
+          format: uri-reference
+        model:
+          type: string
+          format: uri-reference
+    Problem:
+      type: object
+      description: RFC 9457 Problem Details for error responses.
+      required:
+        - type
+        - title
+        - status
+      properties:
+        type:
+          type: string
+          format: uri
+          example: https://apis.meetgor.com/problems/not-found
+        title:
+          type: string
+          example: Resource Not Found
+        status:
+          type: integer
+          example: 404
+        detail:
+          type: string
+          example: The requested model does not exist.
+        instance:
+          type: string
+          format: uri-reference
+          example: /tokenomics/v1/models/gpt-99

@@ -1,3 +1,4 @@
+import { handleTokenomics } from "./tokenomics"
 import { handleTicTacToe } from "./games/tic-tac-toe"
 import { handleChess } from "./games/chess"
 import { handleRockPaperScissors } from "./games/rock-paper-scissors"
@@ -115,6 +116,7 @@ interface BlogrollLink {
 
 interface Env {
   DB: D1Database
+  ASSETS: Fetcher
 }
 
 const apis: ApiEntry[] = [
@@ -178,6 +180,20 @@ const apis: ApiEntry[] = [
     endpoints: [
       "/flights",
       "/flights/docs",
+    ],
+  },
+  {
+    name: "Tokenomics API",
+    description: "LLM pricing, cost estimation, and model comparison across providers",
+    path: "/tokenomics/v1",
+    endpoints: [
+      "/tokenomics/v1/providers",
+      "/tokenomics/v1/models",
+      "/tokenomics/v1/models/{modelId}/pricing",
+      "/tokenomics/v1/estimate",
+      "/tokenomics/v1/compare",
+      "/tokenomics/v1/cheapest",
+      "/tokenomics/docs",
     ],
   },
 ]
@@ -1061,8 +1077,8 @@ export default {
       if (request.method === "QUERY") return handleFlights(request)
       if (request.method === "GET") return Response.json({
         name: "Flight Observatory API",
-        description: "Query live global flight data from the OpenSky Network via the HTTP QUERY method (RFC 10008). Supports rich multi-dimensional filters on altitude, speed, heading, airline, country, bounding box, and more.",
-        usage: "Send a QUERY request with Content-Type: application/json and a JSON body of filters.",
+        description: "Query live global flight data from the OpenSky Network via the HTTP QUERY method (RFC 10008).",
+        usage: "Send a QUERY request with Content-Type: application/json and a JSON body of filters. See /flights/docs for full schema.",
         methods: ["QUERY"],
         docs: "/flights/docs",
       })
@@ -1070,6 +1086,18 @@ export default {
     }
     if (pathname === "/flights/docs") return serveDocs("Flight Observatory", "/flights/docs/openapi.yaml")
 
+    if (pathname === "/tokenomics/docs") return serveDocs("Tokenomics API", "/tokenomics/docs/openapi.yaml")
+    if (pathname.startsWith("/tokenomics")) {
+      return handleTokenomics(request, env)
+    }
+
+    // Try static assets (scalar-standalone.js, etc.)
+    try {
+      const asset = await env.ASSETS.fetch(request)
+      if (asset.status !== 404) return asset
+    } catch {
+      // ASSETS binding unavailable or request failed
+    }
     return Response.json({ error: "Not found" }, { status: 404 })
   },
 }
