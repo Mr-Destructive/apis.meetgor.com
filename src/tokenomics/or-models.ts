@@ -9,7 +9,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Muse Spark 1.2 contributor tier is a reasoning model from Meta designed for developers who want to start building at an even lower cost. It’s meaningfully cheaper than Muse Spark...",
     "status": "active",
     "contextWindow": 1048576,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 943718,
     "modalities": {
       "input": [
         "text",
@@ -30,7 +30,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.19999999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -61,7 +61,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.44,
         "outputPricePer1M": 1.32,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -93,7 +93,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -123,7 +123,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.044,
         "outputPricePer1M": 0.17700000000000002,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -153,7 +153,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.074,
         "outputPricePer1M": 0.295,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -183,7 +183,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.4,
         "outputPricePer1M": 4.4,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -213,7 +213,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.074,
         "outputPricePer1M": 0.295,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -243,7 +243,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.4,
         "outputPricePer1M": 4.4,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -272,10 +272,10 @@ export const orModels: TokenomicsModel[] = [
     ],
     "pricing": [
       {
-        "inputPricePer1M": 0.39999999999999997,
-        "outputPricePer1M": 3,
+        "inputPricePer1M": 0.425,
+        "outputPricePer1M": 2.5500000000000003,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -288,7 +288,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Dots3-Note Preview is an open-weight mixture-of-experts model from Dots Studio, with 16B active parameters out of 280B total. It is the lightest model in the Dots 3 family and is...",
     "status": "active",
     "contextWindow": 512000,
-    "maxOutputTokens": 512000,
+    "maxOutputTokens": 460800,
     "modalities": {
       "input": [
         "text",
@@ -306,7 +306,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -340,7 +340,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.375,
         "outputPricePer1M": 1.875,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -374,7 +374,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.1875,
         "outputPricePer1M": 0.9375,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -387,7 +387,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Seed 2.1 Turbo is a multimodal model from ByteDance Seed for coding and long-horizon agent workflows. It is suited for end-to-end software delivery, multi-step task execution, and understanding visual and...",
     "status": "active",
     "contextWindow": 262144,
-    "maxOutputTokens": 262144,
+    "maxOutputTokens": 235929,
     "modalities": {
       "input": [
         "text",
@@ -406,7 +406,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.5,
         "outputPricePer1M": 2.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -436,7 +436,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 6,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -468,7 +468,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.5,
         "outputPricePer1M": 3,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -481,7 +481,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "DeepSeek V4 Pro 0813 is a large-scale mixture-of-experts model from DeepSeek. This is the GA release of DeepSeek V4 Pro.",
     "status": "active",
     "contextWindow": 1048576,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 943717,
     "modalities": {
       "input": [
         "text"
@@ -498,7 +498,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.122,
         "outputPricePer1M": 3.366,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -511,7 +511,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Grok 4.6 is SpaceXAI's smartest model with frontier performance on coding, knowledge work, and STEM.",
     "status": "active",
     "contextWindow": 500000,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 450000,
     "modalities": {
       "input": [
         "text",
@@ -530,7 +530,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 6,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -560,7 +560,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -590,7 +590,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.08,
         "outputPricePer1M": 0.19999999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -620,7 +620,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -652,7 +652,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.95,
         "outputPricePer1M": 4,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -682,7 +682,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.03,
         "outputPricePer1M": 0.12,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -695,7 +695,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Muse Glimmer 30B is a dense, open-weight multimodal model from Meta Superintelligence Labs, distilled from Muse Spark and optimized for autonomous agents on consumer hardware. It is suited for long-horizon...",
     "status": "active",
     "contextWindow": 131072,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 117964,
     "modalities": {
       "input": [
         "text",
@@ -713,7 +713,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.35,
         "outputPricePer1M": 1.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -726,7 +726,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Muse Spark 1.2 is a reasoning model from Meta, designed for complex agentic tasks. It accepts text, images, video, audio, and PDF documents, returns text, and offers a 1M-token context...",
     "status": "active",
     "contextWindow": 1048576,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 943718,
     "modalities": {
       "input": [
         "text",
@@ -747,7 +747,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.25,
         "outputPricePer1M": 4.25,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -779,7 +779,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 6,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -790,36 +790,6 @@ export const orModels: TokenomicsModel[] = [
     "providerId": "~deepseek",
     "family": "~deepseek",
     "description": "This model always redirects to the latest model in the DeepSeek V4 Flash family.",
-    "status": "active",
-    "contextWindow": 1310720,
-    "maxOutputTokens": 1048576,
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "tags": [
-      "openrouter"
-    ],
-    "pricing": [
-      {
-        "inputPricePer1M": 0.035,
-        "outputPricePer1M": 0.09999999999999999,
-        "currency": "USD",
-        "effectiveDate": "2026-08-25",
-        "source": "https://openrouter.ai/models"
-      }
-    ]
-  },
-  {
-    "id": "or-deepseek-deepseek-v4-flash-0731",
-    "name": "[OR] DeepSeek: DeepSeek V4 Flash 0731",
-    "providerId": "deepseek",
-    "family": "deepseek",
-    "description": "DeepSeek V4 Flash 0731 is a sparse mixture-of-experts model from DeepSeek, with 13B active parameters out of 284B total. This re-post-trained revision is suited for coding, reasoning, and agent workflows....",
     "status": "active",
     "contextWindow": 1310720,
     "maxOutputTokens": 131072,
@@ -836,10 +806,40 @@ export const orModels: TokenomicsModel[] = [
     ],
     "pricing": [
       {
-        "inputPricePer1M": 0.14,
-        "outputPricePer1M": 0.28,
+        "inputPricePer1M": 0.03,
+        "outputPricePer1M": 0.075,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
+        "source": "https://openrouter.ai/models"
+      }
+    ]
+  },
+  {
+    "id": "or-deepseek-deepseek-v4-flash-0731",
+    "name": "[OR] DeepSeek: DeepSeek V4 Flash 0731",
+    "providerId": "deepseek",
+    "family": "deepseek",
+    "description": "DeepSeek V4 Flash 0731 is a sparse mixture-of-experts model from DeepSeek, with 13B active parameters out of 284B total. This re-post-trained revision is suited for coding, reasoning, and agent workflows....",
+    "status": "active",
+    "contextWindow": 1310720,
+    "maxOutputTokens": 943718,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "tags": [
+      "openrouter"
+    ],
+    "pricing": [
+      {
+        "inputPricePer1M": 0.06,
+        "outputPricePer1M": 0.12,
+        "currency": "USD",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -871,7 +871,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.44999999999999996,
         "outputPricePer1M": 1.2,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -903,7 +903,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -935,7 +935,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.03,
         "outputPricePer1M": 0.13,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -967,7 +967,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 10,
         "outputPricePer1M": 50,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -999,7 +999,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 5,
         "outputPricePer1M": 25,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1031,7 +1031,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 12.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1061,7 +1061,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.020999999999999998,
         "outputPricePer1M": 0.063,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1091,7 +1091,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09,
         "outputPricePer1M": 0.18,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1121,7 +1121,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1155,7 +1155,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.75,
         "outputPricePer1M": 3.75,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1189,7 +1189,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.375,
         "outputPricePer1M": 1.875,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1223,7 +1223,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 2.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1257,7 +1257,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.15,
         "outputPricePer1M": 1.25,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1287,7 +1287,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 1.2,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1319,7 +1319,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.95,
         "outputPricePer1M": 4.05,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1332,7 +1332,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Inkling is an open-weight multimodal mixture-of-experts model from Thinking Machines Lab, with 41B active parameters out of 975B total. It is designed for general-purpose reasoning, coding, agentic and tool-use systems,...",
     "status": "active",
     "contextWindow": 524288,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 471859,
     "modalities": {
       "input": [
         "text",
@@ -1351,7 +1351,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 4.05,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1383,7 +1383,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1418,7 +1418,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": -1000000,
         "outputPricePer1M": -1000000,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1431,7 +1431,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Kimi K3 is a 2.8T parameter open-weight multimodal reasoning model from Moonshot AI. It is suited for complex coding, knowledge work, and long-horizon agentic workflows, and is particularly strong at...",
     "status": "active",
     "contextWindow": 1048576,
-    "maxOutputTokens": 1048576,
+    "maxOutputTokens": 943718,
     "modalities": {
       "input": [
         "text",
@@ -1450,7 +1450,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 3,
         "outputPricePer1M": 15,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1463,7 +1463,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Muse Spark 1.1 is a multimodal reasoning model from Meta, built for agentic tasks. It accepts text, images, video, audio, and PDF documents and returns text, with a 1M-token context...",
     "status": "active",
     "contextWindow": 1048576,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 943718,
     "modalities": {
       "input": [
         "text",
@@ -1484,7 +1484,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.25,
         "outputPricePer1M": 4.25,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1514,7 +1514,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.15,
         "outputPricePer1M": 0.6,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1544,7 +1544,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.74,
         "outputPricePer1M": 2.96,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1576,7 +1576,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.19999999999999998,
         "outputPricePer1M": 1.2,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1608,7 +1608,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.6,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1640,7 +1640,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.19999999999999998,
         "outputPricePer1M": 1.2,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1672,7 +1672,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.6,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1704,7 +1704,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 12,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1736,7 +1736,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 6,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1768,7 +1768,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 12,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1800,7 +1800,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 6,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1832,7 +1832,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1864,7 +1864,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1896,7 +1896,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1928,7 +1928,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1941,7 +1941,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Grok 4.5 is a model from SpaceXAI with frontier performance on coding, knowledge work, and STEM.",
     "status": "active",
     "contextWindow": 500000,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 450000,
     "modalities": {
       "input": [
         "text",
@@ -1960,7 +1960,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 6,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1973,7 +1973,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "This model always redirects to the latest Grok model from xAI.",
     "status": "active",
     "contextWindow": 500000,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 450000,
     "modalities": {
       "input": [
         "text",
@@ -1992,7 +1992,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 6,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2022,7 +2022,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.7,
         "outputPricePer1M": 1.4,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2052,7 +2052,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 3,
         "outputPricePer1M": 6,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2082,7 +2082,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.13199999999999998,
         "outputPricePer1M": 0.5279999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2112,7 +2112,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.06,
         "outputPricePer1M": 0.12,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2142,7 +2142,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2174,7 +2174,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2206,7 +2206,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2219,7 +2219,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image) is Google's fastest, most cost-efficient Gemini image model, built for high-velocity developer pipelines and rapid-fire visual exploration. It delivers text-to-image generation...",
     "status": "active",
     "contextWindow": 65536,
-    "maxOutputTokens": 65536,
+    "maxOutputTokens": 58982,
     "modalities": {
       "input": [
         "image",
@@ -2238,7 +2238,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.25,
         "outputPricePer1M": 1.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2251,7 +2251,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Nex-N2-Mini is an open-source agentic mixture-of-experts model from Nex AGI, the smaller sibling in the Nex-N2 series. It accepts text and image input and is built for coding, tool use,...",
     "status": "active",
     "contextWindow": 262144,
-    "maxOutputTokens": 262144,
+    "maxOutputTokens": 235929,
     "modalities": {
       "input": [
         "text",
@@ -2269,7 +2269,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.024999999999999998,
         "outputPricePer1M": 0.09999999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2300,7 +2300,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 5,
         "outputPricePer1M": 30,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2332,7 +2332,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.5,
         "outputPricePer1M": 3,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2364,7 +2364,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 12,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2394,7 +2394,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2424,7 +2424,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.19,
         "outputPricePer1M": 3.74,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2437,7 +2437,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "GLM 5.2 is a large-scale reasoning model from Z.ai. It supports text input and output with a 1M-token context window, and is suited for long-horizon agent workflows, project-level software engineering,...",
     "status": "active",
     "contextWindow": 1048575,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 943717,
     "modalities": {
       "input": [
         "text"
@@ -2454,7 +2454,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.4,
         "outputPricePer1M": 4.4,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2467,7 +2467,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "GLM 5.2 is a large-scale reasoning model from Z.ai. It supports text input and output with a 1M-token context window, and is suited for long-horizon agent workflows, project-level software engineering,...",
     "status": "active",
     "contextWindow": 256000,
-    "maxOutputTokens": 256000,
+    "maxOutputTokens": 230400,
     "modalities": {
       "input": [
         "text"
@@ -2484,7 +2484,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2514,7 +2514,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": -1000000,
         "outputPricePer1M": -1000000,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2527,7 +2527,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "MoonshotAI: Kimi K2.7 Code is a coding-focused model in Moonshot AI's Kimi K2 family, built to complete end-to-end programming tasks reliably over long contexts. It uses a native multimodal mixture-of-experts...",
     "status": "active",
     "contextWindow": 262144,
-    "maxOutputTokens": 262144,
+    "maxOutputTokens": 235929,
     "modalities": {
       "input": [
         "text",
@@ -2545,7 +2545,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.67,
         "outputPricePer1M": 3.4,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2558,7 +2558,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "MoonshotAI: Kimi K2.7 Code is a coding-focused model in Moonshot AI's Kimi K2 family, built to complete end-to-end programming tasks reliably over long contexts. It uses a native multimodal mixture-of-experts...",
     "status": "active",
     "contextWindow": 262144,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 235929,
     "modalities": {
       "input": [
         "text",
@@ -2576,7 +2576,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.95,
         "outputPricePer1M": 4,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2608,7 +2608,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 10,
         "outputPricePer1M": 50,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2640,7 +2640,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 10,
         "outputPricePer1M": 50,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2672,7 +2672,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 5,
         "outputPricePer1M": 25,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2685,7 +2685,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Nex-N2-Pro is an agentic mixture-of-experts model from Nex AGI, with 17B active parameters out of 397B total. Built on the Qwen3.5 architecture, it accepts text and image input and produces...",
     "status": "active",
     "contextWindow": 262144,
-    "maxOutputTokens": 262144,
+    "maxOutputTokens": 235929,
     "modalities": {
       "input": [
         "text",
@@ -2703,7 +2703,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.25,
         "outputPricePer1M": 1,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2734,7 +2734,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2747,7 +2747,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "NVIDIA Nemotron 3 Ultra is an open frontier-reasoning and orchestration model from NVIDIA, with 55B active parameters out of 550B total (MoE). Built on a hybrid Transformer-Mamba mixture-of-experts architecture, it...",
     "status": "active",
     "contextWindow": 512288,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 461059,
     "modalities": {
       "input": [
         "text"
@@ -2764,7 +2764,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.6,
         "outputPricePer1M": 3.5999999999999996,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2777,7 +2777,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "NVIDIA Nemotron 3 Ultra is an open frontier-reasoning and orchestration model from NVIDIA, with 55B active parameters out of 550B total (MoE). Built on a hybrid Transformer-Mamba mixture-of-experts architecture, it...",
     "status": "active",
     "contextWindow": 512288,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 461059,
     "modalities": {
       "input": [
         "text"
@@ -2794,7 +2794,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.6,
         "outputPricePer1M": 3.5999999999999996,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2824,7 +2824,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2855,7 +2855,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.32,
         "outputPricePer1M": 1.28,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2887,7 +2887,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 1.2,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2900,7 +2900,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "MiniMax-M3 is a multimodal foundation model from MiniMax. It supports text, image, and video inputs with text output, a 1M-token context window, and is suited for long-horizon agentic work, coding,...",
     "status": "active",
     "contextWindow": 524288,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 471859,
     "modalities": {
       "input": [
         "text",
@@ -2919,7 +2919,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 1.2,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2932,7 +2932,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "MiniMax-M3 is a multimodal foundation model from MiniMax. It supports text, image, and video inputs with text output, a 1M-token context window, and is suited for long-horizon agentic work, coding,...",
     "status": "active",
     "contextWindow": 1048576,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 943718,
     "modalities": {
       "input": [
         "text",
@@ -2951,7 +2951,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2964,7 +2964,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Step 3.7 Flash is StepFun's latest high-efficiency multimodal Mixture-of-Experts model. It pairs a 196B-parameter language backbone with a vision encoder for native image and video understanding, activating roughly 11B parameters...",
     "status": "active",
     "contextWindow": 262144,
-    "maxOutputTokens": 256000,
+    "maxOutputTokens": 230400,
     "modalities": {
       "input": [
         "text",
@@ -2983,7 +2983,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.19999999999999998,
         "outputPricePer1M": 1.15,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3015,7 +3015,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 10,
         "outputPricePer1M": 50,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3047,7 +3047,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 5,
         "outputPricePer1M": 25,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3079,7 +3079,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 12.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3109,7 +3109,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.475,
         "outputPricePer1M": 4.425,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3122,7 +3122,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Grok Build 0.1 is SpaceXAI’s fast coding model trained specifically for agentic software engineering workflows. It supports text and image inputs with text output, and is optimized for interactive coding...",
     "status": "active",
     "contextWindow": 256000,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 230400,
     "modalities": {
       "input": [
         "text",
@@ -3141,7 +3141,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 2,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3175,7 +3175,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.5,
         "outputPricePer1M": 9,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3209,7 +3209,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.75,
         "outputPricePer1M": 4.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3241,7 +3241,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 30,
         "outputPricePer1M": 150,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3273,7 +3273,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.15,
         "outputPricePer1M": 1.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3307,7 +3307,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.25,
         "outputPricePer1M": 1.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3341,7 +3341,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.125,
         "outputPricePer1M": 0.75,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3373,7 +3373,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 5,
         "outputPricePer1M": 30,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3386,7 +3386,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Grok 4.3 is a reasoning model from SpaceXAI. It accepts text and image inputs with text output, and is suited for agentic workflows, instruction-following tasks, and applications requiring high factual...",
     "status": "active",
     "contextWindow": 1000000,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 900000,
     "modalities": {
       "input": [
         "text",
@@ -3405,7 +3405,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.25,
         "outputPricePer1M": 2.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3418,7 +3418,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Granite 4.1 8B is a dense, decoder-only 8-billion-parameter language model from IBM, part of the Granite 4.1 family. It supports a 131K-token context window and is designed for enterprise tasks...",
     "status": "active",
     "contextWindow": 131072,
-    "maxOutputTokens": 131072,
+    "maxOutputTokens": 117964,
     "modalities": {
       "input": [
         "text"
@@ -3435,7 +3435,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.049999999999999996,
         "outputPricePer1M": 0.09999999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3448,7 +3448,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Mistral Medium 3.5 is a dense 128B instruction-following model from Mistral AI. It supports text and image inputs with text output, and is designed for agentic workflows, coding, and complex...",
     "status": "active",
     "contextWindow": 262144,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 209715,
     "modalities": {
       "input": [
         "text",
@@ -3467,7 +3467,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.5,
         "outputPricePer1M": 7.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3500,7 +3500,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3532,7 +3532,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3564,7 +3564,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.75,
         "outputPricePer1M": 4.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3598,7 +3598,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 12,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3611,7 +3611,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "This model always redirects to the latest model in the MoonshotAI Kimi family.",
     "status": "active",
     "contextWindow": 1048576,
-    "maxOutputTokens": 1048576,
+    "maxOutputTokens": 943718,
     "modalities": {
       "input": [
         "text",
@@ -3627,10 +3627,10 @@ export const orModels: TokenomicsModel[] = [
     ],
     "pricing": [
       {
-        "inputPricePer1M": 2.8,
-        "outputPricePer1M": 14,
+        "inputPricePer1M": 2.5500000000000003,
+        "outputPricePer1M": 12.75,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3664,7 +3664,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.375,
         "outputPricePer1M": 1.875,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3696,7 +3696,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3728,7 +3728,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3760,7 +3760,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 1.7999999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3792,7 +3792,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.1875,
         "outputPricePer1M": 1.125,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3805,7 +3805,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Qwen3.6-35B-A3B is an open-weight multimodal model from Alibaba Cloud with 35 billion total parameters and 3 billion active parameters per token. It uses a hybrid sparse mixture-of-experts architecture combining Gated...",
     "status": "active",
     "contextWindow": 262144,
-    "maxOutputTokens": 262144,
+    "maxOutputTokens": 235929,
     "modalities": {
       "input": [
         "text",
@@ -3824,7 +3824,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.14,
         "outputPricePer1M": 1,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3854,7 +3854,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.0270000000000001,
         "outputPricePer1M": 6.162,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3867,7 +3867,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Qwen3.6 27B is a dense 27-billion-parameter language model from the Qwen Team at Alibaba, released in April 2026. It features hybrid multimodal capabilities — accepting text, image, and video inputs...",
     "status": "active",
     "contextWindow": 262144,
-    "maxOutputTokens": 81920,
+    "maxOutputTokens": 235929,
     "modalities": {
       "input": [
         "text",
@@ -3883,10 +3883,10 @@ export const orModels: TokenomicsModel[] = [
     ],
     "pricing": [
       {
-        "inputPricePer1M": 0.32,
-        "outputPricePer1M": 3.1999999999999997,
+        "inputPricePer1M": 0.6,
+        "outputPricePer1M": 3.5999999999999996,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3918,7 +3918,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 30,
         "outputPricePer1M": 180,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3950,7 +3950,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 15,
         "outputPricePer1M": 90,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3982,7 +3982,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 5,
         "outputPricePer1M": 30,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4014,7 +4014,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 15,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4041,10 +4041,10 @@ export const orModels: TokenomicsModel[] = [
     ],
     "pricing": [
       {
-        "inputPricePer1M": 0.790308,
-        "outputPricePer1M": 1.580616,
+        "inputPricePer1M": 0.87,
+        "outputPricePer1M": 1.74,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4074,7 +4074,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.088606,
         "outputPricePer1M": 0.177212,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4087,7 +4087,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Hy3 preview is a high-efficiency Mixture-of-Experts model from Tencent designed for agentic workflows and production use. It supports configurable reasoning levels across disabled, low, and high modes, allowing it to...",
     "status": "active",
     "contextWindow": 262144,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 235929,
     "modalities": {
       "input": [
         "text"
@@ -4104,7 +4104,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.18,
         "outputPricePer1M": 0.6,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4134,7 +4134,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.435,
         "outputPricePer1M": 0.87,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4167,7 +4167,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.14,
         "outputPricePer1M": 0.28,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4200,7 +4200,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 8,
         "outputPricePer1M": 15,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4232,7 +4232,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 5,
         "outputPricePer1M": 25,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4262,7 +4262,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": -1000000,
         "outputPricePer1M": -1000000,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4275,7 +4275,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Kimi K2.6 is Moonshot AI's next-generation multimodal model, designed for long-horizon coding, coding-driven UI/UX generation, and multi-agent orchestration. It handles complex end-to-end coding tasks across Python, Rust, and Go, and...",
     "status": "active",
     "contextWindow": 262144,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 235929,
     "modalities": {
       "input": [
         "text",
@@ -4293,7 +4293,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.95,
         "outputPricePer1M": 4,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4325,7 +4325,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 5,
         "outputPricePer1M": 25,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4357,7 +4357,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 12.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4370,7 +4370,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "GLM-5.1 delivers a major leap in coding capability, with particularly significant gains in handling long-horizon tasks. Unlike previous models built around minute-level interactions, GLM-5.1 can work independently and continuously on...",
     "status": "active",
     "contextWindow": 204800,
-    "maxOutputTokens": 202752,
+    "maxOutputTokens": 182476,
     "modalities": {
       "input": [
         "text"
@@ -4387,7 +4387,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.26,
         "outputPricePer1M": 3.9600000000000004,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4419,7 +4419,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.07,
         "outputPricePer1M": 0.33999999999999997,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4451,7 +4451,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4464,7 +4464,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Gemma 4 31B Instruct is Google DeepMind's 30.7B dense multimodal model supporting text and image input with text output. Features a 256K token context window, configurable thinking/reasoning mode, native function...",
     "status": "active",
     "contextWindow": 262144,
-    "maxOutputTokens": 262144,
+    "maxOutputTokens": 16384,
     "modalities": {
       "input": [
         "image",
@@ -4480,10 +4480,10 @@ export const orModels: TokenomicsModel[] = [
     ],
     "pricing": [
       {
-        "inputPricePer1M": 0.09999999999999999,
+        "inputPricePer1M": 0.09,
         "outputPricePer1M": 0.33999999999999997,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4515,7 +4515,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4547,7 +4547,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.325,
         "outputPricePer1M": 1.95,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4579,7 +4579,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.2,
         "outputPricePer1M": 4,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4592,7 +4592,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Trinity Large Thinking is a powerful open source reasoning model from the team at Arcee AI. It shows strong performance in PinchBench, agentic workloads, and reasoning tasks. Launch video: https://youtu.be/Gc82AXLa0Rg?si=4RLn6WBz33qT--B7...",
     "status": "active",
     "contextWindow": 262144,
-    "maxOutputTokens": 262144,
+    "maxOutputTokens": 235929,
     "modalities": {
       "input": [
         "text"
@@ -4609,7 +4609,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.22,
         "outputPricePer1M": 0.85,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4622,7 +4622,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Grok 4.20 Multi-Agent is a variant of SpaceXAI’s Grok 4.20 designed for collaborative, agent-based workflows. Multiple agents operate in parallel to conduct deep research, coordinate tool use, and synthesize information...",
     "status": "active",
     "contextWindow": 2000000,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 1800000,
     "modalities": {
       "input": [
         "text",
@@ -4641,7 +4641,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.25,
         "outputPricePer1M": 2.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4654,7 +4654,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Grok 4.20 is a reasoning model from SpaceXAI with industry-leading speed and agentic tool calling capabilities. It combines the lowest hallucination rate on the market with strict prompt adherance, delivering...",
     "status": "active",
     "contextWindow": 2000000,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 1800000,
     "modalities": {
       "input": [
         "text",
@@ -4673,7 +4673,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.25,
         "outputPricePer1M": 2.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4705,7 +4705,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4737,7 +4737,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4767,7 +4767,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 1.2,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4780,7 +4780,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Reka Edge is an extremely efficient 7B multimodal vision-language model that accepts image/video+text inputs and generates text outputs. This model is optimized specifically to deliver industry-leading performance in image understanding,...",
     "status": "active",
     "contextWindow": 16384,
-    "maxOutputTokens": 16384,
+    "maxOutputTokens": 14745,
     "modalities": {
       "input": [
         "image",
@@ -4799,7 +4799,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.09999999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4812,7 +4812,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "MiniMax-M2.7 is a next-generation large language model designed for autonomous, real-world productivity and continuous improvement. Built to actively participate in its own evolution, M2.7 integrates advanced agentic capabilities through multi-agent...",
     "status": "active",
     "contextWindow": 204800,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 131072,
     "modalities": {
       "input": [
         "text"
@@ -4829,7 +4829,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 1.2,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4842,7 +4842,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "MiniMax-M2.7 is a next-generation large language model designed for autonomous, real-world productivity and continuous improvement. Built to actively participate in its own evolution, M2.7 integrates advanced agentic capabilities through multi-agent...",
     "status": "active",
     "contextWindow": 196608,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 176947,
     "modalities": {
       "input": [
         "text"
@@ -4859,7 +4859,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4891,7 +4891,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.19999999999999998,
         "outputPricePer1M": 1.25,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4923,7 +4923,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.625,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4955,7 +4955,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.75,
         "outputPricePer1M": 4.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4987,7 +4987,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.375,
         "outputPricePer1M": 2.25,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5000,7 +5000,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Mistral Small 4 is the next major release in the Mistral Small family, unifying the capabilities of several flagship Mistral models into a single system. It combines strong reasoning from...",
     "status": "active",
     "contextWindow": 262144,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 209715,
     "modalities": {
       "input": [
         "text",
@@ -5018,7 +5018,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.15,
         "outputPricePer1M": 0.6,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5048,7 +5048,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.2,
         "outputPricePer1M": 4,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5078,7 +5078,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.08499999999999999,
         "outputPricePer1M": 0.39999999999999997,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5091,7 +5091,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "NVIDIA Nemotron 3 Super is a 120B-parameter open hybrid MoE model, activating just 12B parameters for maximum compute efficiency and accuracy in complex multi-agent applications. Built on a hybrid Mamba-Transformer...",
     "status": "active",
     "contextWindow": 262144,
-    "maxOutputTokens": 262144,
+    "maxOutputTokens": 235929,
     "modalities": {
       "input": [
         "text"
@@ -5108,7 +5108,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5140,7 +5140,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.25,
         "outputPricePer1M": 2,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5153,7 +5153,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Qwen3.5-9B is a multimodal foundation model from the Qwen3.5 family, designed to deliver strong reasoning, coding, and visual understanding in an efficient 9B-parameter architecture. It uses a unified vision-language design...",
     "status": "active",
     "contextWindow": 262144,
-    "maxOutputTokens": 262144,
+    "maxOutputTokens": 235929,
     "modalities": {
       "input": [
         "text",
@@ -5172,7 +5172,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.15,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5204,7 +5204,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 30,
         "outputPricePer1M": 180,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5236,7 +5236,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 15,
         "outputPricePer1M": 90,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5268,7 +5268,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 15,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5300,7 +5300,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.25,
         "outputPricePer1M": 7.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5330,7 +5330,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.25,
         "outputPricePer1M": 0.75,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5364,7 +5364,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.25,
         "outputPricePer1M": 1.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5396,7 +5396,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.39999999999999997,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5409,7 +5409,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Gemini 3.1 Flash Image Preview, a.k.a. \"Nano Banana 2,\" is Google’s latest state of the art image generation and editing model, delivering Pro-level visual quality at Flash speed. It combines...",
     "status": "active",
     "contextWindow": 65536,
-    "maxOutputTokens": 65536,
+    "maxOutputTokens": 58982,
     "modalities": {
       "input": [
         "image",
@@ -5428,7 +5428,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.5,
         "outputPricePer1M": 3,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5441,7 +5441,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "The Qwen3.5 Series 35B-A3B is a native vision-language model designed with a hybrid architecture that integrates linear attention mechanisms and a sparse mixture-of-experts model, achieving higher inference efficiency. Its overall...",
     "status": "active",
     "contextWindow": 262144,
-    "maxOutputTokens": 262144,
+    "maxOutputTokens": 235929,
     "modalities": {
       "input": [
         "text",
@@ -5460,7 +5460,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.25,
         "outputPricePer1M": 1.25,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5492,7 +5492,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.195,
         "outputPricePer1M": 1.56,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5505,7 +5505,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "The Qwen3.5 122B-A10B native vision-language model is built on a hybrid architecture that integrates a linear attention mechanism with a sparse mixture-of-experts model, achieving higher inference efficiency. In terms of...",
     "status": "active",
     "contextWindow": 262144,
-    "maxOutputTokens": 262144,
+    "maxOutputTokens": 235929,
     "modalities": {
       "input": [
         "text",
@@ -5524,7 +5524,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.26,
         "outputPricePer1M": 2.08,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5556,7 +5556,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.065,
         "outputPricePer1M": 0.26,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5590,7 +5590,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 12,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5622,7 +5622,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.75,
         "outputPricePer1M": 14,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5652,7 +5652,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.7999999999999999,
         "outputPricePer1M": 1.5999999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5686,7 +5686,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 12,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5720,7 +5720,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 6,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5752,7 +5752,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 3,
         "outputPricePer1M": 15,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5784,7 +5784,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.5,
         "outputPricePer1M": 7.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5816,7 +5816,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.26,
         "outputPricePer1M": 1.56,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5829,7 +5829,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "The Qwen3.5 series 397B-A17B native vision-language model is built on a hybrid architecture that integrates a linear attention mechanism with a sparse mixture-of-experts model, achieving higher inference efficiency. It delivers...",
     "status": "active",
     "contextWindow": 262144,
-    "maxOutputTokens": 262144,
+    "maxOutputTokens": 65536,
     "modalities": {
       "input": [
         "text",
@@ -5845,10 +5845,10 @@ export const orModels: TokenomicsModel[] = [
     ],
     "pricing": [
       {
-        "inputPricePer1M": 0.5,
-        "outputPricePer1M": 3.5999999999999996,
+        "inputPricePer1M": 0.39,
+        "outputPricePer1M": 2.34,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5878,7 +5878,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.27,
         "outputPricePer1M": 1.08,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5908,7 +5908,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.6,
         "outputPricePer1M": 1.92,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5938,7 +5938,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.78,
         "outputPricePer1M": 3.9,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5970,7 +5970,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 5,
         "outputPricePer1M": 25,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6002,7 +6002,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 12.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6015,7 +6015,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Qwen3-Coder-Next is an open-weight causal language model optimized for coding agents and local development workflows. It uses a sparse MoE design with 80B total parameters and only 3B activated per...",
     "status": "active",
     "contextWindow": 262144,
-    "maxOutputTokens": 262144,
+    "maxOutputTokens": 235929,
     "modalities": {
       "input": [
         "text"
@@ -6032,7 +6032,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.12,
         "outputPricePer1M": 0.7999999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6063,7 +6063,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6093,7 +6093,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.3,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6106,7 +6106,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Kimi K2.5 is Moonshot AI's native multimodal model, delivering state-of-the-art visual coding capability and a self-directed agent swarm paradigm. Built on Kimi K2 with continued pretraining over approximately 15T mixed...",
     "status": "active",
     "contextWindow": 262144,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 235929,
     "modalities": {
       "input": [
         "text",
@@ -6124,7 +6124,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.6,
         "outputPricePer1M": 3,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6137,7 +6137,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Solar Pro 3 is Upstage's powerful Mixture-of-Experts (MoE) language model. With 102B total parameters and 12B active parameters per forward pass, it delivers exceptional performance while maintaining computational efficiency. Optimized...",
     "status": "active",
     "contextWindow": 131072,
-    "maxOutputTokens": 131072,
+    "maxOutputTokens": 117964,
     "modalities": {
       "input": [
         "text"
@@ -6154,7 +6154,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.15,
         "outputPricePer1M": 0.6,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6184,7 +6184,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 1.2,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6214,7 +6214,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.6,
         "outputPricePer1M": 6,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6246,7 +6246,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6278,7 +6278,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.6,
         "outputPricePer1M": 2.4,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6308,7 +6308,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.06,
         "outputPricePer1M": 0.39999999999999997,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6339,7 +6339,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.75,
         "outputPricePer1M": 14,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6371,7 +6371,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.075,
         "outputPricePer1M": 0.3,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6403,7 +6403,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.25,
         "outputPricePer1M": 2,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6433,7 +6433,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 1.2,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6463,7 +6463,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.39999999999999997,
         "outputPricePer1M": 1.75,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6497,7 +6497,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.5,
         "outputPricePer1M": 3,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6531,7 +6531,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.25,
         "outputPricePer1M": 1.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6544,7 +6544,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "NVIDIA Nemotron 3 Nano 30B A3B is a small language MoE model with highest compute efficiency and accuracy for developers to build specialized agentic AI systems. The model is fully...",
     "status": "active",
     "contextWindow": 262144,
-    "maxOutputTokens": 262144,
+    "maxOutputTokens": 235929,
     "modalities": {
       "input": [
         "text"
@@ -6561,7 +6561,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.049999999999999996,
         "outputPricePer1M": 0.19999999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6593,7 +6593,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.75,
         "outputPricePer1M": 14,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6625,7 +6625,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 21,
         "outputPricePer1M": 168,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6657,7 +6657,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 10.5,
         "outputPricePer1M": 84,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6689,7 +6689,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.75,
         "outputPricePer1M": 14,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6721,7 +6721,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.875,
         "outputPricePer1M": 7,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6734,7 +6734,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Devstral 2 is a state-of-the-art open-source model by Mistral AI specializing in agentic coding. It is a 123B-parameter dense transformer model supporting a 256K context window. Devstral 2 supports exploring...",
     "status": "active",
     "contextWindow": 262144,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 209715,
     "modalities": {
       "input": [
         "text",
@@ -6752,7 +6752,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.44,
         "outputPricePer1M": 2.2,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6782,7 +6782,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 3,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6814,7 +6814,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 0.8999999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6844,7 +6844,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": -1000000,
         "outputPricePer1M": -1000000,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6875,7 +6875,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.25,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6908,7 +6908,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 2.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6921,7 +6921,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "The largest model in the Ministral 3 family, Ministral 3 14B offers frontier capabilities and performance comparable to its larger Mistral Small 3.2 24B counterpart. A powerful and efficient language...",
     "status": "active",
     "contextWindow": 262144,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 209715,
     "modalities": {
       "input": [
         "text",
@@ -6939,7 +6939,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.19999999999999998,
         "outputPricePer1M": 0.19999999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6952,7 +6952,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "A balanced model in the Ministral 3 family, Ministral 3 8B is a powerful, efficient tiny language model with vision capabilities.",
     "status": "active",
     "contextWindow": 262144,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 209715,
     "modalities": {
       "input": [
         "text",
@@ -6970,7 +6970,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.15,
         "outputPricePer1M": 0.15,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6983,7 +6983,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "The smallest model in the Ministral 3 family, Ministral 3 3B is a powerful, efficient tiny language model with vision capabilities.",
     "status": "active",
     "contextWindow": 131072,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 104857,
     "modalities": {
       "input": [
         "text",
@@ -7001,7 +7001,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.09999999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7014,7 +7014,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Mistral Large 3 2512 is Mistral’s most capable model to date, featuring a sparse mixture-of-experts architecture with 41B active parameters (675B total), and released under the Apache 2.0 license.",
     "status": "active",
     "contextWindow": 262144,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 209715,
     "modalities": {
       "input": [
         "text",
@@ -7033,7 +7033,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.5,
         "outputPricePer1M": 1.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7046,7 +7046,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "DeepSeek-V3.2 is a large language model designed to harmonize high computational efficiency with strong reasoning and agentic tool-use performance. It introduces DeepSeek Sparse Attention (DSA), a fine-grained sparse attention mechanism...",
     "status": "active",
     "contextWindow": 163840,
-    "maxOutputTokens": 163840,
+    "maxOutputTokens": 147456,
     "modalities": {
       "input": [
         "text"
@@ -7063,7 +7063,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.26,
         "outputPricePer1M": 0.38,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7095,7 +7095,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 5,
         "outputPricePer1M": 25,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7127,7 +7127,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 12.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7140,7 +7140,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Olmo 3 32B Think is a large-scale, 32-billion-parameter model purpose-built for deep reasoning, complex logic chains and advanced instruction-following scenarios. Its capacity enables strong performance on demanding evaluation tasks and...",
     "status": "active",
     "contextWindow": 65536,
-    "maxOutputTokens": 65536,
+    "maxOutputTokens": 58982,
     "modalities": {
       "input": [
         "text"
@@ -7157,7 +7157,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.15,
         "outputPricePer1M": 0.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7189,7 +7189,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 12,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7221,7 +7221,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.25,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7253,7 +7253,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.625,
         "outputPricePer1M": 5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7284,7 +7284,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.25,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7315,7 +7315,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.25,
         "outputPricePer1M": 2,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7345,7 +7345,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.6,
         "outputPricePer1M": 2.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7376,7 +7376,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 12.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7407,7 +7407,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 3,
         "outputPricePer1M": 15,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7420,7 +7420,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Voxtral Small is an enhancement of Mistral Small 3, incorporating state-of-the-art audio input capabilities while retaining best-in-class text performance. It excels at speech transcription, translation and audio understanding. Input audio...",
     "status": "active",
     "contextWindow": 32000,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 25600,
     "modalities": {
       "input": [
         "text",
@@ -7439,7 +7439,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.3,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7469,7 +7469,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.075,
         "outputPricePer1M": 0.3,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7499,7 +7499,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.255,
         "outputPricePer1M": 1.02,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7530,7 +7530,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.10400000000000001,
         "outputPricePer1M": 0.41600000000000004,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7543,7 +7543,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Granite-4.0-H-Micro is a 3B parameter from the Granite 4 family of models. These models are the latest in a series of models released by IBM. They are fine-tuned for long...",
     "status": "active",
     "contextWindow": 131000,
-    "maxOutputTokens": 131000,
+    "maxOutputTokens": 117900,
     "modalities": {
       "input": [
         "text"
@@ -7560,7 +7560,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.017,
         "outputPricePer1M": 0.112,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7593,7 +7593,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 2,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7625,7 +7625,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7657,7 +7657,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.5,
         "outputPricePer1M": 2.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7688,7 +7688,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.18,
         "outputPricePer1M": 2.0999999999999996,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7719,7 +7719,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.117,
         "outputPricePer1M": 0.45499999999999996,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7752,7 +7752,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 10,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7784,7 +7784,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 2.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7815,7 +7815,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.19999999999999998,
         "outputPricePer1M": 2.4,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7846,7 +7846,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.13,
         "outputPricePer1M": 0.52,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7878,7 +7878,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 15,
         "outputPricePer1M": 120,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7910,7 +7910,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 7.5,
         "outputPricePer1M": 60,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7940,7 +7940,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.5,
         "outputPricePer1M": 2,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7972,7 +7972,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 3,
         "outputPricePer1M": 15,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8004,7 +8004,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.5,
         "outputPricePer1M": 7.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8034,7 +8034,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.27,
         "outputPricePer1M": 0.41,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8047,7 +8047,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Uncensored and creative writing model based on Mistral Small 3.2 24B with good recall, prompt adherence, and intelligence.",
     "status": "active",
     "contextWindow": 131072,
-    "maxOutputTokens": 131072,
+    "maxOutputTokens": 117964,
     "modalities": {
       "input": [
         "text"
@@ -8064,7 +8064,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 0.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8094,7 +8094,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.85,
         "outputPricePer1M": 1.25,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8125,7 +8125,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.39999999999999997,
         "outputPricePer1M": 4,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8156,7 +8156,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.21,
         "outputPricePer1M": 1.9,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8186,7 +8186,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.78,
         "outputPricePer1M": 3.9,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8216,7 +8216,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.65,
         "outputPricePer1M": 3.25,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8247,7 +8247,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.625,
         "outputPricePer1M": 5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8277,7 +8277,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.27,
         "outputPricePer1M": 1,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8307,7 +8307,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.195,
         "outputPricePer1M": 0.975,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8337,7 +8337,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.15,
         "outputPricePer1M": 1.2,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8350,7 +8350,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Qwen3-Next-80B-A3B-Instruct is an instruction-tuned chat model in the Qwen3-Next series optimized for fast, stable responses without “thinking” traces. It targets complex tasks across reasoning, code generation, knowledge QA, and multilingual...",
     "status": "active",
     "contextWindow": 262144,
-    "maxOutputTokens": 262144,
+    "maxOutputTokens": 235929,
     "modalities": {
       "input": [
         "text"
@@ -8367,7 +8367,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 1.1,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8397,37 +8397,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.26,
         "outputPricePer1M": 0.78,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
-        "source": "https://openrouter.ai/models"
-      }
-    ]
-  },
-  {
-    "id": "or-qwen-qwen-plus-2025-07-28:thinking",
-    "name": "[OR] Qwen: Qwen Plus 0728 (thinking)",
-    "providerId": "qwen",
-    "family": "qwen",
-    "description": "Qwen Plus 0728, based on the Qwen3 foundation model, is a 1 million context hybrid reasoning model with a balanced performance, speed, and cost combination.",
-    "status": "active",
-    "contextWindow": 1000000,
-    "maxOutputTokens": 32768,
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "tags": [
-      "openrouter"
-    ],
-    "pricing": [
-      {
-        "inputPricePer1M": 0.26,
-        "outputPricePer1M": 0.78,
-        "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8457,7 +8427,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.6,
         "outputPricePer1M": 2.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8487,7 +8457,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.19999999999999998,
         "outputPricePer1M": 2.4,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8500,7 +8470,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Hermes 4 70B is a hybrid reasoning model from Nous Research, built on Meta-Llama-3.1-70B. It introduces the same hybrid mode as the larger 405B release, allowing the model to either...",
     "status": "active",
     "contextWindow": 131072,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 117964,
     "modalities": {
       "input": [
         "text"
@@ -8517,7 +8487,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.13,
         "outputPricePer1M": 0.39999999999999997,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8530,7 +8500,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Hermes 4 is a large-scale reasoning model built on Meta-Llama-3.1-405B and released by Nous Research. It introduces a hybrid reasoning mode, where the model can choose to deliberate internally with...",
     "status": "active",
     "contextWindow": 131072,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 117964,
     "modalities": {
       "input": [
         "text"
@@ -8547,7 +8517,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 3,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8560,7 +8530,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "DeepSeek-V3.1 is a large hybrid reasoning model (671B parameters, 37B active) that supports both thinking and non-thinking modes via prompt templates. It extends the DeepSeek-V3 base with a two-phase long-context...",
     "status": "active",
     "contextWindow": 163840,
-    "maxOutputTokens": 161000,
+    "maxOutputTokens": 144900,
     "modalities": {
       "input": [
         "text"
@@ -8577,7 +8547,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.55,
         "outputPricePer1M": 1.6500000000000001,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8590,7 +8560,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Mistral Medium 3.1 is an updated version of Mistral Medium 3, which is a high-performance enterprise-grade language model designed to deliver frontier-level capabilities at significantly reduced operational cost. It balances...",
     "status": "active",
     "contextWindow": 131072,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 104857,
     "modalities": {
       "input": [
         "text",
@@ -8609,7 +8579,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.39999999999999997,
         "outputPricePer1M": 2,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8640,7 +8610,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.6,
         "outputPricePer1M": 1.7999999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8672,7 +8642,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.25,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8704,7 +8674,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.625,
         "outputPricePer1M": 5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8736,7 +8706,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.25,
         "outputPricePer1M": 2,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8768,7 +8738,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.125,
         "outputPricePer1M": 1,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8800,7 +8770,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.049999999999999996,
         "outputPricePer1M": 0.39999999999999997,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8832,7 +8802,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.024999999999999998,
         "outputPricePer1M": 0.19999999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8845,7 +8815,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "gpt-oss-120b is an open-weight, 117B-parameter Mixture-of-Experts (MoE) language model from OpenAI designed for high-reasoning, agentic, and general-purpose production use cases. It activates 5.1B parameters per forward pass and is optimized...",
     "status": "active",
     "contextWindow": 131072,
-    "maxOutputTokens": 131072,
+    "maxOutputTokens": 117964,
     "modalities": {
       "input": [
         "text"
@@ -8862,7 +8832,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.037,
         "outputPricePer1M": 0.16999999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8875,7 +8845,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "gpt-oss-20b is an open-weight 21B parameter model released by OpenAI under the Apache 2.0 license. It uses a Mixture-of-Experts (MoE) architecture with 3.6B active parameters per forward pass, optimized for...",
     "status": "active",
     "contextWindow": 131072,
-    "maxOutputTokens": 131072,
+    "maxOutputTokens": 117964,
     "modalities": {
       "input": [
         "text"
@@ -8892,7 +8862,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.03,
         "outputPricePer1M": 0.13,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8924,7 +8894,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 15,
         "outputPricePer1M": 75,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8956,7 +8926,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 7.5,
         "outputPricePer1M": 37.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8969,7 +8939,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Mistral's cutting-edge language model for coding released end of July 2025. Codestral specializes in low-latency, high-frequency tasks such as fill-in-the-middle (FIM), code correction and test generation.\n\n[Blog Post](https://mistral.ai/news/codestral-25-08)",
     "status": "active",
     "contextWindow": 256000,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 204800,
     "modalities": {
       "input": [
         "text",
@@ -8987,7 +8957,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 0.8999999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9000,7 +8970,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Qwen3-Coder-30B-A3B-Instruct is a 30.5B parameter Mixture-of-Experts (MoE) model with 128 experts (8 active per forward pass), designed for advanced code generation, repository-scale understanding, and agentic tool use. Built on the...",
     "status": "active",
     "contextWindow": 262144,
-    "maxOutputTokens": 262144,
+    "maxOutputTokens": 235929,
     "modalities": {
       "input": [
         "text"
@@ -9017,7 +8987,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.07,
         "outputPricePer1M": 0.28,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9047,7 +9017,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.04815,
         "outputPricePer1M": 0.19305,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9077,7 +9047,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.6,
         "outputPricePer1M": 2.2,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9107,7 +9077,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.13,
         "outputPricePer1M": 0.85,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9120,7 +9090,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Qwen3-235B-A22B-Thinking-2507 is a high-performance, open-weight Mixture-of-Experts (MoE) language model optimized for complex reasoning tasks. It activates 22B of its 235B parameters per forward pass and natively supports up to 262,144...",
     "status": "active",
     "contextWindow": 131072,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 117964,
     "modalities": {
       "input": [
         "text"
@@ -9137,7 +9107,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.22999999999999998,
         "outputPricePer1M": 2.3,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9167,7 +9137,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 1,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9198,7 +9168,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.19999999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9232,7 +9202,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.39999999999999997,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9266,7 +9236,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.049999999999999996,
         "outputPricePer1M": 0.19999999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9296,7 +9266,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09,
         "outputPricePer1M": 0.55,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9326,7 +9296,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.5700000000000001,
         "outputPricePer1M": 2.3,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9356,7 +9326,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.19999999999999998,
         "outputPricePer1M": 0.8999999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9369,7 +9339,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Hunyuan-A13B is a 13B active parameter Mixture-of-Experts (MoE) language model developed by Tencent, with a total parameter count of 80B and support for reasoning via Chain-of-Thought. It offers competitive benchmark...",
     "status": "active",
     "contextWindow": 131072,
-    "maxOutputTokens": 131072,
+    "maxOutputTokens": 117964,
     "modalities": {
       "input": [
         "text"
@@ -9386,7 +9356,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.14,
         "outputPricePer1M": 0.5700000000000001,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9416,7 +9386,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.8999999999999999,
         "outputPricePer1M": 1.9,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9446,7 +9416,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.7999999999999999,
         "outputPricePer1M": 1.2,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9477,7 +9447,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.42,
         "outputPricePer1M": 1.25,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9508,7 +9478,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.075,
         "outputPricePer1M": 0.19999999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9538,7 +9508,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.55,
         "outputPricePer1M": 2.2,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9572,7 +9542,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 2.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9606,7 +9576,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.15,
         "outputPricePer1M": 1.25,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9640,7 +9610,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.25,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9674,7 +9644,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.625,
         "outputPricePer1M": 5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9706,7 +9676,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 20,
         "outputPricePer1M": 80,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9738,7 +9708,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 10,
         "outputPricePer1M": 40,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9771,7 +9741,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.25,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9801,7 +9771,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.5,
         "outputPricePer1M": 2.1500000000000004,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9833,7 +9803,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 15,
         "outputPricePer1M": 75,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9865,37 +9835,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 3,
         "outputPricePer1M": 15,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
-        "source": "https://openrouter.ai/models"
-      }
-    ]
-  },
-  {
-    "id": "or-google-gemma-3n-e4b-it",
-    "name": "[OR] Google: Gemma 3n 4B",
-    "providerId": "google",
-    "family": "google",
-    "description": "Gemma 3n E4B-it is optimized for efficient execution on mobile and low-resource devices, such as phones, laptops, and tablets. It supports multimodal inputs—including text, visual data, and audio—enabling diverse tasks...",
-    "status": "active",
-    "contextWindow": 32768,
-    "maxOutputTokens": 0,
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "tags": [
-      "openrouter"
-    ],
-    "pricing": [
-      {
-        "inputPricePer1M": 0.06,
-        "outputPricePer1M": 0.12,
-        "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9908,7 +9848,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Mistral Medium 3 is a high-performance enterprise-grade language model designed to deliver frontier-level capabilities at significantly reduced operational cost. It balances state-of-the-art reasoning and multimodal performance with 8× lower cost...",
     "status": "active",
     "contextWindow": 131072,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 104857,
     "modalities": {
       "input": [
         "text",
@@ -9927,7 +9867,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.39999999999999997,
         "outputPricePer1M": 2,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9961,7 +9901,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.25,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9991,7 +9931,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.75,
         "outputPricePer1M": 1.2,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10003,7 +9943,7 @@ export const orModels: TokenomicsModel[] = [
     "family": "meta-llama",
     "description": "Llama Guard 4 is a Llama 4 Scout-derived multimodal pretrained model, fine-tuned for content safety classification. Similar to previous versions, it can be used to classify content in both LLM...",
     "status": "active",
-    "contextWindow": 1048576,
+    "contextWindow": 163840,
     "maxOutputTokens": 16384,
     "modalities": {
       "input": [
@@ -10022,7 +9962,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.18,
         "outputPricePer1M": 0.18,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10052,7 +9992,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.12,
         "outputPricePer1M": 0.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10082,7 +10022,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.117,
         "outputPricePer1M": 0.45499999999999996,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10112,7 +10052,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.12,
         "outputPricePer1M": 0.24,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10142,7 +10082,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.08,
         "outputPricePer1M": 0.28,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10172,7 +10112,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.45499999999999996,
         "outputPricePer1M": 1.8199999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10204,7 +10144,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.1,
         "outputPricePer1M": 4.4,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10236,7 +10176,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.55,
         "outputPricePer1M": 2.2,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10268,7 +10208,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 8,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10300,7 +10240,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 4,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10332,7 +10272,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.1,
         "outputPricePer1M": 4.4,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10364,7 +10304,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.55,
         "outputPricePer1M": 2.2,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10396,7 +10336,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 8,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10428,7 +10368,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 4,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10460,7 +10400,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.39999999999999997,
         "outputPricePer1M": 1.5999999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10492,7 +10432,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.19999999999999998,
         "outputPricePer1M": 0.7999999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10524,7 +10464,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.39999999999999997,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10556,7 +10496,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.049999999999999996,
         "outputPricePer1M": 0.19999999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10587,7 +10527,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.19999999999999998,
         "outputPricePer1M": 0.7999999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10600,7 +10540,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Llama 4 Scout 17B Instruct (16E) is a mixture-of-experts (MoE) language model developed by Meta, activating 17 billion parameters out of a total of 109B. It supports native multimodal input...",
     "status": "active",
     "contextWindow": 1310720,
-    "maxOutputTokens": 16384,
+    "maxOutputTokens": 8192,
     "modalities": {
       "input": [
         "text",
@@ -10615,10 +10555,10 @@ export const orModels: TokenomicsModel[] = [
     ],
     "pricing": [
       {
-        "inputPricePer1M": 0.09999999999999999,
-        "outputPricePer1M": 0.3,
+        "inputPricePer1M": 0.11,
+        "outputPricePer1M": 0.33999999999999997,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10631,7 +10571,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "DeepSeek V3, a 685B-parameter, mixture-of-experts model, is the latest iteration of the flagship chat model family from the DeepSeek team. It succeeds the [DeepSeek V3](/deepseek/deepseek-chat-v3) model and performs really well...",
     "status": "active",
     "contextWindow": 163840,
-    "maxOutputTokens": 163840,
+    "maxOutputTokens": 147456,
     "modalities": {
       "input": [
         "text"
@@ -10648,7 +10588,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.25,
         "outputPricePer1M": 1,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10680,7 +10620,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 150,
         "outputPricePer1M": 600,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10712,7 +10652,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 75,
         "outputPricePer1M": 300,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10725,7 +10665,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Mistral Small 3.1 24B Instruct is an upgraded variant of Mistral Small 3 (2501), featuring 24 billion parameters with advanced multimodal capabilities. It provides state-of-the-art performance in text-based reasoning and...",
     "status": "active",
     "contextWindow": 128000,
-    "maxOutputTokens": 128000,
+    "maxOutputTokens": 102400,
     "modalities": {
       "input": [
         "text",
@@ -10743,7 +10683,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.351,
         "outputPricePer1M": 0.5549999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10774,7 +10714,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.049999999999999996,
         "outputPricePer1M": 0.09999999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10805,7 +10745,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.049999999999999996,
         "outputPricePer1M": 0.15,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10835,7 +10775,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10848,7 +10788,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Reka Flash 3 is a general-purpose, instruction-tuned large language model with 21 billion parameters, developed by Reka. It excels at general chat, coding tasks, instruction-following, and function calling. Featuring a...",
     "status": "active",
     "contextWindow": 65536,
-    "maxOutputTokens": 65536,
+    "maxOutputTokens": 58982,
     "modalities": {
       "input": [
         "text"
@@ -10865,7 +10805,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.19999999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10878,7 +10818,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, and chat capabilities,...",
     "status": "active",
     "contextWindow": 262144,
-    "maxOutputTokens": 131072,
+    "maxOutputTokens": 117964,
     "modalities": {
       "input": [
         "text",
@@ -10896,7 +10836,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.08,
         "outputPricePer1M": 0.44999999999999996,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10909,7 +10849,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Skyfall 36B v2 is an enhanced iteration of Mistral Small 2501, specifically fine-tuned for improved creativity, nuanced writing, role-playing, and coherent storytelling.",
     "status": "active",
     "contextWindow": 32768,
-    "maxOutputTokens": 32768,
+    "maxOutputTokens": 29491,
     "modalities": {
       "input": [
         "text"
@@ -10926,7 +10866,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.55,
         "outputPricePer1M": 0.7999999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10939,7 +10879,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Note: Sonar Pro pricing includes Perplexity search pricing. See [details here](https://docs.perplexity.ai/guides/pricing#detailed-pricing-breakdown-for-sonar-reasoning-pro-and-sonar-pro) Sonar Reasoning Pro is a premier reasoning model powered by DeepSeek R1 with Chain of Thought (CoT). Designed for...",
     "status": "active",
     "contextWindow": 128000,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 115200,
     "modalities": {
       "input": [
         "text",
@@ -10957,7 +10897,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 8,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10988,7 +10928,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 3,
         "outputPricePer1M": 15,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11001,7 +10941,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Sonar Deep Research is a research-focused model designed for multi-step retrieval, synthesis, and reasoning across complex topics. It autonomously searches, reads, and evaluates sources, refining its approach as it gathers...",
     "status": "active",
     "contextWindow": 128000,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 115200,
     "modalities": {
       "input": [
         "text"
@@ -11018,7 +10958,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 8,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11031,7 +10971,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Mistral Saba is a 24B-parameter language model specifically designed for the Middle East and South Asia, delivering accurate and contextually relevant responses while maintaining efficient performance. Trained on curated regional...",
     "status": "active",
     "contextWindow": 32768,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 26214,
     "modalities": {
       "input": [
         "text",
@@ -11049,7 +10989,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.19999999999999998,
         "outputPricePer1M": 0.6,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11080,7 +11020,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.1,
         "outputPricePer1M": 4.4,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11111,7 +11051,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.55,
         "outputPricePer1M": 2.2,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11124,7 +11064,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Aion-RP-Llama-3.1-8B ranks the highest in the character evaluation portion of the RPBench-Auto benchmark, a roleplaying-specific variant of Arena-Hard-Auto, where LLMs evaluate each other’s responses. It is a fine-tuned base model...",
     "status": "active",
     "contextWindow": 32768,
-    "maxOutputTokens": 32768,
+    "maxOutputTokens": 29491,
     "modalities": {
       "input": [
         "text"
@@ -11141,7 +11081,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.7999999999999999,
         "outputPricePer1M": 1.5999999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11154,7 +11094,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Qwen2.5-VL is proficient in recognizing common objects such as flowers, birds, fish, and insects. It is also highly capable of analyzing texts, charts, icons, graphics, and layouts within images.",
     "status": "active",
     "contextWindow": 128000,
-    "maxOutputTokens": 128000,
+    "maxOutputTokens": 28800,
     "modalities": {
       "input": [
         "text",
@@ -11169,10 +11109,10 @@ export const orModels: TokenomicsModel[] = [
     ],
     "pricing": [
       {
-        "inputPricePer1M": 0.7999999999999999,
-        "outputPricePer1M": 1,
+        "inputPricePer1M": 0.25,
+        "outputPricePer1M": 0.75,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11202,7 +11142,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.26,
         "outputPricePer1M": 0.78,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11233,7 +11173,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.1,
         "outputPricePer1M": 4.4,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11264,7 +11204,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.55,
         "outputPricePer1M": 2.2,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11294,7 +11234,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.049999999999999996,
         "outputPricePer1M": 0.08,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11307,7 +11247,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Sonar is lightweight, affordable, fast, and simple to use — now featuring citations and the ability to customize sources. It is designed for companies seeking to integrate lightweight question-and-answer features...",
     "status": "active",
     "contextWindow": 127072,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 114364,
     "modalities": {
       "input": [
         "text",
@@ -11325,7 +11265,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 1,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11338,7 +11278,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "DeepSeek R1 Distill Llama 70B is a distilled large language model based on [Llama-3.3-70B-Instruct](/meta-llama/llama-3.3-70b-instruct), using outputs from [DeepSeek R1](/deepseek/deepseek-r1). The model combines advanced distillation techniques to achieve high performance across...",
     "status": "active",
     "contextWindow": 8192,
-    "maxOutputTokens": 8192,
+    "maxOutputTokens": 7372,
     "modalities": {
       "input": [
         "text"
@@ -11355,7 +11295,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.7999999999999999,
         "outputPricePer1M": 0.7999999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11385,7 +11325,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.7,
         "outputPricePer1M": 2.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11398,7 +11338,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "MiniMax-01 is a combines MiniMax-Text-01 for text generation and MiniMax-VL-01 for image understanding. It has 456 billion parameters, with 45.9 billion parameters activated per inference, and can handle a context...",
     "status": "active",
     "contextWindow": 1000192,
-    "maxOutputTokens": 1000192,
+    "maxOutputTokens": 900172,
     "modalities": {
       "input": [
         "text",
@@ -11416,7 +11356,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.19999999999999998,
         "outputPricePer1M": 1.1,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11429,7 +11369,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "[Microsoft Research](/microsoft) Phi-4 is designed to perform well in complex reasoning tasks and can operate efficiently in situations with limited memory or where quick responses are needed. At 14 billion...",
     "status": "active",
     "contextWindow": 16384,
-    "maxOutputTokens": 16384,
+    "maxOutputTokens": 14745,
     "modalities": {
       "input": [
         "text"
@@ -11446,7 +11386,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.07,
         "outputPricePer1M": 0.14,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11476,7 +11416,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.2574,
         "outputPricePer1M": 1.0287,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11506,7 +11446,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.65,
         "outputPricePer1M": 0.75,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11538,7 +11478,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 15,
         "outputPricePer1M": 60,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11570,7 +11510,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 7.5,
         "outputPricePer1M": 30,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11600,7 +11540,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.0375,
         "outputPricePer1M": 0.15,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11613,7 +11553,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "The Meta Llama 3.3 multilingual large language model (LLM) is a pretrained and instruction tuned generative model in 70B (text in/text out). The Llama 3.3 instruction tuned text only model...",
     "status": "active",
     "contextWindow": 131072,
-    "maxOutputTokens": 16384,
+    "maxOutputTokens": 115200,
     "modalities": {
       "input": [
         "text"
@@ -11627,10 +11567,10 @@ export const orModels: TokenomicsModel[] = [
     ],
     "pricing": [
       {
-        "inputPricePer1M": 0.09999999999999999,
-        "outputPricePer1M": 0.32,
+        "inputPricePer1M": 0.71,
+        "outputPricePer1M": 0.71,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11661,7 +11601,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.06,
         "outputPricePer1M": 0.24,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11691,7 +11631,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.035,
         "outputPricePer1M": 0.14,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11722,7 +11662,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.7999999999999999,
         "outputPricePer1M": 3.1999999999999997,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11754,7 +11694,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11767,7 +11707,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "This is Mistral AI's flagship model, Mistral Large 2 (version mistral-large-2407). It's a proprietary weights-available model and excels at reasoning, code, JSON, chat, and more. Read the launch announcement [here](https://mistral.ai/news/mistral-large-2407/)....",
     "status": "active",
     "contextWindow": 131072,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 104857,
     "modalities": {
       "input": [
         "text",
@@ -11785,7 +11725,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 6,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11798,7 +11738,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Qwen2.5-Coder is the latest series of Code-Specific Qwen large language models (formerly known as CodeQwen). Qwen2.5-Coder brings the following improvements upon CodeQwen1.5: - Significantly improvements in **code generation**, **code reasoning**...",
     "status": "active",
     "contextWindow": 32768,
-    "maxOutputTokens": 32768,
+    "maxOutputTokens": 29491,
     "modalities": {
       "input": [
         "text"
@@ -11815,7 +11755,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.66,
         "outputPricePer1M": 1,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11828,7 +11768,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "UnslopNemo v4.1 is the latest addition from the creator of Rocinante, designed for adventure writing and role-play scenarios.",
     "status": "active",
     "contextWindow": 1024000,
-    "maxOutputTokens": 32768,
+    "maxOutputTokens": 26214,
     "modalities": {
       "input": [
         "text"
@@ -11845,7 +11785,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.39999999999999997,
         "outputPricePer1M": 0.39999999999999997,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11875,7 +11815,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 3,
         "outputPricePer1M": 5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11888,7 +11828,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Ministral 8B is an 8B parameter model featuring a unique interleaved sliding-window attention pattern for faster, memory-efficient inference. Designed for edge use cases, it supports up to 128k context length...",
     "status": "active",
     "contextWindow": 128000,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 102400,
     "modalities": {
       "input": [
         "text"
@@ -11905,7 +11845,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.11,
         "outputPricePer1M": 0.11,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11918,7 +11858,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Qwen2.5 7B is the latest series of Qwen large language models. Qwen2.5 brings the following improvements upon Qwen2: - Significantly more knowledge and has greatly improved capabilities in coding and...",
     "status": "active",
     "contextWindow": 32768,
-    "maxOutputTokens": 32768,
+    "maxOutputTokens": 29491,
     "modalities": {
       "input": [
         "text"
@@ -11935,7 +11875,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.19999999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11948,7 +11888,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Rocinante 12B is designed for engaging storytelling and rich prose. Early testers have reported: - Expanded vocabulary with unique and expressive word choices - Enhanced creativity for vivid narratives -...",
     "status": "active",
     "contextWindow": 65536,
-    "maxOutputTokens": 65536,
+    "maxOutputTokens": 58982,
     "modalities": {
       "input": [
         "text"
@@ -11965,7 +11905,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.25,
         "outputPricePer1M": 0.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11978,7 +11918,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Llama 3.2 1B is a 1-billion-parameter language model focused on efficiently performing natural language tasks, such as summarization, dialogue, and multilingual text analysis. Its smaller size allows it to operate...",
     "status": "active",
     "contextWindow": 60000,
-    "maxOutputTokens": 60000,
+    "maxOutputTokens": 54000,
     "modalities": {
       "input": [
         "text"
@@ -11995,7 +11935,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.027,
         "outputPricePer1M": 0.201,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12008,7 +11948,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Llama 3.2 3B is a 3-billion-parameter multilingual large language model, optimized for advanced natural language processing tasks like dialogue generation, reasoning, and summarization. Designed with the latest transformer architecture, it...",
     "status": "active",
     "contextWindow": 131072,
-    "maxOutputTokens": 131072,
+    "maxOutputTokens": 117964,
     "modalities": {
       "input": [
         "text"
@@ -12025,7 +11965,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.049999999999999996,
         "outputPricePer1M": 0.33,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12055,7 +11995,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.36,
         "outputPricePer1M": 0.39999999999999997,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12085,7 +12025,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.15,
         "outputPricePer1M": 0.6,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12115,7 +12055,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12145,7 +12085,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.85,
         "outputPricePer1M": 0.85,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12175,7 +12115,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.7,
         "outputPricePer1M": 0.7,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12205,7 +12145,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 1,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12218,7 +12158,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Lunaris 8B is a versatile generalist and roleplaying model based on Llama 3. It's a strategic merge of multiple models, designed to balance creativity with improved logic and general knowledge....",
     "status": "active",
     "contextWindow": 8192,
-    "maxOutputTokens": 16384,
+    "maxOutputTokens": 7372,
     "modalities": {
       "input": [
         "text"
@@ -12235,7 +12175,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.04,
         "outputPricePer1M": 0.049999999999999996,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12267,7 +12207,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12297,7 +12237,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.39999999999999997,
         "outputPricePer1M": 0.39999999999999997,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12310,7 +12250,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Meta's latest class of model (Llama 3.1) launched with a variety of sizes & flavors. This 8B instruct-tuned version is fast and efficient. It has demonstrated strong performance compared to...",
     "status": "active",
     "contextWindow": 131072,
-    "maxOutputTokens": 131072,
+    "maxOutputTokens": 117964,
     "modalities": {
       "input": [
         "text"
@@ -12327,7 +12267,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.049999999999999996,
         "outputPricePer1M": 0.08,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12357,7 +12297,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.019000000000000003,
         "outputPricePer1M": 0.03,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12389,7 +12329,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.15,
         "outputPricePer1M": 0.6,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12421,7 +12361,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.15,
         "outputPricePer1M": 0.6,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12453,7 +12393,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.075,
         "outputPricePer1M": 0.3,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12483,7 +12423,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.65,
         "outputPricePer1M": 0.65,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12515,7 +12455,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12547,7 +12487,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 5,
         "outputPricePer1M": 15,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12579,7 +12519,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.25,
         "outputPricePer1M": 5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12592,7 +12532,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Mistral's official instruct fine-tuned version of [Mixtral 8x22B](/models/mistralai/mixtral-8x22b). It uses 39B active parameters out of 141B, offering unparalleled cost efficiency for its size. Its strengths include: - strong math, coding,...",
     "status": "active",
     "contextWindow": 65536,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 52428,
     "modalities": {
       "input": [
         "text",
@@ -12610,7 +12550,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 6,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12640,7 +12580,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.62,
         "outputPricePer1M": 0.62,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12671,7 +12611,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 10,
         "outputPricePer1M": 30,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12702,7 +12642,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 5,
         "outputPricePer1M": 15,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12733,7 +12673,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.25,
         "outputPricePer1M": 1.25,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12746,7 +12686,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "This is Mistral AI's flagship model, Mistral Large 2 (version `mistral-large-2407`). It's a proprietary weights-available model and excels at reasoning, code, JSON, chat, and more. Read the launch announcement [here](https://mistral.ai/news/mistral-large-2407/)....",
     "status": "active",
     "contextWindow": 128000,
-    "maxOutputTokens": 0,
+    "maxOutputTokens": 102400,
     "modalities": {
       "input": [
         "text",
@@ -12764,7 +12704,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 6,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12777,7 +12717,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "GPT-3.5 Turbo is OpenAI's fastest model. It can understand and generate natural language or code, and is optimized for chat and traditional completion tasks.\n\nTraining data up to Sep 2021.",
     "status": "active",
     "contextWindow": 4095,
-    "maxOutputTokens": 4096,
+    "maxOutputTokens": 3685,
     "modalities": {
       "input": [
         "text"
@@ -12794,7 +12734,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 2,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12824,7 +12764,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 10,
         "outputPricePer1M": 30,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12859,7 +12799,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": -1000000,
         "outputPricePer1M": -1000000,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12872,7 +12812,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "This model is a variant of GPT-3.5 Turbo tuned for instructional prompts and omitting chat-related optimizations. Training data: up to Sep 2021.",
     "status": "active",
     "contextWindow": 4095,
-    "maxOutputTokens": 4096,
+    "maxOutputTokens": 3685,
     "modalities": {
       "input": [
         "text"
@@ -12889,7 +12829,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.5,
         "outputPricePer1M": 2,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12919,7 +12859,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 3,
         "outputPricePer1M": 4,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12949,7 +12889,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.5,
         "outputPricePer1M": 0.75,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12979,7 +12919,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.44999999999999996,
         "outputPricePer1M": 0.65,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12992,7 +12932,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "One of the highest performing and most popular fine-tunes of Llama 2 13B, with rich descriptions and roleplay. #merge",
     "status": "active",
     "contextWindow": 8192,
-    "maxOutputTokens": 4096,
+    "maxOutputTokens": 3686,
     "modalities": {
       "input": [
         "text"
@@ -13009,7 +12949,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.06,
         "outputPricePer1M": 0.06,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13039,7 +12979,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.5,
         "outputPricePer1M": 1.5,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13069,7 +13009,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.25,
         "outputPricePer1M": 0.75,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13099,7 +13039,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 30,
         "outputPricePer1M": 60,
         "currency": "USD",
-        "effectiveDate": "2026-08-25",
+        "effectiveDate": "2026-08-26",
         "source": "https://openrouter.ai/models"
       }
     ]
