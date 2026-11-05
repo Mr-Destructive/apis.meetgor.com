@@ -2,6 +2,36 @@ import { type TokenomicsModel } from "./seed"
 
 export const orModels: TokenomicsModel[] = [
   {
+    "id": "or-ricursiveai-ripple-65b-preview",
+    "name": "[OR] ricursiveAI/Ripple-65B-Preview",
+    "providerId": "ricursiveai",
+    "family": "ricursiveai",
+    "description": "Ripple-65B-Preview by ricursiveAI, a 65B model with native tool calling, served in BF16.",
+    "status": "active",
+    "contextWindow": 1048576,
+    "maxOutputTokens": 131072,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "tags": [
+      "openrouter"
+    ],
+    "pricing": [
+      {
+        "inputPricePer1M": 0.19999999999999998,
+        "outputPricePer1M": 0.6,
+        "currency": "USD",
+        "effectiveDate": "2026-11-05",
+        "source": "https://openrouter.ai/models"
+      }
+    ]
+  },
+  {
     "id": "or-tencent-hy4",
     "name": "[OR] Tencent: Hy4",
     "providerId": "tencent",
@@ -27,7 +57,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.417,
         "outputPricePer1M": 1.2505,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -61,7 +91,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -93,7 +123,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.37,
         "outputPricePer1M": 1.25,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -124,7 +154,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.049999999999999996,
         "outputPricePer1M": 0.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -156,7 +186,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -188,7 +218,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.5,
         "outputPricePer1M": 2.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -220,7 +250,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -252,7 +282,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.5,
         "outputPricePer1M": 2.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -284,7 +314,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -314,7 +344,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -346,7 +376,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.15,
         "outputPricePer1M": 0.6,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -377,7 +407,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.15,
         "outputPricePer1M": 0.6,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -409,7 +439,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.6,
         "outputPricePer1M": 3,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -439,7 +469,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -469,7 +499,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.25,
         "outputPricePer1M": 1,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -499,7 +529,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.35,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -530,7 +560,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.08,
         "outputPricePer1M": 0.13,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -561,7 +591,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 2.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -592,7 +622,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 2.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -626,7 +656,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.25,
         "outputPricePer1M": 4.25,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -658,7 +688,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.15,
         "outputPricePer1M": 0.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -690,7 +720,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -721,7 +751,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.7999999999999999,
         "outputPricePer1M": 3.1999999999999997,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -752,7 +782,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.7999999999999999,
         "outputPricePer1M": 3.1999999999999997,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -783,7 +813,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 7.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -813,7 +843,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.049999999999999996,
         "outputPricePer1M": 0.7,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -847,7 +877,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -881,7 +911,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -913,7 +943,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.04,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -945,7 +975,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.04,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -979,7 +1009,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 4,
         "outputPricePer1M": 20,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1011,7 +1041,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 2.7,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1043,7 +1073,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1075,7 +1105,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.049999999999999996,
         "outputPricePer1M": 0.25,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1107,7 +1137,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.5,
         "outputPricePer1M": 7.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1138,7 +1168,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.7,
         "outputPricePer1M": 2.0999999999999996,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1168,7 +1198,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.075,
         "outputPricePer1M": 0.22499999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1200,7 +1230,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1232,7 +1262,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1264,7 +1294,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1296,7 +1326,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1328,7 +1358,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1360,7 +1390,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1393,7 +1423,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.15,
         "outputPricePer1M": 1.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1424,7 +1454,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 3,
         "outputPricePer1M": 15,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1454,7 +1484,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.8,
         "outputPricePer1M": 8.8,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1486,7 +1516,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 4,
         "outputPricePer1M": 12,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1516,7 +1546,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.7,
         "outputPricePer1M": 1.4,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1546,7 +1576,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 3,
         "outputPricePer1M": 6,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1576,7 +1606,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.049999999999999996,
         "outputPricePer1M": 0.19999999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1607,7 +1637,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 1.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1639,7 +1669,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1671,7 +1701,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.049999999999999996,
         "outputPricePer1M": 0.25,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1703,7 +1733,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1735,7 +1765,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.049999999999999996,
         "outputPricePer1M": 0.25,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1767,7 +1797,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1799,7 +1829,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1831,7 +1861,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1863,7 +1893,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1895,7 +1925,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 4,
         "outputPricePer1M": 20,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1927,7 +1957,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1960,7 +1990,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 4.35,
         "outputPricePer1M": 8.7,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -1993,7 +2023,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.14,
         "outputPricePer1M": 0.28,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2026,7 +2056,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.435,
         "outputPricePer1M": 0.87,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2058,7 +2088,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 6,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2090,7 +2120,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.5999999999999999,
         "outputPricePer1M": 4.8,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2123,7 +2153,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.15,
         "outputPricePer1M": 0.47,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2154,7 +2184,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.075,
         "outputPricePer1M": 0.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2186,7 +2216,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.37,
         "outputPricePer1M": 1.25,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2213,10 +2243,10 @@ export const orModels: TokenomicsModel[] = [
     ],
     "pricing": [
       {
-        "inputPricePer1M": 0.1035,
+        "inputPricePer1M": 0.0927,
         "outputPricePer1M": 8,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2244,10 +2274,10 @@ export const orModels: TokenomicsModel[] = [
     ],
     "pricing": [
       {
-        "inputPricePer1M": 0.032,
+        "inputPricePer1M": 0.006,
         "outputPricePer1M": 0.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2277,7 +2307,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.03,
         "outputPricePer1M": 0.15,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2290,7 +2320,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Schematron V2 Small is a 3B-parameter HTML-to-JSON extraction model from Inference.net. It prioritizes extraction quality for complex schemas and long pages. Extraction instructions must be supplied through a JSON schema...",
     "status": "active",
     "contextWindow": 128000,
-    "maxOutputTokens": 4096,
+    "maxOutputTokens": 8192,
     "modalities": {
       "input": [
         "text"
@@ -2307,7 +2337,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.049999999999999996,
         "outputPricePer1M": 0.22999999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2339,7 +2369,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 10,
         "outputPricePer1M": 50,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2371,7 +2401,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2403,7 +2433,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2435,7 +2465,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2467,7 +2497,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 5,
         "outputPricePer1M": 30,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2499,7 +2529,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 6,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2531,7 +2561,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.06,
         "outputPricePer1M": 0.18,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2562,7 +2592,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.045,
         "outputPricePer1M": 0.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2575,7 +2605,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "DeepSeek V4.1 Flash is a sparse mixture-of-experts model from DeepSeek, and the first built on the company's Causal Encoder-Decoder (CED) architecture. It activates 8B parameters on input and 16B on...",
     "status": "active",
     "contextWindow": 1048576,
-    "maxOutputTokens": 384000,
+    "maxOutputTokens": 131072,
     "modalities": {
       "input": [
         "text",
@@ -2590,10 +2620,10 @@ export const orModels: TokenomicsModel[] = [
     ],
     "pricing": [
       {
-        "inputPricePer1M": 0.049999999999999996,
-        "outputPricePer1M": 0.15,
+        "inputPricePer1M": 0.112,
+        "outputPricePer1M": 0.33599999999999997,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2623,7 +2653,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.04,
         "outputPricePer1M": 0.15,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2654,7 +2684,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.024999999999999998,
         "outputPricePer1M": 0.09999999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2685,7 +2715,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.075,
         "outputPricePer1M": 0.25,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2717,7 +2747,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 10,
         "outputPricePer1M": 50,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2749,7 +2779,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 5,
         "outputPricePer1M": 25,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2781,7 +2811,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 10,
         "outputPricePer1M": 50,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2813,7 +2843,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 5,
         "outputPricePer1M": 25,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2845,7 +2875,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 6,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2878,7 +2908,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.19999999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2911,7 +2941,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.25,
         "outputPricePer1M": 4.25,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2945,7 +2975,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.8250000000000001,
         "outputPricePer1M": 4.125,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -2979,7 +3009,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.375,
         "outputPricePer1M": 1.875,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3011,7 +3041,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 10,
         "outputPricePer1M": 50,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3043,7 +3073,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 5,
         "outputPricePer1M": 25,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3073,7 +3103,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.06,
         "outputPricePer1M": 0.25,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3103,7 +3133,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.834,
         "outputPricePer1M": 2.501,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3132,10 +3162,10 @@ export const orModels: TokenomicsModel[] = [
     ],
     "pricing": [
       {
-        "inputPricePer1M": 0.0269,
-        "outputPricePer1M": 0.09960000000000001,
+        "inputPricePer1M": 0.0285,
+        "outputPricePer1M": 0.0923,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3167,7 +3197,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.15,
         "outputPricePer1M": 0.47,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3180,7 +3210,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "GLM-5.3-Flash is a native multimodal model from Z.ai. It is suited for efficient coding and long-horizon agent tasks. Its hybrid sparse and linear attention architecture maintains accurate long-context behavior while...",
     "status": "active",
     "contextWindow": 1048576,
-    "maxOutputTokens": 131072,
+    "maxOutputTokens": 943717,
     "modalities": {
       "input": [
         "text",
@@ -3196,10 +3226,10 @@ export const orModels: TokenomicsModel[] = [
     ],
     "pricing": [
       {
-        "inputPricePer1M": 0.0269,
-        "outputPricePer1M": 0.09960000000000001,
+        "inputPricePer1M": 0.15,
+        "outputPricePer1M": 0.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3231,7 +3261,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.049999999999999996,
         "outputPricePer1M": 0.18,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3264,7 +3294,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.19999999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3295,7 +3325,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.21559999999999999,
         "outputPricePer1M": 0.6468,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3325,7 +3355,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.044,
         "outputPricePer1M": 0.17700000000000002,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3355,7 +3385,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.074,
         "outputPricePer1M": 0.295,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3385,7 +3415,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.0699,
         "outputPricePer1M": 1.4,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3415,7 +3445,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.074,
         "outputPricePer1M": 0.295,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3442,10 +3472,10 @@ export const orModels: TokenomicsModel[] = [
     ],
     "pricing": [
       {
-        "inputPricePer1M": 0.08,
-        "outputPricePer1M": 3.5999999999999996,
+        "inputPricePer1M": 0.0699,
+        "outputPricePer1M": 1.4,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3475,7 +3505,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.44999999999999996,
         "outputPricePer1M": 2,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3507,7 +3537,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.15,
         "outputPricePer1M": 1.875,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3538,7 +3568,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3572,7 +3602,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.75,
         "outputPricePer1M": 3.75,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3606,7 +3636,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.375,
         "outputPricePer1M": 1.875,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3638,7 +3668,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.5,
         "outputPricePer1M": 2.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3668,7 +3698,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 6,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3700,7 +3730,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.5,
         "outputPricePer1M": 3,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3727,10 +3757,10 @@ export const orModels: TokenomicsModel[] = [
     ],
     "pricing": [
       {
-        "inputPricePer1M": 0.11499999999999999,
-        "outputPricePer1M": 4.6,
+        "inputPricePer1M": 0.103,
+        "outputPricePer1M": 4.109999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3762,7 +3792,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 6,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3794,7 +3824,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.5999999999999999,
         "outputPricePer1M": 4.8,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3824,7 +3854,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.35,
         "outputPricePer1M": 0.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3854,7 +3884,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3884,7 +3914,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.07,
         "outputPricePer1M": 0.19999999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3914,7 +3944,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3946,7 +3976,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.95,
         "outputPricePer1M": 4,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -3976,7 +4006,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.15,
         "outputPricePer1M": 0.6,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4007,7 +4037,37 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 1.2,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
+        "source": "https://openrouter.ai/models"
+      }
+    ]
+  },
+  {
+    "id": "or-inclusionai-ling-3.0-tiny",
+    "name": "[OR] inclusionAI: Ling 3.0 Tiny",
+    "providerId": "inclusionai",
+    "family": "inclusionai",
+    "description": "Ling 3.0 Tiny is a mixture-of-experts model from InclusionAI, with 1.3B active parameters out of 7.9B total. It is designed for responsive agents, instruction following, and multi-turn conversations, with switchable...",
+    "status": "active",
+    "contextWindow": 262144,
+    "maxOutputTokens": 250000,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "tags": [
+      "openrouter"
+    ],
+    "pricing": [
+      {
+        "inputPricePer1M": 0.015,
+        "outputPricePer1M": 0.045,
+        "currency": "USD",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4040,7 +4100,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.25,
         "outputPricePer1M": 4.25,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4053,7 +4113,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "This model always redirects to the latest model in the DeepSeek V4 Flash family.",
     "status": "active",
     "contextWindow": 1048576,
-    "maxOutputTokens": 943718,
+    "maxOutputTokens": 131072,
     "modalities": {
       "input": [
         "text"
@@ -4067,10 +4127,10 @@ export const orModels: TokenomicsModel[] = [
     ],
     "pricing": [
       {
-        "inputPricePer1M": 0.059,
-        "outputPricePer1M": 0.3,
+        "inputPricePer1M": 0.055,
+        "outputPricePer1M": 0.165,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4097,10 +4157,10 @@ export const orModels: TokenomicsModel[] = [
     ],
     "pricing": [
       {
-        "inputPricePer1M": 0.059,
+        "inputPricePer1M": 0.0553,
         "outputPricePer1M": 0.3,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4132,7 +4192,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.44999999999999996,
         "outputPricePer1M": 1.2,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4164,7 +4224,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.03,
         "outputPricePer1M": 0.13,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4196,7 +4256,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 5,
         "outputPricePer1M": 25,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4228,7 +4288,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 12.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4258,7 +4318,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.020999999999999998,
         "outputPricePer1M": 0.063,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4292,7 +4352,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.75,
         "outputPricePer1M": 3.75,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4326,7 +4386,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.375,
         "outputPricePer1M": 1.875,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4360,7 +4420,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 2.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4394,7 +4454,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.15,
         "outputPricePer1M": 1.25,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4424,7 +4484,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 1.2,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4456,7 +4516,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 4.05,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4488,7 +4548,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.192,
         "outputPricePer1M": 16,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4520,7 +4580,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.2800000000000002,
         "outputPricePer1M": 11.399999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4553,7 +4613,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.25,
         "outputPricePer1M": 4.25,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4585,7 +4645,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.19999999999999998,
         "outputPricePer1M": 1.2,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4617,7 +4677,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.6,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4649,7 +4709,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.19999999999999998,
         "outputPricePer1M": 1.2,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4681,7 +4741,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.6,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4713,7 +4773,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 12,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4745,7 +4805,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 6,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4777,7 +4837,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 12,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4809,7 +4869,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 6,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4841,7 +4901,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 4,
         "outputPricePer1M": 20,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4873,7 +4933,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4905,7 +4965,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 4,
         "outputPricePer1M": 20,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4937,7 +4997,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -4969,7 +5029,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 6,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5001,7 +5061,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 6,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5031,7 +5091,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.7,
         "outputPricePer1M": 1.4,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5061,7 +5121,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 3,
         "outputPricePer1M": 6,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5091,7 +5151,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.13199999999999998,
         "outputPricePer1M": 0.5279999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5123,7 +5183,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5155,7 +5215,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5187,7 +5247,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.25,
         "outputPricePer1M": 1.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5218,7 +5278,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 5,
         "outputPricePer1M": 30,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5250,7 +5310,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.5,
         "outputPricePer1M": 3,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5282,7 +5342,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 12,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5312,7 +5372,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5342,7 +5402,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.006,
         "outputPricePer1M": 6.8,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5373,7 +5433,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.6,
         "outputPricePer1M": 3.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5405,7 +5465,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 10,
         "outputPricePer1M": 50,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5437,7 +5497,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 10,
         "outputPricePer1M": 50,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5469,7 +5529,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 5,
         "outputPricePer1M": 25,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5500,7 +5560,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.19999999999999998,
         "outputPricePer1M": 0.19999999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5531,7 +5591,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5561,7 +5621,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.6,
         "outputPricePer1M": 2.4,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5591,7 +5651,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5622,7 +5682,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.32,
         "outputPricePer1M": 1.28,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5653,7 +5713,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.22999999999999998,
         "outputPricePer1M": 0.9199999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5685,7 +5745,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 1.2,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5717,7 +5777,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.19999999999999998,
         "outputPricePer1M": 1.15,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5749,7 +5809,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 5,
         "outputPricePer1M": 25,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5781,7 +5841,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 12.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5811,7 +5871,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.475,
         "outputPricePer1M": 4.425,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5843,7 +5903,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 2,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5877,7 +5937,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.5,
         "outputPricePer1M": 9,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5911,7 +5971,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.75,
         "outputPricePer1M": 4.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5943,7 +6003,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.15,
         "outputPricePer1M": 1.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -5977,7 +6037,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.25,
         "outputPricePer1M": 1.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6011,7 +6071,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.125,
         "outputPricePer1M": 0.75,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6043,7 +6103,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 5,
         "outputPricePer1M": 30,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6075,7 +6135,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.25,
         "outputPricePer1M": 2.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6107,7 +6167,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 2,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6139,7 +6199,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.5,
         "outputPricePer1M": 7.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6171,7 +6231,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.75,
         "outputPricePer1M": 3.75,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6204,7 +6264,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6236,7 +6296,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6268,7 +6328,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.75,
         "outputPricePer1M": 4.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6302,7 +6362,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6332,9 +6392,9 @@ export const orModels: TokenomicsModel[] = [
     "pricing": [
       {
         "inputPricePer1M": 0.18239999999999998,
-        "outputPricePer1M": 10.155100000000001,
+        "outputPricePer1M": 9.338799999999999,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6368,7 +6428,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.75,
         "outputPricePer1M": 3.75,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6400,7 +6460,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6432,7 +6492,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 1.7999999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6464,7 +6524,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.1875,
         "outputPricePer1M": 1.125,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6496,7 +6556,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.8999999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6528,7 +6588,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.44999999999999996,
         "outputPricePer1M": 2.7,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6560,7 +6620,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 30,
         "outputPricePer1M": 180,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6592,7 +6652,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 15,
         "outputPricePer1M": 90,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6624,7 +6684,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 5,
         "outputPricePer1M": 30,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6656,7 +6716,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 15,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6686,7 +6746,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.5999999999999999,
         "outputPricePer1M": 3.1999999999999997,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6716,7 +6776,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.091,
         "outputPricePer1M": 0.182,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6746,7 +6806,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.18,
         "outputPricePer1M": 0.6,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6776,7 +6836,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.48,
         "outputPricePer1M": 1.7999999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6809,7 +6869,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.39999999999999997,
         "outputPricePer1M": 2,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6842,7 +6902,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 8,
         "outputPricePer1M": 15,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6874,7 +6934,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 4,
         "outputPricePer1M": 20,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6905,7 +6965,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.65,
         "outputPricePer1M": 3.41,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6937,7 +6997,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 5,
         "outputPricePer1M": 25,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6969,7 +7029,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 12.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -6999,7 +7059,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.4,
         "outputPricePer1M": 4.4,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7028,10 +7088,10 @@ export const orModels: TokenomicsModel[] = [
     ],
     "pricing": [
       {
-        "inputPricePer1M": 0.091,
-        "outputPricePer1M": 0.272,
+        "inputPricePer1M": 0.043000000000000003,
+        "outputPricePer1M": 0.129,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7063,7 +7123,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7095,7 +7155,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.19999999999999998,
         "outputPricePer1M": 0.39999999999999997,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7127,7 +7187,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7159,7 +7219,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.325,
         "outputPricePer1M": 1.95,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7191,7 +7251,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.2,
         "outputPricePer1M": 4,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7223,7 +7283,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.25,
         "outputPricePer1M": 2.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7255,7 +7315,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.25,
         "outputPricePer1M": 2.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7287,7 +7347,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7319,7 +7379,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7351,7 +7411,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.09999999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7364,7 +7424,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "MiniMax-M2.7 is a next-generation large language model designed for autonomous, real-world productivity and continuous improvement. Built to actively participate in its own evolution, M2.7 integrates advanced agentic capabilities through multi-agent...",
     "status": "active",
     "contextWindow": 204800,
-    "maxOutputTokens": 131072,
+    "maxOutputTokens": 176947,
     "modalities": {
       "input": [
         "text"
@@ -7378,10 +7438,10 @@ export const orModels: TokenomicsModel[] = [
     ],
     "pricing": [
       {
-        "inputPricePer1M": 0.3,
-        "outputPricePer1M": 1.2,
+        "inputPricePer1M": 0.21,
+        "outputPricePer1M": 0.84,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7413,7 +7473,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.19999999999999998,
         "outputPricePer1M": 1.25,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7445,7 +7505,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.625,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7477,7 +7537,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.75,
         "outputPricePer1M": 4.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7509,7 +7569,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.375,
         "outputPricePer1M": 2.25,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7540,7 +7600,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.15,
         "outputPricePer1M": 0.6,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7570,7 +7630,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.2,
         "outputPricePer1M": 4,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7600,7 +7660,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 2.4,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7632,7 +7692,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.25,
         "outputPricePer1M": 2,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7664,7 +7724,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.16999999999999998,
         "outputPricePer1M": 0.25,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7696,7 +7756,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 30,
         "outputPricePer1M": 180,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7728,7 +7788,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 15,
         "outputPricePer1M": 90,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7760,7 +7820,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 15,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7792,7 +7852,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.25,
         "outputPricePer1M": 7.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7822,7 +7882,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.25,
         "outputPricePer1M": 0.75,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7856,7 +7916,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.25,
         "outputPricePer1M": 1.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7888,7 +7948,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.39999999999999997,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7920,7 +7980,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.5,
         "outputPricePer1M": 3,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7952,7 +8012,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.14,
         "outputPricePer1M": 1,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -7984,7 +8044,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.26,
         "outputPricePer1M": 2.6,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8016,7 +8076,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.26,
         "outputPricePer1M": 2.08,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8048,7 +8108,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.065,
         "outputPricePer1M": 0.26,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8082,7 +8142,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 12,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8114,7 +8174,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.75,
         "outputPricePer1M": 14,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8144,7 +8204,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.7999999999999999,
         "outputPricePer1M": 1.5999999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8178,7 +8238,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 12,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8212,7 +8272,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 6,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8244,7 +8304,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 3,
         "outputPricePer1M": 15,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8276,7 +8336,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.5,
         "outputPricePer1M": 7.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8308,7 +8368,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.26,
         "outputPricePer1M": 1.56,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8340,7 +8400,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.5,
         "outputPricePer1M": 3.5999999999999996,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8370,7 +8430,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.27,
         "outputPricePer1M": 0.95,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8400,7 +8460,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 3.1999999999999997,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8432,7 +8492,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 5,
         "outputPricePer1M": 25,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8464,7 +8524,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 12.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8494,7 +8554,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.12,
         "outputPricePer1M": 0.7999999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8524,7 +8584,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.3,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8555,37 +8615,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.5,
         "outputPricePer1M": 2.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
-        "source": "https://openrouter.ai/models"
-      }
-    ]
-  },
-  {
-    "id": "or-minimax-minimax-m2-her",
-    "name": "[OR] MiniMax: MiniMax M2-her",
-    "providerId": "minimax",
-    "family": "minimax",
-    "description": "MiniMax M2-her is a dialogue-first large language model built for immersive roleplay, character-driven chat, and expressive multi-turn conversations. Designed to stay consistent in tone and personality, it supports rich message...",
-    "status": "active",
-    "contextWindow": 65536,
-    "maxOutputTokens": 2048,
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "tags": [
-      "openrouter"
-    ],
-    "pricing": [
-      {
-        "inputPricePer1M": 0.3,
-        "outputPricePer1M": 1.2,
-        "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8615,7 +8645,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.6,
         "outputPricePer1M": 6,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8647,7 +8677,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8679,7 +8709,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.6,
         "outputPricePer1M": 2.4,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8709,7 +8739,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.060500000000000005,
         "outputPricePer1M": 0.39999999999999997,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8740,7 +8770,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.75,
         "outputPricePer1M": 14,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8772,7 +8802,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.075,
         "outputPricePer1M": 0.3,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8804,37 +8834,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.25,
         "outputPricePer1M": 2,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
-        "source": "https://openrouter.ai/models"
-      }
-    ]
-  },
-  {
-    "id": "or-minimax-minimax-m2.1",
-    "name": "[OR] MiniMax: MiniMax M2.1",
-    "providerId": "minimax",
-    "family": "minimax",
-    "description": "MiniMax-M2.1 is a lightweight, state-of-the-art large language model optimized for coding, agentic workflows, and modern application development. With only 10 billion activated parameters, it delivers a major jump in real-world...",
-    "status": "active",
-    "contextWindow": 204800,
-    "maxOutputTokens": 131072,
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "tags": [
-      "openrouter"
-    ],
-    "pricing": [
-      {
-        "inputPricePer1M": 0.3,
-        "outputPricePer1M": 1.2,
-        "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8864,7 +8864,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.6,
         "outputPricePer1M": 2.2,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8898,7 +8898,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.5,
         "outputPricePer1M": 3,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8932,7 +8932,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.25,
         "outputPricePer1M": 1.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8962,7 +8962,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.06,
         "outputPricePer1M": 0.24,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -8994,7 +8994,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.75,
         "outputPricePer1M": 14,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9026,7 +9026,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 21,
         "outputPricePer1M": 168,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9058,7 +9058,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 10.5,
         "outputPricePer1M": 84,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9090,7 +9090,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.75,
         "outputPricePer1M": 14,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9122,7 +9122,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.875,
         "outputPricePer1M": 7,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9153,7 +9153,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.39999999999999997,
         "outputPricePer1M": 2,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9183,7 +9183,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 3,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9215,7 +9215,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 0.8999999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9246,7 +9246,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.25,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9279,7 +9279,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 2.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9310,7 +9310,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.19999999999999998,
         "outputPricePer1M": 0.19999999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9341,7 +9341,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.15,
         "outputPricePer1M": 0.15,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9372,7 +9372,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.09999999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9404,7 +9404,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.5,
         "outputPricePer1M": 1.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9434,7 +9434,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.26,
         "outputPricePer1M": 0.38,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9466,7 +9466,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 5,
         "outputPricePer1M": 25,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9498,7 +9498,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 12.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9530,7 +9530,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 12,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9562,7 +9562,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.25,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9594,7 +9594,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.625,
         "outputPricePer1M": 5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9625,7 +9625,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.25,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9656,7 +9656,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.25,
         "outputPricePer1M": 2,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9686,7 +9686,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.6,
         "outputPricePer1M": 2.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9717,7 +9717,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 12.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9748,7 +9748,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 3,
         "outputPricePer1M": 15,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9780,7 +9780,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.3,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9810,37 +9810,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.075,
         "outputPricePer1M": 0.3,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
-        "source": "https://openrouter.ai/models"
-      }
-    ]
-  },
-  {
-    "id": "or-minimax-minimax-m2",
-    "name": "[OR] MiniMax: MiniMax M2",
-    "providerId": "minimax",
-    "family": "minimax",
-    "description": "MiniMax-M2 is a compact, high-efficiency large language model optimized for end-to-end coding and agentic workflows. With 10 billion activated parameters (230 billion total), it delivers near-frontier intelligence across general reasoning,...",
-    "status": "active",
-    "contextWindow": 204800,
-    "maxOutputTokens": 131072,
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "tags": [
-      "openrouter"
-    ],
-    "pricing": [
-      {
-        "inputPricePer1M": 0.255,
-        "outputPricePer1M": 1.02,
-        "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9873,7 +9843,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 2,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9905,7 +9875,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9937,7 +9907,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.5,
         "outputPricePer1M": 2.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -9968,7 +9938,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.25,
         "outputPricePer1M": 0.75,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10001,7 +9971,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 10,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10033,7 +10003,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 2.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10064,7 +10034,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.29,
         "outputPricePer1M": 1,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10095,7 +10065,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.15,
         "outputPricePer1M": 0.6,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10127,7 +10097,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 15,
         "outputPricePer1M": 120,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10159,7 +10129,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 7.5,
         "outputPricePer1M": 60,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10189,7 +10159,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.5,
         "outputPricePer1M": 2,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10221,7 +10191,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 3,
         "outputPricePer1M": 15,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10253,7 +10223,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.5,
         "outputPricePer1M": 7.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10283,7 +10253,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.27,
         "outputPricePer1M": 0.41,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10313,7 +10283,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 0.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10343,7 +10313,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.85,
         "outputPricePer1M": 1.25,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10374,7 +10344,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.21,
         "outputPricePer1M": 1.9,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10404,7 +10374,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.27,
         "outputPricePer1M": 1,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10434,7 +10404,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.195,
         "outputPricePer1M": 0.975,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10447,7 +10417,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Qwen3-Next-80B-A3B-Instruct is an instruction-tuned chat model in the Qwen3-Next series optimized for fast, stable responses without “thinking” traces. It targets complex tasks across reasoning, code generation, knowledge QA, and multilingual...",
     "status": "active",
     "contextWindow": 262144,
-    "maxOutputTokens": 235929,
+    "maxOutputTokens": 16384,
     "modalities": {
       "input": [
         "text"
@@ -10461,10 +10431,10 @@ export const orModels: TokenomicsModel[] = [
     ],
     "pricing": [
       {
-        "inputPricePer1M": 0.09999999999999999,
+        "inputPricePer1M": 0.09,
         "outputPricePer1M": 1.1,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10494,7 +10464,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.6,
         "outputPricePer1M": 2.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10524,7 +10494,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 3,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10554,7 +10524,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.25,
         "outputPricePer1M": 0.95,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10586,7 +10556,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.39999999999999997,
         "outputPricePer1M": 2,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10617,7 +10587,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.6,
         "outputPricePer1M": 1.7999999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10649,7 +10619,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.25,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10681,7 +10651,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.625,
         "outputPricePer1M": 5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10713,7 +10683,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.25,
         "outputPricePer1M": 2,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10745,7 +10715,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.125,
         "outputPricePer1M": 1,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10777,7 +10747,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.049999999999999996,
         "outputPricePer1M": 0.39999999999999997,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10809,7 +10779,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.024999999999999998,
         "outputPricePer1M": 0.19999999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10836,10 +10806,10 @@ export const orModels: TokenomicsModel[] = [
     ],
     "pricing": [
       {
-        "inputPricePer1M": 0.027,
-        "outputPricePer1M": 0.101,
+        "inputPricePer1M": 0.15,
+        "outputPricePer1M": 0.6,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10869,7 +10839,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.0296,
         "outputPricePer1M": 0.136,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10899,7 +10869,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.03,
         "outputPricePer1M": 0.13,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10929,7 +10899,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.024,
         "outputPricePer1M": 0.112,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10961,7 +10931,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 15,
         "outputPricePer1M": 75,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -10993,7 +10963,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 7.5,
         "outputPricePer1M": 37.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11024,7 +10994,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 0.8999999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11054,7 +11024,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.15,
         "outputPricePer1M": 0.6,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11084,7 +11054,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.3,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11114,7 +11084,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.6,
         "outputPricePer1M": 2.2,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11144,7 +11114,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.13,
         "outputPricePer1M": 0.85,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11174,7 +11144,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.44999999999999996,
         "outputPricePer1M": 3.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11204,7 +11174,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 1,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11235,7 +11205,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.19999999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11269,7 +11239,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.39999999999999997,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11299,7 +11269,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.14,
         "outputPricePer1M": 0.7999999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11329,7 +11299,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.5700000000000001,
         "outputPricePer1M": 2.3,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11359,7 +11329,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.19999999999999998,
         "outputPricePer1M": 0.8999999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11389,7 +11359,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.14,
         "outputPricePer1M": 0.5700000000000001,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11419,7 +11389,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.8999999999999999,
         "outputPricePer1M": 1.9,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11449,7 +11419,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.7999999999999999,
         "outputPricePer1M": 1.2,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11480,7 +11450,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.075,
         "outputPricePer1M": 0.19999999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11510,7 +11480,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.55,
         "outputPricePer1M": 2.2,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11544,7 +11514,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.3,
         "outputPricePer1M": 2.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11578,7 +11548,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.25,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11610,7 +11580,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 20,
         "outputPricePer1M": 80,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11643,7 +11613,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.25,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11673,7 +11643,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.5,
         "outputPricePer1M": 2.1500000000000004,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11705,7 +11675,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.39999999999999997,
         "outputPricePer1M": 2,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11736,7 +11706,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.18,
         "outputPricePer1M": 0.18,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11766,7 +11736,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.12,
         "outputPricePer1M": 0.5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11796,7 +11766,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.12,
         "outputPricePer1M": 0.24,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11826,7 +11796,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.08,
         "outputPricePer1M": 0.28,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11858,7 +11828,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 8,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11890,7 +11860,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 4,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11922,7 +11892,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.55,
         "outputPricePer1M": 2.2,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11954,7 +11924,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 8,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -11986,7 +11956,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 4,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12018,7 +11988,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.39999999999999997,
         "outputPricePer1M": 1.5999999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12050,7 +12020,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.19999999999999998,
         "outputPricePer1M": 0.7999999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12082,7 +12052,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.39999999999999997,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12114,7 +12084,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.049999999999999996,
         "outputPricePer1M": 0.19999999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12127,7 +12097,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "Llama 4 Maverick 17B Instruct (128E) is a high-capacity multimodal language model from Meta, built on a mixture-of-experts (MoE) architecture with 128 experts and 17 billion active parameters per forward...",
     "status": "active",
     "contextWindow": 524288,
-    "maxOutputTokens": 16384,
+    "maxOutputTokens": 32768,
     "modalities": {
       "input": [
         "text",
@@ -12142,10 +12112,10 @@ export const orModels: TokenomicsModel[] = [
     ],
     "pricing": [
       {
-        "inputPricePer1M": 0.1875,
-        "outputPricePer1M": 0.6525,
+        "inputPricePer1M": 0.35,
+        "outputPricePer1M": 1,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12176,7 +12146,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.3,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12206,7 +12176,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.29,
         "outputPricePer1M": 1.1400000000000001,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12237,7 +12207,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.351,
         "outputPricePer1M": 0.5549999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12268,7 +12238,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.049999999999999996,
         "outputPricePer1M": 0.09999999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12299,7 +12269,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.049999999999999996,
         "outputPricePer1M": 0.15,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12329,7 +12299,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12359,7 +12329,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.19999999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12390,7 +12360,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.08,
         "outputPricePer1M": 0.35,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12420,7 +12390,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.55,
         "outputPricePer1M": 0.7999999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12451,7 +12421,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 8,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12482,7 +12452,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 3,
         "outputPricePer1M": 15,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12512,7 +12482,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 8,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12543,7 +12513,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.19999999999999998,
         "outputPricePer1M": 0.6,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12573,7 +12543,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.7999999999999999,
         "outputPricePer1M": 1.5999999999999999,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12604,7 +12574,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.7999999999999999,
         "outputPricePer1M": 1,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12634,7 +12604,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.26,
         "outputPricePer1M": 0.78,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12665,7 +12635,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.55,
         "outputPricePer1M": 2.2,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12695,7 +12665,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.049999999999999996,
         "outputPricePer1M": 0.08,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12726,38 +12696,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 1,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
-        "source": "https://openrouter.ai/models"
-      }
-    ]
-  },
-  {
-    "id": "or-minimax-minimax-01",
-    "name": "[OR] MiniMax: MiniMax-01",
-    "providerId": "minimax",
-    "family": "minimax",
-    "description": "MiniMax-01 is a combines MiniMax-Text-01 for text generation and MiniMax-VL-01 for image understanding. It has 456 billion parameters, with 45.9 billion parameters activated per inference, and can handle a context...",
-    "status": "active",
-    "contextWindow": 1000192,
-    "maxOutputTokens": 900172,
-    "modalities": {
-      "input": [
-        "text",
-        "image"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "tags": [
-      "openrouter"
-    ],
-    "pricing": [
-      {
-        "inputPricePer1M": 0.19999999999999998,
-        "outputPricePer1M": 1.1,
-        "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12787,7 +12726,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.07,
         "outputPricePer1M": 0.14,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12817,7 +12756,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.2574,
         "outputPricePer1M": 1.0287,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12847,7 +12786,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.0375,
         "outputPricePer1M": 0.15,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12860,7 +12799,7 @@ export const orModels: TokenomicsModel[] = [
     "description": "The Meta Llama 3.3 multilingual large language model (LLM) is a pretrained and instruction tuned generative model in 70B (text in/text out). The Llama 3.3 instruction tuned text only model...",
     "status": "active",
     "contextWindow": 131072,
-    "maxOutputTokens": 16384,
+    "maxOutputTokens": 128000,
     "modalities": {
       "input": [
         "text"
@@ -12874,10 +12813,10 @@ export const orModels: TokenomicsModel[] = [
     ],
     "pricing": [
       {
-        "inputPricePer1M": 0.09999999999999999,
-        "outputPricePer1M": 0.32,
+        "inputPricePer1M": 0.19999999999999998,
+        "outputPricePer1M": 0.52,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12908,7 +12847,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.06,
         "outputPricePer1M": 0.24,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12938,7 +12877,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.035,
         "outputPricePer1M": 0.14,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -12969,7 +12908,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.7999999999999999,
         "outputPricePer1M": 3.1999999999999997,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13001,7 +12940,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13032,7 +12971,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 6,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13062,7 +13001,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.66,
         "outputPricePer1M": 1,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13092,7 +13031,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.39999999999999997,
         "outputPricePer1M": 0.39999999999999997,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13122,7 +13061,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13152,7 +13091,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.09999999999999999,
         "outputPricePer1M": 0.19999999999999998,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13182,7 +13121,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.027,
         "outputPricePer1M": 0.201,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13212,7 +13151,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.0509,
         "outputPricePer1M": 0.335,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13242,7 +13181,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.36,
         "outputPricePer1M": 0.39999999999999997,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13272,7 +13211,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.15,
         "outputPricePer1M": 0.6,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13302,7 +13241,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13332,7 +13271,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.85,
         "outputPricePer1M": 0.85,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13362,7 +13301,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.04,
         "outputPricePer1M": 0.049999999999999996,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13394,7 +13333,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13424,7 +13363,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.72,
         "outputPricePer1M": 0.72,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13454,7 +13393,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.049999999999999996,
         "outputPricePer1M": 0.08,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13484,7 +13423,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.029,
         "outputPricePer1M": 0.03,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13516,7 +13455,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.15,
         "outputPricePer1M": 0.6,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13548,7 +13487,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.15,
         "outputPricePer1M": 0.6,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13580,7 +13519,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.075,
         "outputPricePer1M": 0.3,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13610,7 +13549,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.65,
         "outputPricePer1M": 0.65,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13642,7 +13581,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2.5,
         "outputPricePer1M": 10,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13674,7 +13613,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 5,
         "outputPricePer1M": 15,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13706,7 +13645,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1.25,
         "outputPricePer1M": 5,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13737,7 +13676,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 6,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13768,7 +13707,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 5,
         "outputPricePer1M": 15,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13799,7 +13738,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 2,
         "outputPricePer1M": 6,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13829,7 +13768,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 1,
         "outputPricePer1M": 2,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13859,7 +13798,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 3,
         "outputPricePer1M": 4,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13889,7 +13828,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.39999999999999997,
         "outputPricePer1M": 0.75,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13919,7 +13858,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.35,
         "outputPricePer1M": 0.65,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13949,7 +13888,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0.08,
         "outputPricePer1M": 0.11,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -13979,7 +13918,77 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 30,
         "outputPricePer1M": 60,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
+        "source": "https://openrouter.ai/models"
+      }
+    ]
+  },
+  {
+    "id": "or-openrouter-auto",
+    "name": "[OR] Auto Router",
+    "providerId": "openrouter",
+    "family": "openrouter",
+    "description": "Auto is OpenRouter’s general-purpose router, now powered by [Jev Router](https://openrouter.ai/typesafe/jev-router). It replaces market-spend rankings with request-aware selection of both the model and reasoning effort, weighing task difficulty, measured benchmark results,...",
+    "status": "active",
+    "contextWindow": 2000000,
+    "maxOutputTokens": 0,
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "audio",
+        "file",
+        "video"
+      ],
+      "output": [
+        "text",
+        "image"
+      ]
+    },
+    "tags": [
+      "openrouter"
+    ],
+    "pricing": [
+      {
+        "inputPricePer1M": -1000000,
+        "outputPricePer1M": -1000000,
+        "currency": "USD",
+        "effectiveDate": "2026-11-05",
+        "source": "https://openrouter.ai/models"
+      }
+    ]
+  },
+  {
+    "id": "or-openrouter-auto-code",
+    "name": "[OR] Auto Code",
+    "providerId": "openrouter",
+    "family": "openrouter",
+    "description": "Auto Code is OpenRouter’s router built specifically for coding agents and harnesses. It uses the same routing engine as the [Auto Router](https://openrouter.ai/openrouter/auto), with every request treated as part of an...",
+    "status": "active",
+    "contextWindow": 2000000,
+    "maxOutputTokens": 65536,
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "audio",
+        "file",
+        "video"
+      ],
+      "output": [
+        "text",
+        "image"
+      ]
+    },
+    "tags": [
+      "openrouter"
+    ],
+    "pricing": [
+      {
+        "inputPricePer1M": -1000000,
+        "outputPricePer1M": -1000000,
+        "currency": "USD",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -14013,7 +14022,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": -1000000,
         "outputPricePer1M": -1000000,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -14043,7 +14052,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": -1000000,
         "outputPricePer1M": -1000000,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -14078,7 +14087,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": -1000000,
         "outputPricePer1M": -1000000,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -14108,7 +14117,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": -1000000,
         "outputPricePer1M": -1000000,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -14138,7 +14147,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": -1000000,
         "outputPricePer1M": -1000000,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -14169,7 +14178,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": 0,
         "outputPricePer1M": 0,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
@@ -14199,42 +14208,7 @@ export const orModels: TokenomicsModel[] = [
         "inputPricePer1M": -1000000,
         "outputPricePer1M": -1000000,
         "currency": "USD",
-        "effectiveDate": "2026-11-04",
-        "source": "https://openrouter.ai/models"
-      }
-    ]
-  },
-  {
-    "id": "or-openrouter-auto",
-    "name": "[OR] Auto Router",
-    "providerId": "openrouter",
-    "family": "openrouter",
-    "description": "The Auto Router automatically selects the best model for your prompt, powered by the wisdom of the market. It routes you based on what the OpenRouter community collectively spends on...",
-    "status": "active",
-    "contextWindow": 2000000,
-    "maxOutputTokens": 0,
-    "modalities": {
-      "input": [
-        "text",
-        "image",
-        "audio",
-        "file",
-        "video"
-      ],
-      "output": [
-        "text",
-        "image"
-      ]
-    },
-    "tags": [
-      "openrouter"
-    ],
-    "pricing": [
-      {
-        "inputPricePer1M": -1000000,
-        "outputPricePer1M": -1000000,
-        "currency": "USD",
-        "effectiveDate": "2026-11-04",
+        "effectiveDate": "2026-11-05",
         "source": "https://openrouter.ai/models"
       }
     ]
